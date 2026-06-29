@@ -17,12 +17,43 @@
     <a href="search.html">全站检索</a>
     <a href="formula-index.html">公式索引</a>
     <a href="practice-index.html">题目索引</a>
+    <a href="type-map.html">题型地图</a>
     <a href="study-roadmap.html">复习路线</a>
     <a href="audit.html">审查报告</a>
     <a href="mindmaps/index.html">总导图</a>
+    <a href="mind-guide.html">思维导读</a>
     <button class="tool-btn" type="button" onclick="toggleTheme()">深色模式</button>
   </nav>
-</div><main id="main"><section class="hero"><span class="eyebrow">审查报告</span><h1>多维度审查报告</h1><p class="subtitle">记录内容完整性、结构、导图、链接、移动端、交互和 Pages 配置。</p></section><section class="review"><h3>章节内容保全校验</h3><table class="audit-table"><thead><tr><th>章节</th><th>知识点</th><th>公式块</th><th>步骤题</th><th>文本长度</th><th>文本指纹</th><th>状态</th></tr></thead><tbody><tr><td>第1章 矢量分析基础</td><td>8</td><td>8</td><td>8</td><td>3729</td><td><code>169f26ce30b0</code></td><td><span class='badge-ok'>保留</span></td></tr><tr><td>第2章 静电场</td><td>8</td><td>8</td><td>8</td><td>3157</td><td><code>25e27ea13637</code></td><td><span class='badge-ok'>保留</span></td></tr><tr><td>第3章 静电场边值问题</td><td>5</td><td>5</td><td>5</td><td>2138</td><td><code>6c30e1e69e8d</code></td><td><span class='badge-ok'>保留</span></td></tr><tr><td>第4章 恒定电流场</td><td>7</td><td>7</td><td>7</td><td>2596</td><td><code>c1f976fceec8</code></td><td><span class='badge-ok'>保留</span></td></tr><tr><td>第5章 恒定磁场</td><td>7</td><td>7</td><td>7</td><td>2945</td><td><code>71486a8d244e</code></td><td><span class='badge-ok'>保留</span></td></tr></tbody></table></section><section class="review"><h3>优化清单</h3><ul><li>完整保留原网页正文、公式和题目步骤。</li><li>每章单独子目录。</li><li>每章独立 Mermaid + HTML 双导图。</li><li>增加总导图、全站检索、公式索引、题目索引、复习路线。</li><li>增加学习进度 localStorage 勾选。</li><li>增加深色模式、公式复制、打印优化。</li><li>增加 GitHub Pages workflow、.nojekyll、robots.txt、sitemap.xml。</li></ul></section><section class="review"><h3>链接检查</h3><p><span class="badge-ok">生成后自动检查内部链接：0 个问题。</span></p></section></main></div>
+</div><main id="main"><section class="hero"><span class="eyebrow">审查报告</span><h1>多维度审查报告</h1><p class="subtitle">记录内容完整性、结构、导图、链接、移动端、交互和 Pages 配置。</p></section><section class="review"><h3>章节内容保全校验</h3><table class="audit-table"><thead><tr><th>章节</th><th>知识点</th><th>公式块</th><th>步骤题</th><th>文本长度</th><th>文本指纹</th><th>状态</th></tr></thead><tbody><tr><td>第1章 矢量分析基础</td><td>8</td><td>8</td><td>8</td><td>3729</td><td><code>169f26ce30b0</code></td><td><span class='badge-ok'>保留</span></td></tr><tr><td>第2章 静电场</td><td>8</td><td>8</td><td>8</td><td>3157</td><td><code>25e27ea13637</code></td><td><span class='badge-ok'>保留</span></td></tr><tr><td>第3章 静电场边值问题</td><td>5</td><td>5</td><td>5</td><td>2138</td><td><code>6c30e1e69e8d</code></td><td><span class='badge-ok'>保留</span></td></tr><tr><td>第4章 恒定电流场</td><td>7</td><td>7</td><td>7</td><td>2596</td><td><code>c1f976fceec8</code></td><td><span class='badge-ok'>保留</span></td></tr><tr><td>第5章 恒定磁场</td><td>7</td><td>7</td><td>7</td><td>2945</td><td><code>71486a8d244e</code></td><td><span class='badge-ok'>保留</span></td></tr></tbody></table></section><section class="review"><h3>优化清单</h3><ul><li>完整保留原网页正文、公式和题目步骤。</li><li>每章单独子目录。</li><li>每章独立 Mermaid + HTML 双导图。</li><li>增加总导图、全站检索、公式索引、题目索引、复习路线。</li><li>增加学习进度 localStorage 勾选。</li><li>增加深色模式、公式复制、打印优化。</li><li>增加 GitHub Pages workflow、.nojekyll、robots.txt、sitemap.xml。</li></ul></section><section class="review"><h3>链接检查</h3><p><span class="badge-ok">生成后自动检查内部链接：0 个问题。</span></p></section>
+<section class="review">
+  <h3>v3 排版 UI 与思维导读审查</h3>
+  <table class="audit-table">
+    <thead><tr><th>维度</th><th>优化内容</th><th>结果</th></tr></thead>
+    <tbody>
+      <tr><td>内容完整性</td><td>继续保留 35 个知识点、35 个公式块、35 道步骤题。</td><td><span class="badge-ok">通过</span></td></tr>
+      <tr><td>视觉层级</td><td>新增学习控制台、章节仪表盘、优先级卡片、公式网络块。</td><td><span class="badge-ok">通过</span></td></tr>
+      <tr><td>思维导读</td><td>新增总思维导读页和每章导读页，强调“为什么学、先学什么、公式怎么串、哪里易错”。</td><td><span class="badge-ok">通过</span></td></tr>
+      <tr><td>阅读体验</td><td>新增阅读进度条、右下角阅读工具、深色模式、打印优化。</td><td><span class="badge-ok">通过</span></td></tr>
+      <tr><td>移动端</td><td>所有新增栅格在窄屏下改为单列，避免横向挤压。</td><td><span class="badge-ok">通过</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+
+<section class="review">
+  <h3>v4 深度扩展审查</h3>
+  <table class="audit-table">
+    <thead><tr><th>维度</th><th>检查内容</th><th>结果</th></tr></thead>
+    <tbody>
+      <tr><td>每知识点扩展</td><td>35 个知识点均追加“公式含义、字母拆解、计算步骤、常见题型、速算例子”。</td><td><span class="badge-ok">通过</span></td></tr>
+      <tr><td>题型覆盖</td><td>新增题型地图，按概念判断、公式代入、边界条件、积分/微分、类比极限、方向判断分类。</td><td><span class="badge-ok">通过</span></td></tr>
+      <tr><td>UI 排版</td><td>新增深度扩展卡片、符号表格、题型卡片，移动端自动单列。</td><td><span class="badge-ok">通过</span></td></tr>
+      <tr><td>内容完整性</td><td>原正文、公式、题目步骤继续保留，新增内容只追加不替换。</td><td><span class="badge-ok">通过</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+</main></div>
 <script src="assets/site.js"></script>
-</body>
+<div class="reader-tools"><a href="#main">回到顶部</a><button type="button" onclick="toggleTheme()">深色</button></div></body>
 </html>

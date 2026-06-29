@@ -19,9 +19,11 @@
     <a href="../../search.html">全站检索</a>
     <a href="../../formula-index.html">公式索引</a>
     <a href="../../practice-index.html">题目索引</a>
+    <a href="../../type-map.html">题型地图</a>
     <a href="../../study-roadmap.html">复习路线</a>
     <a href="../../audit.html">审查报告</a>
     <a href="../../mindmaps/index.html">总导图</a>
+    <a href="../../mind-guide.html">思维导读</a>
     <button class="tool-btn" type="button" onclick="toggleTheme()">深色模式</button>
   </nav>
 </div>
@@ -40,6 +42,15 @@
   </aside>
   <main id="main">
     <div class="full-preserve"><b>完整性校验：</b>本章从原网页完整拆出。文本指纹：<code>169f26ce30b0</code>。共 8 个知识点、8 个公式块、8 道步骤题。</div>
+
+<section class="chapter-dashboard">
+  <div class="dash-card"><b>本章为什么学</b><span>先学数学工具，否则后面看到 ∇·E、∇×E、E=-∇φ 会只剩背公式。</span></div>
+  <div class="dash-card"><b>核心抓手</b><span>场的概念、∇ 算子、梯度、散度</span></div>
+  <div class="dash-card"><b>公式主线</b><span>∇φ → 梯度；∇·A → 散度；∇×A → 旋度；∮A·dl ↔ ∬(∇×A)·dS</span></div>
+  <div class="dash-card"><b>易错提醒</b><span>把 ∇ 当成普通数字</span></div>
+</section>
+<div class="callout-blue"><b>本章导读建议：</b>先打开 <a class="pill-link" href="../../mindmaps/guide-ch1.html">第1章思维导读</a>，再看正文；学完后回到导图复盘。</div>
+
     <section class="progress-box" data-progress-scope>
       <h3>本章学习进度</h3>
       <div class="progress-bar"><span data-progress-bar></span></div>
@@ -83,7 +94,34 @@
         <div class="box"><b>易错提醒</b><p>不要把场理解成某一个点的量。某一点的值只是场在该点的取值。</p></div>
       </div>
       
-    <details class="practice">
+    
+<div class="deep-expand" id="deep-1-1">
+  <div class="deep-head">
+    <span>深度扩展</span>
+    <b>公式含义 · 字母拆解 · 计算方法 · 常见题型</b>
+  </div>
+  <div class="deep-grid">
+    <section class="deep-card meaning-card">
+      <h5>1. 这个公式/概念到底在说什么</h5>
+      <p>场表示“空间中每一个位置都有一个对应的物理量”。如果这个量只有大小，就是标量场；如果既有大小又有方向，就是矢量场。</p>
+      <div class="formula-network"><b>本知识点公式：</b><code>标量场：T = T(x, y, z, t) 矢量场：A = A(x, y, z, t)</code></div>
+    </section>
+    <section class="deep-card">
+      <h5>2. 每个字母/符号代表什么</h5>
+      <table class="symbol-table"><tbody><tr><td><code>T</code></td><td>温度或任意标量物理量，只有大小，没有方向。</td></tr><tr><td><code>A</code></td><td>矢量场，表示每个空间点都有一个箭头。</td></tr><tr><td><code>x,y,z</code></td><td>空间坐标，说明你在空间中的哪个位置。</td></tr><tr><td><code>t</code></td><td>时间变量；如果场随时间变化，就写上 t。</td></tr></tbody></table>
+    </section>
+    <section class="deep-card">
+      <h5>3. 遇到题目怎么算</h5>
+      <ol><li>先判断物理量是只有大小还是有大小和方向。</li><li>再判断它是否随空间位置变化。</li><li>如果每个点都有取值，就可以写成某种场函数。</li></ol>
+    </section>
+    <section class="deep-card">
+      <h5>4. 常见题型</h5>
+      <ul><li>判断标量场/矢量场题</li><li>写出场函数形式题</li><li>根据物理图像判断场分布题</li></ul>
+    </section>
+  </div>
+  <div class="quick-example"><b>速算例子：</b>温度 T(x,y,z) 是标量场；电场 E(x,y,z) 是矢量场。</div>
+</div>
+<details class="practice">
       <summary>小题：判断温度、电场、速度哪个属于场？</summary>
       <div class="steps">
         <ol><li>温度如果随空间位置变化，可写成 T(x,y,z)，是标量场。</li><li>电场强度 E(x,y,z) 在每点有大小和方向，是矢量场。</li><li>流体速度 v(x,y,z) 在每点有速度大小和方向，也是矢量场。</li></ol>
@@ -105,7 +143,34 @@
         <div class="box"><b>易错提醒</b><p>不要把分量当成矢量本身。分量只是数，乘上单位矢量后才说明方向。</p></div>
       </div>
       
-    <details class="practice">
+    
+<div class="deep-expand" id="deep-1-2">
+  <div class="deep-head">
+    <span>深度扩展</span>
+    <b>公式含义 · 字母拆解 · 计算方法 · 常见题型</b>
+  </div>
+  <div class="deep-grid">
+    <section class="deep-card meaning-card">
+      <h5>1. 这个公式/概念到底在说什么</h5>
+      <p>矢量分量表达式把一个空间箭头拆成 x、y、z 三个方向上的投影；模长公式用于求这个箭头的真实长度。</p>
+      <div class="formula-network"><b>本知识点公式：</b><code>A = A x e x + A y e y + A z e z |A| = √(A x 2 + A y 2 + A z 2 )</code></div>
+    </section>
+    <section class="deep-card">
+      <h5>2. 每个字母/符号代表什么</h5>
+      <table class="symbol-table"><tbody><tr><td><code>A</code></td><td>总矢量。</td></tr><tr><td><code>Ax, Ay, Az</code></td><td>矢量在 x、y、z 方向上的分量。</td></tr><tr><td><code>ex, ey, ez</code></td><td>三个坐标轴方向的单位矢量。</td></tr><tr><td><code>|A|</code></td><td>矢量 A 的大小，也叫模。</td></tr></tbody></table>
+    </section>
+    <section class="deep-card">
+      <h5>3. 遇到题目怎么算</h5>
+      <ol><li>从题目读出三个分量 Ax、Ay、Az。</li><li>代入 |A|=√(Ax²+Ay²+Az²)。</li><li>开方得到模长；需要方向时保留单位矢量形式。</li></ol>
+    </section>
+    <section class="deep-card">
+      <h5>4. 常见题型</h5>
+      <ul><li>已知分量求模长</li><li>已知模长和部分分量求未知分量</li><li>矢量单位化</li><li>判断标量/矢量</li></ul>
+    </section>
+  </div>
+  <div class="quick-example"><b>速算例子：</b>A=3ex+4ey，则 |A|=√(3²+4²)=5。</div>
+</div>
+<details class="practice">
       <summary>小题：A=3eₓ+4eᵧ，求 |A|。</summary>
       <div class="steps">
         <ol><li>识别分量：Aₓ=3，Aᵧ=4，A_z=0。</li><li>代入模长公式：|A|=√(3²+4²+0²)。</li><li>计算：√25=5。</li></ol>
@@ -127,7 +192,34 @@
         <div class="box"><b>易错提醒</b><p>点积结果不是矢量；叉积顺序不能随便换，A×B = −B×A。</p></div>
       </div>
       
-    <details class="practice">
+    
+<div class="deep-expand" id="deep-1-3">
+  <div class="deep-head">
+    <span>深度扩展</span>
+    <b>公式含义 · 字母拆解 · 计算方法 · 常见题型</b>
+  </div>
+  <div class="deep-grid">
+    <section class="deep-card meaning-card">
+      <h5>1. 这个公式/概念到底在说什么</h5>
+      <p>点积看两个矢量在同一方向上的重合程度，结果是标量；叉积看两个矢量张成平面的垂直效果，结果是矢量。</p>
+      <div class="formula-network"><b>本知识点公式：</b><code>A·B = |A||B|cosθ = A x B x + A y B y + A z B z |A×B| = |A||B|sinθ</code></div>
+    </section>
+    <section class="deep-card">
+      <h5>2. 每个字母/符号代表什么</h5>
+      <table class="symbol-table"><tbody><tr><td><code>A·B</code></td><td>点积，常用于功、通量、环量中的方向投影。</td></tr><tr><td><code>A×B</code></td><td>叉积，常用于力矩、磁力、旋度方向。</td></tr><tr><td><code>θ</code></td><td>两个矢量之间的夹角。</td></tr><tr><td><code>cosθ/sinθ</code></td><td>分别衡量同向程度和垂直程度。</td></tr></tbody></table>
+    </section>
+    <section class="deep-card">
+      <h5>3. 遇到题目怎么算</h5>
+      <ol><li>点积：对应分量相乘再相加。</li><li>叉积：用右手定则判断方向，大小为 |A||B|sinθ。</li><li>题目涉及“沿某方向贡献”多用点积；涉及“垂直方向/转动”多用叉积。</li></ol>
+    </section>
+    <section class="deep-card">
+      <h5>4. 常见题型</h5>
+      <ul><li>点积分量计算</li><li>夹角计算</li><li>叉积方向判断</li><li>功/通量/环量中的点积应用</li></ul>
+    </section>
+  </div>
+  <div class="quick-example"><b>速算例子：</b>A=2ex+ey，B=ex+3ey，A·B=2×1+1×3=5。</div>
+</div>
+<details class="practice">
       <summary>小题：A=2eₓ+eᵧ，B=eₓ+3eᵧ，求 A·B。</summary>
       <div class="steps">
         <ol><li>写出分量：Aₓ=2，Aᵧ=1；Bₓ=1，Bᵧ=3。</li><li>用点积分量公式：A·B=AₓBₓ+AᵧBᵧ。</li><li>代入：2×1+1×3=5。</li></ol>
@@ -149,7 +241,34 @@
         <div class="box"><b>易错提醒</b><p>∇ 本身不是结果，它必须作用到某个标量场或矢量场上才有意义。</p></div>
       </div>
       
-    <details class="practice">
+    
+<div class="deep-expand" id="deep-1-4">
+  <div class="deep-head">
+    <span>深度扩展</span>
+    <b>公式含义 · 字母拆解 · 计算方法 · 常见题型</b>
+  </div>
+  <div class="deep-grid">
+    <section class="deep-card meaning-card">
+      <h5>1. 这个公式/概念到底在说什么</h5>
+      <p>∇ 是空间微分算子，不是普通数。它像三方向扫描器，用来检测场沿 x、y、z 的变化。</p>
+      <div class="formula-network"><b>本知识点公式：</b><code>∇ = e x ∂ ∂x + e y ∂ ∂y + e z ∂ ∂z</code></div>
+    </section>
+    <section class="deep-card">
+      <h5>2. 每个字母/符号代表什么</h5>
+      <table class="symbol-table"><tbody><tr><td><code>∇</code></td><td>纳布拉算子，由三个方向的偏导组成。</td></tr><tr><td><code>∂/∂x</code></td><td>只看 x 方向变化率。</td></tr><tr><td><code>ex, ey, ez</code></td><td>说明偏导对应哪个方向。</td></tr><tr><td><code>∇φ/∇·A/∇×A</code></td><td>分别产生梯度、散度、旋度。</td></tr></tbody></table>
+    </section>
+    <section class="deep-card">
+      <h5>3. 遇到题目怎么算</h5>
+      <ol><li>看 ∇ 后面接的是标量还是矢量。</li><li>接标量 φ：做梯度。</li><li>与矢量 A 点乘：做散度。</li><li>与矢量 A 叉乘：做旋度。</li></ol>
+    </section>
+    <section class="deep-card">
+      <h5>4. 常见题型</h5>
+      <ul><li>识别 ∇ 运算类型</li><li>偏导计算</li><li>梯度/散度/旋度概念判断</li></ul>
+    </section>
+  </div>
+  <div class="quick-example"><b>速算例子：</b>∇φ 是梯度；∇·A 是散度；∇×A 是旋度。</div>
+</div>
+<details class="practice">
       <summary>小题：∇φ、∇·A、∇×A 分别叫什么？</summary>
       <div class="steps">
         <ol><li>∇ 作用于标量 φ，得到 ∇φ，叫梯度。</li><li>∇ 与矢量 A 做点积，得到 ∇·A，叫散度。</li><li>∇ 与矢量 A 做叉积，得到 ∇×A，叫旋度。</li></ol>
@@ -171,7 +290,34 @@
         <div class="box"><b>易错提醒</b><p>方向向量必须先单位化，否则方向导数会被长度放大。</p></div>
       </div>
       
-    <details class="practice">
+    
+<div class="deep-expand" id="deep-1-5">
+  <div class="deep-head">
+    <span>深度扩展</span>
+    <b>公式含义 · 字母拆解 · 计算方法 · 常见题型</b>
+  </div>
+  <div class="deep-grid">
+    <section class="deep-card meaning-card">
+      <h5>1. 这个公式/概念到底在说什么</h5>
+      <p>梯度指向标量场增加最快的方向；方向导数表示沿指定方向时标量变化得多快。</p>
+      <div class="formula-network"><b>本知识点公式：</b><code>∇φ = e x ∂φ ∂x + e y ∂φ ∂y + e z ∂φ ∂z ∂φ ∂l = ∇φ · e l</code></div>
+    </section>
+    <section class="deep-card">
+      <h5>2. 每个字母/符号代表什么</h5>
+      <table class="symbol-table"><tbody><tr><td><code>φ</code></td><td>标量场，例如电位、温度。</td></tr><tr><td><code>∇φ</code></td><td>梯度矢量，方向为 φ 增加最快方向。</td></tr><tr><td><code>el</code></td><td>指定方向的单位矢量。</td></tr><tr><td><code>∂φ/∂l</code></td><td>沿 l 方向的变化率。</td></tr></tbody></table>
+    </section>
+    <section class="deep-card">
+      <h5>3. 遇到题目怎么算</h5>
+      <ol><li>对 φ 分别求 x、y、z 的偏导。</li><li>把偏导作为 ex、ey、ez 的分量写成 ∇φ。</li><li>如果问方向导数，先把方向向量单位化，再与 ∇φ 点乘。</li></ol>
+    </section>
+    <section class="deep-card">
+      <h5>4. 常见题型</h5>
+      <ul><li>求梯度</li><li>求方向导数</li><li>判断最大变化方向</li><li>由电位求电场 E=-∇φ</li></ul>
+    </section>
+  </div>
+  <div class="quick-example"><b>速算例子：</b>φ=x²+y²，在(1,2)处 ∇φ=2ex+4ey。</div>
+</div>
+<details class="practice">
       <summary>小题：φ=x²+y²，求点(1,2)处梯度。</summary>
       <div class="steps">
         <ol><li>求偏导：∂φ/∂x=2x，∂φ/∂y=2y。</li><li>代入点(1,2)：∂φ/∂x=2，∂φ/∂y=4。</li><li>写成矢量：∇φ=2eₓ+4eᵧ。</li></ol>
@@ -193,7 +339,34 @@
         <div class="box"><b>易错提醒</b><p>通量为零不一定说明没有场，可能是进出抵消。</p></div>
       </div>
       
-    <details class="practice">
+    
+<div class="deep-expand" id="deep-1-6">
+  <div class="deep-head">
+    <span>深度扩展</span>
+    <b>公式含义 · 字母拆解 · 计算方法 · 常见题型</b>
+  </div>
+  <div class="deep-grid">
+    <section class="deep-card meaning-card">
+      <h5>1. 这个公式/概念到底在说什么</h5>
+      <p>散度描述某点附近有没有净流出，通量描述穿过某个面的总量。</p>
+      <div class="formula-network"><b>本知识点公式：</b><code>∇·A = ∂A x ∂x + ∂A y ∂y + ∂A z ∂z Φ = ∬ S A·dS</code></div>
+    </section>
+    <section class="deep-card">
+      <h5>2. 每个字母/符号代表什么</h5>
+      <table class="symbol-table"><tbody><tr><td><code>∇·A</code></td><td>散度，标量结果。</td></tr><tr><td><code>Ax,Ay,Az</code></td><td>矢量场三个分量。</td></tr><tr><td><code>Φ</code></td><td>通量。</td></tr><tr><td><code>dS</code></td><td>带方向的小面积矢量。</td></tr></tbody></table>
+    </section>
+    <section class="deep-card">
+      <h5>3. 遇到题目怎么算</h5>
+      <ol><li>求散度：对 Ax 求 x 偏导、Ay 求 y 偏导、Az 求 z 偏导。</li><li>三个结果相加。</li><li>求通量：先确定曲面法向，再算 A·dS 并积分。</li></ol>
+    </section>
+    <section class="deep-card">
+      <h5>4. 常见题型</h5>
+      <ul><li>求散度</li><li>判断源/汇</li><li>求平面/闭合面通量</li><li>用高斯定理简化通量</li></ul>
+    </section>
+  </div>
+  <div class="quick-example"><b>速算例子：</b>A=xex+yey+zez，则 ∇·A=1+1+1=3。</div>
+</div>
+<details class="practice">
       <summary>小题：A=xeₓ+yeᵧ+ze_z，求散度。</summary>
       <div class="steps">
         <ol><li>识别分量：Aₓ=x，Aᵧ=y，A_z=z。</li><li>逐项求偏导：∂Aₓ/∂x=1，∂Aᵧ/∂y=1，∂A_z/∂z=1。</li><li>相加：∇·A=3。</li></ol>
@@ -215,7 +388,34 @@
         <div class="box"><b>易错提醒</b><p>旋度公式正负号容易写反，建议按行列式顺序记。</p></div>
       </div>
       
-    <details class="practice">
+    
+<div class="deep-expand" id="deep-1-7">
+  <div class="deep-head">
+    <span>深度扩展</span>
+    <b>公式含义 · 字母拆解 · 计算方法 · 常见题型</b>
+  </div>
+  <div class="deep-grid">
+    <section class="deep-card meaning-card">
+      <h5>1. 这个公式/概念到底在说什么</h5>
+      <p>旋度描述局部旋转趋势，环量描述沿闭合曲线走一圈的总绕行效果。</p>
+      <div class="formula-network"><b>本知识点公式：</b><code>∇×A = ( ∂A z ∂y − ∂A y ∂z )e x + ( ∂A x ∂z − ∂A z ∂x )e y + ( ∂A y ∂x − ∂A x ∂y )e z Γ = ∮ L A·dl</code></div>
+    </section>
+    <section class="deep-card">
+      <h5>2. 每个字母/符号代表什么</h5>
+      <table class="symbol-table"><tbody><tr><td><code>∇×A</code></td><td>旋度，结果是矢量。</td></tr><tr><td><code>Γ</code></td><td>环量。</td></tr><tr><td><code>L</code></td><td>闭合路径。</td></tr><tr><td><code>dl</code></td><td>沿路径方向的小线段。</td></tr></tbody></table>
+    </section>
+    <section class="deep-card">
+      <h5>3. 遇到题目怎么算</h5>
+      <ol><li>识别 Ax、Ay、Az。</li><li>按旋度公式分别求 x、y、z 分量。</li><li>如果求环量，需要参数化路径，再计算 A·dl 积分。</li></ol>
+    </section>
+    <section class="deep-card">
+      <h5>4. 常见题型</h5>
+      <ul><li>求旋度</li><li>判断无旋场</li><li>求闭合路径环量</li><li>用斯托克斯定理转化环量</li></ul>
+    </section>
+  </div>
+  <div class="quick-example"><b>速算例子：</b>A=-yex+xey，则 (∇×A)z=∂x/∂x-∂(-y)/∂y=2。</div>
+</div>
+<details class="practice">
       <summary>小题：A=−yeₓ+xeᵧ，求旋度 z 分量。</summary>
       <div class="steps">
         <ol><li>识别 Aₓ=−y，Aᵧ=x。</li><li>z 分量公式：(∇×A)_z=∂Aᵧ/∂x−∂Aₓ/∂y。</li><li>计算：∂x/∂x=1，∂(−y)/∂y=−1。</li><li>相减：1−(−1)=2。</li></ol>
@@ -237,7 +437,34 @@
         <div class="box"><b>易错提醒</b><p>散度定理要求 S 是闭合曲面；斯托克斯定理的 L 是曲面 S 的边界。</p></div>
       </div>
       
-    <details class="practice">
+    
+<div class="deep-expand" id="deep-1-8">
+  <div class="deep-head">
+    <span>深度扩展</span>
+    <b>公式含义 · 字母拆解 · 计算方法 · 常见题型</b>
+  </div>
+  <div class="deep-grid">
+    <section class="deep-card meaning-card">
+      <h5>1. 这个公式/概念到底在说什么</h5>
+      <p>散度定理把体内源强与闭合面通量联系起来；斯托克斯定理把面内旋度与边界环量联系起来。</p>
+      <div class="formula-network"><b>本知识点公式：</b><code>∯ S A·dS = ∭ V (∇·A)dV ∮ L A·dl = ∬ S (∇×A)·dS</code></div>
+    </section>
+    <section class="deep-card">
+      <h5>2. 每个字母/符号代表什么</h5>
+      <table class="symbol-table"><tbody><tr><td><code>∯S</code></td><td>闭合曲面积分。</td></tr><tr><td><code>∭V</code></td><td>体积分。</td></tr><tr><td><code>∮L</code></td><td>闭合曲线积分。</td></tr><tr><td><code>dV/dS/dl</code></td><td>体积元、面积元、线元。</td></tr></tbody></table>
+    </section>
+    <section class="deep-card">
+      <h5>3. 遇到题目怎么算</h5>
+      <ol><li>判断是通量问题还是环量问题。</li><li>闭合面通量优先想到散度定理。</li><li>闭合线环量优先想到斯托克斯定理。</li><li>确认 S 是否闭合、L 是否是 S 的边界。</li></ol>
+    </section>
+    <section class="deep-card">
+      <h5>4. 常见题型</h5>
+      <ul><li>散度定理应用</li><li>斯托克斯定理应用</li><li>面积分与体积分互化</li><li>线积分与面积分互化</li></ul>
+    </section>
+  </div>
+  <div class="quick-example"><b>速算例子：</b>闭合面通量为正，说明内部存在净源。</div>
+</div>
+<details class="practice">
       <summary>小题：闭合面通量为正说明什么？</summary>
       <div class="steps">
         <ol><li>通量是穿过闭合面的净流出量。</li><li>通量为正，说明流出多于流入。</li><li>用散度定理看，内部散度积分为正，表示内部存在净源。</li></ol>
@@ -259,5 +486,5 @@
 </div>
 
 <script src="../../assets/site.js"></script>
-</body>
+<div class="reader-tools"><a href="#top">回到顶部</a><button type="button" onclick="toggleTheme()">深色</button></div></body>
 </html>

@@ -19,9 +19,11 @@
     <a href="search.html">全站检索</a>
     <a href="formula-index.html">公式索引</a>
     <a href="practice-index.html">题目索引</a>
+    <a href="type-map.html">题型地图</a>
     <a href="study-roadmap.html">复习路线</a>
     <a href="audit.html">审查报告</a>
     <a href="mindmaps/index.html">总导图</a>
+    <a href="mind-guide.html">思维导读</a>
     <button class="tool-btn" type="button" onclick="toggleTheme()">深色模式</button>
   </nav>
 </div>
@@ -39,6 +41,32 @@
   </div>
 </section>
 <div class="full-preserve"><b>完整性原则：</b>章节正文直接从原 HTML 的 <code>section.chapter</code> 拆出，未删减、未压缩、未改写。新增内容只作为复习辅助层。</div>
+
+<section class="learning-console">
+  <div class="console-card">
+    <h2>先看思维导读，再进正文</h2>
+    <p>导图告诉你“有哪些知识”，导读告诉你“为什么按这个顺序学、公式之间怎么连接、哪里最容易错”。建议每章按 5 分钟预览 → 30 分钟正文 → 10 分钟题目 → 5 分钟导图复盘。</p>
+    <div class="action-row">
+      <a class="pill-link" href="mind-guide.html">打开总思维导读</a>
+      <a class="pill-link" href="study-roadmap.html">打开复习路线</a>
+    </div>
+  </div>
+  <div class="console-card">
+    <h3>本版 UI 优化重点</h3>
+    <div class="focus-pills">
+      <span>视觉层级</span><span>阅读进度条</span><span>章节仪表盘</span><span>导读页面</span><span>深色模式</span><span>移动端</span>
+    </div>
+    <p>保留原内容的同时，提升“找知识点、看公式、做题、复盘”的效率。</p>
+  </div>
+</section>
+
+
+<section class="console-card">
+  <h2>v4 深度扩展：每个知识点都加了“怎么算”</h2>
+  <p>本版给 35 个知识点逐个追加深度扩展卡：公式含义、符号/字母拆解、计算步骤、常见题型、速算例子。</p>
+  <div class="action-row"><a class="pill-link" href="type-map.html">打开题型地图</a><a class="pill-link" href="formula-index.html">公式索引</a><a class="pill-link" href="practice-index.html">题目索引</a></div>
+</section>
+
 <section class="home-grid">
 
 <article class="home-card">
@@ -97,5 +125,5 @@
 </div>
 
 <script src="assets/site.js"></script>
-</body>
+<div class="reader-tools"><a href="#main">回到顶部</a><button type="button" onclick="toggleTheme()">深色</button></div></body>
 </html>

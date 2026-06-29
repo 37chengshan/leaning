@@ -19,9 +19,11 @@
     <a href="../../search.html">全站检索</a>
     <a href="../../formula-index.html">公式索引</a>
     <a href="../../practice-index.html">题目索引</a>
+    <a href="../../type-map.html">题型地图</a>
     <a href="../../study-roadmap.html">复习路线</a>
     <a href="../../audit.html">审查报告</a>
     <a href="../../mindmaps/index.html">总导图</a>
+    <a href="../../mind-guide.html">思维导读</a>
     <button class="tool-btn" type="button" onclick="toggleTheme()">深色模式</button>
   </nav>
 </div>
@@ -40,6 +42,15 @@
   </aside>
   <main id="main">
     <div class="full-preserve"><b>完整性校验：</b>本章从原网页完整拆出。文本指纹：<code>6c30e1e69e8d</code>。共 5 个知识点、5 个公式块、5 道步骤题。</div>
+
+<section class="chapter-dashboard">
+  <div class="dash-card"><b>本章为什么学</b><span>从会看电场，进入会求电场：用方程和边界条件求 φ，再由 E=-∇φ 得到场。</span></div>
+  <div class="dash-card"><b>核心抓手</b><span>边值问题、泊松方程、拉普拉斯方程、狄里赫利</span></div>
+  <div class="dash-card"><b>公式主线</b><span>有源：∇²φ=-ρ/ε；无源：∇²φ=0；边界给 φ / ∂φ/∂n / 二者组合</span></div>
+  <div class="dash-card"><b>易错提醒</b><span>以为拉普拉斯方程表示没有电场</span></div>
+</section>
+<div class="callout-blue"><b>本章导读建议：</b>先打开 <a class="pill-link" href="../../mindmaps/guide-ch3.html">第3章思维导读</a>，再看正文；学完后回到导图复盘。</div>
+
     <section class="progress-box" data-progress-scope>
       <h3>本章学习进度</h3>
       <div class="progress-bar"><span data-progress-bar></span></div>
@@ -83,7 +94,34 @@
         <div class="box"><b>易错提醒</b><p>边值问题不是只求某一点，而是求整个区域的函数分布。</p></div>
       </div>
       
-    <details class="practice">
+    
+<div class="deep-expand" id="deep-3-1">
+  <div class="deep-head">
+    <span>深度扩展</span>
+    <b>公式含义 · 字母拆解 · 计算方法 · 常见题型</b>
+  </div>
+  <div class="deep-grid">
+    <section class="deep-card meaning-card">
+      <h5>1. 这个公式/概念到底在说什么</h5>
+      <p>边值问题是已知边界上的电位或导数，求区域内部的电位函数。</p>
+      <div class="formula-network"><b>本知识点公式：</b><code>已知边界条件 → 求 φ(x,y,z) → 再由 E = −∇φ 求电场</code></div>
+    </section>
+    <section class="deep-card">
+      <h5>2. 每个字母/符号代表什么</h5>
+      <table class="symbol-table"><tbody><tr><td><code>φ(x,y,z)</code></td><td>待求的空间电位分布。</td></tr><tr><td><code>边界条件</code></td><td>区域边缘给定的限制。</td></tr><tr><td><code>E=-∇φ</code></td><td>求得电位后再求电场。</td></tr></tbody></table>
+    </section>
+    <section class="deep-card">
+      <h5>3. 遇到题目怎么算</h5>
+      <ol><li>明确求解区域。</li><li>写出区域内满足的微分方程。</li><li>写出边界条件。</li><li>先求 φ，再由 E=-∇φ 求 E。</li></ol>
+    </section>
+    <section class="deep-card">
+      <h5>4. 常见题型</h5>
+      <ul><li>导体边界电位问题</li><li>区域内电位分布</li><li>由边界求电场</li><li>边值问题类型判断</li></ul>
+    </section>
+  </div>
+  <div class="quick-example"><b>速算例子：</b>已知导体球表面电位，求球外电位，是静电场边值问题。</div>
+</div>
+<details class="practice">
       <summary>小题：已知导体球表面电位，求球外电位属于什么问题？</summary>
       <div class="steps">
         <ol><li>题目给了边界上的电位。</li><li>要求空间区域中的电位。</li><li>这符合边值问题定义。</li></ol>
@@ -105,7 +143,34 @@
         <div class="box"><b>易错提醒</b><p>不要把“空间里有电场”和“区域内有电荷”混淆。无源区也可以有电场。</p></div>
       </div>
       
-    <details class="practice">
+    
+<div class="deep-expand" id="deep-3-2">
+  <div class="deep-head">
+    <span>深度扩展</span>
+    <b>公式含义 · 字母拆解 · 计算方法 · 常见题型</b>
+  </div>
+  <div class="deep-grid">
+    <section class="deep-card meaning-card">
+      <h5>1. 这个公式/概念到底在说什么</h5>
+      <p>泊松方程用于有电荷源区域，拉普拉斯方程用于无电荷源区域。</p>
+      <div class="formula-network"><b>本知识点公式：</b><code>泊松方程：∇²φ = − ρ ε 拉普拉斯方程：∇²φ = 0</code></div>
+    </section>
+    <section class="deep-card">
+      <h5>2. 每个字母/符号代表什么</h5>
+      <table class="symbol-table"><tbody><tr><td><code>∇²</code></td><td>拉普拉斯算子，二阶空间变化。</td></tr><tr><td><code>φ</code></td><td>电位。</td></tr><tr><td><code>ρ</code></td><td>体电荷密度。</td></tr><tr><td><code>ε</code></td><td>介电常数。</td></tr></tbody></table>
+    </section>
+    <section class="deep-card">
+      <h5>3. 遇到题目怎么算</h5>
+      <ol><li>先判断区域内 ρ 是否为 0。</li><li>若 ρ≠0，用 ∇²φ=-ρ/ε。</li><li>若 ρ=0，用 ∇²φ=0。</li><li>再结合边界条件定解。</li></ol>
+    </section>
+    <section class="deep-card">
+      <h5>4. 常见题型</h5>
+      <ul><li>判断泊松/拉普拉斯</li><li>一维积分求 φ</li><li>边界条件求积分常数</li><li>无源区电位分布</li></ul>
+    </section>
+  </div>
+  <div class="quick-example"><b>速算例子：</b>无电荷区域 ρ=0，因此 ∇²φ=0。</div>
+</div>
+<details class="practice">
       <summary>小题：无电荷区域中电位满足什么方程？</summary>
       <div class="steps">
         <ol><li>无电荷说明 ρ=0。</li><li>泊松方程 ∇²φ=−ρ/ε。</li><li>代入 ρ=0，得到 ∇²φ=0。</li></ol>
@@ -127,7 +192,34 @@
         <div class="box"><b>易错提醒</b><p>法向导数和电场法向有关，因为 E_n=−∂φ/∂n。</p></div>
       </div>
       
-    <details class="practice">
+    
+<div class="deep-expand" id="deep-3-3">
+  <div class="deep-head">
+    <span>深度扩展</span>
+    <b>公式含义 · 字母拆解 · 计算方法 · 常见题型</b>
+  </div>
+  <div class="deep-grid">
+    <section class="deep-card meaning-card">
+      <h5>1. 这个公式/概念到底在说什么</h5>
+      <p>三类边界条件本质上是在边界上已知什么：电位、法向导数，或二者组合。</p>
+      <div class="formula-network"><b>本知识点公式：</b><code>第一类：φ| S =f₁(r) 第二类： ∂φ ∂n | S =f₂(r) 第三类：aφ + b ∂φ ∂n = f₃(r)</code></div>
+    </section>
+    <section class="deep-card">
+      <h5>2. 每个字母/符号代表什么</h5>
+      <table class="symbol-table"><tbody><tr><td><code>φ|S</code></td><td>边界 S 上的电位。</td></tr><tr><td><code>∂φ/∂n</code></td><td>沿边界法线方向的电位变化率。</td></tr><tr><td><code>a,b</code></td><td>混合条件中的系数。</td></tr><tr><td><code>f1,f2,f3</code></td><td>边界上给定函数。</td></tr></tbody></table>
+    </section>
+    <section class="deep-card">
+      <h5>3. 遇到题目怎么算</h5>
+      <ol><li>题目给电位就是狄里赫利。</li><li>题目给法向电场/表面电荷，多半转为诺依曼。</li><li>题目给 φ 与 ∂φ/∂n 的组合，就是混合条件。</li></ol>
+    </section>
+    <section class="deep-card">
+      <h5>4. 常见题型</h5>
+      <ul><li>边界条件分类</li><li>表面电荷转诺依曼</li><li>接地/等位体判断</li><li>混合边界识别</li></ul>
+    </section>
+  </div>
+  <div class="quick-example"><b>速算例子：</b>导体表面 φ=V0，属于狄里赫利条件。</div>
+</div>
+<details class="practice">
       <summary>小题：导体表面电位给定为 V₀，属于哪类边界条件？</summary>
       <div class="steps">
         <ol><li>题目直接给出边界电位。</li><li>第一类边界条件定义为 φ|S=f。</li><li>因此属于狄里赫利条件。</li></ol>
@@ -149,7 +241,34 @@
         <div class="box"><b>易错提醒</b><p>唯一性定理不一定告诉你怎么找解，但告诉你找到后为什么可信。</p></div>
       </div>
       
-    <details class="practice">
+    
+<div class="deep-expand" id="deep-3-4">
+  <div class="deep-head">
+    <span>深度扩展</span>
+    <b>公式含义 · 字母拆解 · 计算方法 · 常见题型</b>
+  </div>
+  <div class="deep-grid">
+    <section class="deep-card meaning-card">
+      <h5>1. 这个公式/概念到底在说什么</h5>
+      <p>唯一性定理保证：只要方程和边界条件都满足，解就是唯一正确解。</p>
+      <div class="formula-network"><b>本知识点公式：</b><code>方程 + 边界条件 → 唯一电位分布</code></div>
+    </section>
+    <section class="deep-card">
+      <h5>2. 每个字母/符号代表什么</h5>
+      <table class="symbol-table"><tbody><tr><td><code>方程</code></td><td>泊松或拉普拉斯方程。</td></tr><tr><td><code>边界条件</code></td><td>边界上的 φ 或导数限制。</td></tr><tr><td><code>唯一</code></td><td>不存在另一个不同解也满足同样条件。</td></tr></tbody></table>
+    </section>
+    <section class="deep-card">
+      <h5>3. 遇到题目怎么算</h5>
+      <ol><li>验证解在区域内满足方程。</li><li>验证解在边界上满足条件。</li><li>若两者都满足，由唯一性定理可确认解正确。</li></ol>
+    </section>
+    <section class="deep-card">
+      <h5>4. 常见题型</h5>
+      <ul><li>证明构造解正确</li><li>镜像法合理性</li><li>判断解是否唯一</li><li>比较两个候选解</li></ul>
+    </section>
+  </div>
+  <div class="quick-example"><b>速算例子：</b>镜像法只要在求解区域内满足方程且边界相同，解就可信。</div>
+</div>
+<details class="practice">
       <summary>小题：为什么镜像法只需检查边界条件？</summary>
       <div class="steps">
         <ol><li>镜像法构造的新电荷只放在求解区域外。</li><li>求解区域内仍满足原来的方程。</li><li>如果边界条件也相同，根据唯一性定理，区域内解相同。</li></ol>
@@ -171,7 +290,34 @@
         <div class="box"><b>易错提醒</b><p>镜像电荷只能用于求解区域外或导体内部的数学构造，不能把它当真实电荷。</p></div>
       </div>
       
-    <details class="practice">
+    
+<div class="deep-expand" id="deep-3-5">
+  <div class="deep-head">
+    <span>深度扩展</span>
+    <b>公式含义 · 字母拆解 · 计算方法 · 常见题型</b>
+  </div>
+  <div class="deep-grid">
+    <section class="deep-card meaning-card">
+      <h5>1. 这个公式/概念到底在说什么</h5>
+      <p>镜像法用区域外构造的等效电荷替代导体边界影响，使求解变成电荷叠加。</p>
+      <div class="formula-network"><b>本知识点公式：</b><code>原电荷 + 镜像电荷 → 满足边界条件的等效问题</code></div>
+    </section>
+    <section class="deep-card">
+      <h5>2. 每个字母/符号代表什么</h5>
+      <table class="symbol-table"><tbody><tr><td><code>原电荷</code></td><td>真实存在的电荷。</td></tr><tr><td><code>镜像电荷</code></td><td>数学构造，不是真实电荷。</td></tr><tr><td><code>边界条件</code></td><td>镜像电荷要满足的目标。</td></tr></tbody></table>
+    </section>
+    <section class="deep-card">
+      <h5>3. 遇到题目怎么算</h5>
+      <ol><li>识别导体边界类型，常见为接地平面。</li><li>在区域外放置镜像电荷。</li><li>检查边界电位是否满足要求。</li><li>只在原求解区域内使用等效解。</li></ol>
+    </section>
+    <section class="deep-card">
+      <h5>4. 常见题型</h5>
+      <ul><li>点电荷-接地平面</li><li>点电荷-导体球</li><li>求感应电荷/作用力</li><li>验证边界电位</li></ul>
+    </section>
+  </div>
+  <div class="quick-example"><b>速算例子：</b>点电荷 q 距接地无限平面 a，在另一侧对称位置放 -q。</div>
+</div>
+<details class="practice">
       <summary>小题：点电荷 q 距接地无限导体平面 a，镜像电荷怎么放？</summary>
       <div class="steps">
         <ol><li>接地平面要求平面上电位为 0。</li><li>在平面对称位置放一个 −q。</li><li>原电荷和平面另一侧镜像电荷在平面上产生等大反号电位。</li></ol>
@@ -193,5 +339,5 @@
 </div>
 
 <script src="../../assets/site.js"></script>
-</body>
+<div class="reader-tools"><a href="#top">回到顶部</a><button type="button" onclick="toggleTheme()">深色</button></div></body>
 </html>

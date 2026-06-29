@@ -58,3 +58,27 @@
     });
   }
 })();
+
+
+(function(){
+  function ensureProgressBar(){
+    if(!document.querySelector('.reading-progress')){
+      const bar = document.createElement('div');
+      bar.className = 'reading-progress';
+      document.body.appendChild(bar);
+    }
+  }
+  function updateReadingProgress(){
+    const bar = document.querySelector('.reading-progress');
+    if(!bar) return;
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - doc.clientHeight;
+    const pct = max > 0 ? (doc.scrollTop / max * 100) : 0;
+    bar.style.width = pct + '%';
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    ensureProgressBar();
+    updateReadingProgress();
+    window.addEventListener('scroll', updateReadingProgress, {passive:true});
+  });
+})();

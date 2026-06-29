@@ -19,9 +19,11 @@
     <a href="../../search.html">全站检索</a>
     <a href="../../formula-index.html">公式索引</a>
     <a href="../../practice-index.html">题目索引</a>
+    <a href="../../type-map.html">题型地图</a>
     <a href="../../study-roadmap.html">复习路线</a>
     <a href="../../audit.html">审查报告</a>
     <a href="../../mindmaps/index.html">总导图</a>
+    <a href="../../mind-guide.html">思维导读</a>
     <button class="tool-btn" type="button" onclick="toggleTheme()">深色模式</button>
   </nav>
 </div>
@@ -40,6 +42,15 @@
   </aside>
   <main id="main">
     <div class="full-preserve"><b>完整性校验：</b>本章从原网页完整拆出。文本指纹：<code>c1f976fceec8</code>。共 7 个知识点、7 个公式块、7 道步骤题。</div>
+
+<section class="chapter-dashboard">
+  <div class="dash-card"><b>本章为什么学</b><span>把静电场方法迁移到导电介质：E 推动电荷形成 J，稳态时电流连续。</span></div>
+  <div class="dash-card"><b>核心抓手</b><span>J=σE、I=∬J·dS、∇·J=0、边界条件</span></div>
+  <div class="dash-card"><b>公式主线</b><span>J=σE；∇·J=0；p=J·E；静电比拟：σ↔ε，J↔D，G↔C</span></div>
+  <div class="dash-card"><b>易错提醒</b><span>把 J 和 I 混淆</span></div>
+</section>
+<div class="callout-blue"><b>本章导读建议：</b>先打开 <a class="pill-link" href="../../mindmaps/guide-ch4.html">第4章思维导读</a>，再看正文；学完后回到导图复盘。</div>
+
     <section class="progress-box" data-progress-scope>
       <h3>本章学习进度</h3>
       <div class="progress-bar"><span data-progress-bar></span></div>
@@ -83,7 +94,34 @@
         <div class="box"><b>易错提醒</b><p>J 是面密度意义的矢量，不等同于总电流 I。</p></div>
       </div>
       
-    <details class="practice">
+    
+<div class="deep-expand" id="deep-4-1">
+  <div class="deep-head">
+    <span>深度扩展</span>
+    <b>公式含义 · 字母拆解 · 计算方法 · 常见题型</b>
+  </div>
+  <div class="deep-grid">
+    <section class="deep-card meaning-card">
+      <h5>1. 这个公式/概念到底在说什么</h5>
+      <p>电流密度 J 表示单位面积上通过的电流，J=σE 表示电场驱动导体中电流。</p>
+      <div class="formula-network"><b>本知识点公式：</b><code>J = σE I = ∬ S J·dS</code></div>
+    </section>
+    <section class="deep-card">
+      <h5>2. 每个字母/符号代表什么</h5>
+      <table class="symbol-table"><tbody><tr><td><code>J</code></td><td>电流密度，单位 A/m²。</td></tr><tr><td><code>σ</code></td><td>电导率，单位 S/m。</td></tr><tr><td><code>E</code></td><td>电场强度。</td></tr><tr><td><code>I</code></td><td>总电流。</td></tr></tbody></table>
+    </section>
+    <section class="deep-card">
+      <h5>3. 遇到题目怎么算</h5>
+      <ol><li>若已知 σ 和 E，直接 J=σE。</li><li>若求总电流，用 I=∬J·dS。</li><li>注意 J 是面密度，I 是总量。</li></ol>
+    </section>
+    <section class="deep-card">
+      <h5>4. 常见题型</h5>
+      <ul><li>由 E 求 J</li><li>由 J 求 I</li><li>均匀截面电流</li><li>导电介质欧姆定律</li></ul>
+    </section>
+  </div>
+  <div class="quick-example"><b>速算例子：</b>σ=2S/m，E=5V/m，则 J=10A/m²。</div>
+</div>
+<details class="practice">
       <summary>小题：σ=2 S/m，E=5 V/m，求 J。</summary>
       <div class="steps">
         <ol><li>使用欧姆定律微分形式 J=σE。</li><li>代入 σ=2，E=5。</li><li>J=10 A/m²，方向与 E 相同。</li></ol>
@@ -105,7 +143,34 @@
         <div class="box"><b>易错提醒</b><p>∇·J=0 不是说 J=0，而是说流入和流出平衡。</p></div>
       </div>
       
-    <details class="practice">
+    
+<div class="deep-expand" id="deep-4-2">
+  <div class="deep-head">
+    <span>深度扩展</span>
+    <b>公式含义 · 字母拆解 · 计算方法 · 常见题型</b>
+  </div>
+  <div class="deep-grid">
+    <section class="deep-card meaning-card">
+      <h5>1. 这个公式/概念到底在说什么</h5>
+      <p>恒定电流连续性表示稳态时电荷不在某点堆积，因此 ∇·J=0。</p>
+      <div class="formula-network"><b>本知识点公式：</b><code>∇·J = 0 ∯ S J·dS = 0 ∇×E = 0 ∮ L E·dl = 0</code></div>
+    </section>
+    <section class="deep-card">
+      <h5>2. 每个字母/符号代表什么</h5>
+      <table class="symbol-table"><tbody><tr><td><code>∇·J</code></td><td>电流密度散度。</td></tr><tr><td><code>J</code></td><td>电流密度。</td></tr><tr><td><code>0</code></td><td>无净源汇、无电荷积累。</td></tr></tbody></table>
+    </section>
+    <section class="deep-card">
+      <h5>3. 遇到题目怎么算</h5>
+      <ol><li>判断是否恒定/稳态。</li><li>稳态直接写 ∇·J=0。</li><li>对闭合面可写 ∯J·dS=0。</li></ol>
+    </section>
+    <section class="deep-card">
+      <h5>4. 常见题型</h5>
+      <ul><li>稳态电流判断</li><li>闭合面电流通量</li><li>连续性方程简化</li><li>电流线连续判断</li></ul>
+    </section>
+  </div>
+  <div class="quick-example"><b>速算例子：</b>恒定电流场中闭合面净流出为 0。</div>
+</div>
+<details class="practice">
       <summary>小题：闭合面内恒定电流净流出为多少？</summary>
       <div class="steps">
         <ol><li>恒定电流满足 ∯J·dS=0。</li><li>这表示任意闭合面净电流为零。</li><li>所以流入等于流出。</li></ol>
@@ -127,7 +192,34 @@
         <div class="box"><b>易错提醒</b><p>不要把电流线和电场线混同。电流线在稳态中闭合，静电场线可起止于电荷。</p></div>
       </div>
       
-    <details class="practice">
+    
+<div class="deep-expand" id="deep-4-3">
+  <div class="deep-head">
+    <span>深度扩展</span>
+    <b>公式含义 · 字母拆解 · 计算方法 · 常见题型</b>
+  </div>
+  <div class="deep-grid">
+    <section class="deep-card meaning-card">
+      <h5>1. 这个公式/概念到底在说什么</h5>
+      <p>恒定电流边界条件保证界面处电荷不无限积累：法向 J 连续，切向 E 连续。</p>
+      <div class="formula-network"><b>本知识点公式：</b><code>稳态：∇·J = 0</code></div>
+    </section>
+    <section class="deep-card">
+      <h5>2. 每个字母/符号代表什么</h5>
+      <table class="symbol-table"><tbody><tr><td><code>J1n,J2n</code></td><td>界面两侧电流密度法向分量。</td></tr><tr><td><code>E1t,E2t</code></td><td>界面两侧电场切向分量。</td></tr><tr><td><code>σ</code></td><td>不同介质的电导率。</td></tr></tbody></table>
+    </section>
+    <section class="deep-card">
+      <h5>3. 遇到题目怎么算</h5>
+      <ol><li>分解为法向和切向。</li><li>法向用 J1n=J2n。</li><li>切向用 E1t=E2t。</li><li>用 J=σE 转换不同介质关系。</li></ol>
+    </section>
+    <section class="deep-card">
+      <h5>4. 常见题型</h5>
+      <ul><li>导电介质分界面</li><li>电流折射</li><li>界面电荷积累判断</li><li>边界条件计算</li></ul>
+    </section>
+  </div>
+  <div class="quick-example"><b>速算例子：</b>稳态无积累时，J 的法向分量连续。</div>
+</div>
+<details class="practice">
       <summary>小题：为什么稳态导线中电流处处相等？</summary>
       <div class="steps">
         <ol><li>若某截面电流大、另一截面小，中间会出现电荷堆积或减少。</li><li>稳态不允许持续堆积。</li><li>所以沿串联导线路径电流连续。</li></ol>
@@ -149,7 +241,34 @@
         <div class="box"><b>易错提醒</b><p>法向连续的是 J，不一定是 E；因为 J=σE，σ 不同时 E_n 会改变。</p></div>
       </div>
       
-    <details class="practice">
+    
+<div class="deep-expand" id="deep-4-4">
+  <div class="deep-head">
+    <span>深度扩展</span>
+    <b>公式含义 · 字母拆解 · 计算方法 · 常见题型</b>
+  </div>
+  <div class="deep-grid">
+    <section class="deep-card meaning-card">
+      <h5>1. 这个公式/概念到底在说什么</h5>
+      <p>电流场中的功率损耗表示单位体积内电能转化为热能的速率。</p>
+      <div class="formula-network"><b>本知识点公式：</b><code>J 1n = J 2n E 1t = E 2t</code></div>
+    </section>
+    <section class="deep-card">
+      <h5>2. 每个字母/符号代表什么</h5>
+      <table class="symbol-table"><tbody><tr><td><code>p</code></td><td>功率损耗密度，单位 W/m³。</td></tr><tr><td><code>J</code></td><td>电流密度。</td></tr><tr><td><code>E</code></td><td>电场强度。</td></tr><tr><td><code>σ</code></td><td>电导率。</td></tr></tbody></table>
+    </section>
+    <section class="deep-card">
+      <h5>3. 遇到题目怎么算</h5>
+      <ol><li>已知 J 和 E，用 p=J·E。</li><li>已知 σ 和 E，用 p=σE²。</li><li>已知 J 和 σ，用 p=J²/σ。</li><li>总功率再对体积积分。</li></ol>
+    </section>
+    <section class="deep-card">
+      <h5>4. 常见题型</h5>
+      <ul><li>功率密度计算</li><li>总损耗计算</li><li>由损耗反求 E/J</li><li>导体发热题</li></ul>
+    </section>
+  </div>
+  <div class="quick-example"><b>速算例子：</b>σ=4，E=3，则 p=σE²=36W/m³。</div>
+</div>
+<details class="practice">
       <summary>小题：σ₁≠σ₂ 且 J₁n=J₂n，E₁n 与 E₂n 一定相等吗？</summary>
       <div class="steps">
         <ol><li>由 J=σE 得 J_n=σE_n。</li><li>边界条件为 σ₁E₁n=σ₂E₂n。</li><li>若 σ₁≠σ₂，则 E₁n 一般不等于 E₂n。</li></ol>
@@ -171,7 +290,34 @@
         <div class="box"><b>易错提醒</b><p>注意 p 是功率密度，P 才是总功率。</p></div>
       </div>
       
-    <details class="practice">
+    
+<div class="deep-expand" id="deep-4-5">
+  <div class="deep-head">
+    <span>深度扩展</span>
+    <b>公式含义 · 字母拆解 · 计算方法 · 常见题型</b>
+  </div>
+  <div class="deep-grid">
+    <section class="deep-card meaning-card">
+      <h5>1. 这个公式/概念到底在说什么</h5>
+      <p>静电比拟利用静电场和恒定电流场数学结构相似，把已知电容结果转成电导结果。</p>
+      <div class="formula-network"><b>本知识点公式：</b><code>p = J·E = σE² = J² σ P = ∭ V p dV</code></div>
+    </section>
+    <section class="deep-card">
+      <h5>2. 每个字母/符号代表什么</h5>
+      <table class="symbol-table"><tbody><tr><td><code>σ↔ε</code></td><td>电导率对应介电常数。</td></tr><tr><td><code>J↔D</code></td><td>电流密度对应电位移。</td></tr><tr><td><code>G↔C</code></td><td>电导对应电容。</td></tr></tbody></table>
+    </section>
+    <section class="deep-card">
+      <h5>3. 遇到题目怎么算</h5>
+      <ol><li>确认几何结构相同。</li><li>把静电问题中的 ε 替换为 σ。</li><li>把 D 替换为 J，把 C 替换为 G。</li></ol>
+    </section>
+    <section class="deep-card">
+      <h5>4. 常见题型</h5>
+      <ul><li>由电容求电导</li><li>同轴/平行板比拟</li><li>静电场解迁移</li><li>材料参数替换</li></ul>
+    </section>
+  </div>
+  <div class="quick-example"><b>速算例子：</b>若几何相同，常有 G=(σ/ε)C。</div>
+</div>
+<details class="practice">
       <summary>小题：σ=4 S/m，E=3 V/m，求 p。</summary>
       <div class="steps">
         <ol><li>用 p=σE²。</li><li>代入 σ=4，E=3。</li><li>p=4×9=36 W/m³。</li></ol>
@@ -193,7 +339,34 @@
         <div class="box"><b>易错提醒</b><p>比拟要求边界条件和几何结构对应，不能随意套。</p></div>
       </div>
       
-    <details class="practice">
+    
+<div class="deep-expand" id="deep-4-6">
+  <div class="deep-head">
+    <span>深度扩展</span>
+    <b>公式含义 · 字母拆解 · 计算方法 · 常见题型</b>
+  </div>
+  <div class="deep-grid">
+    <section class="deep-card meaning-card">
+      <h5>1. 这个公式/概念到底在说什么</h5>
+      <p>静电比拟利用静电场和恒定电流场数学结构相似，把电容、电位移等静电结果转成电导、电流密度等电流场结果。</p>
+      <div class="formula-network"><b>本知识点公式：</b><code>σ ↔ ε J ↔ D G ↔ C G = (σ/ε)C</code></div>
+    </section>
+    <section class="deep-card">
+      <h5>2. 每个字母/符号代表什么</h5>
+      <table class="symbol-table"><tbody><tr><td><code>σ</code></td><td>电导率，描述材料导电能力。</td></tr><tr><td><code>ε</code></td><td>介电常数，描述材料对电场的响应。</td></tr><tr><td><code>J</code></td><td>电流密度，对应静电场中的 D。</td></tr><tr><td><code>D</code></td><td>电位移矢量，对应电流场中的 J。</td></tr><tr><td><code>G</code></td><td>电导，对应静电问题中的电容 C。</td></tr><tr><td><code>C</code></td><td>电容。</td></tr></tbody></table>
+    </section>
+    <section class="deep-card">
+      <h5>3. 遇到题目怎么算</h5>
+      <ol><li>确认两个问题几何结构相同。</li><li>把静电场里的 ε 替换成电流场里的 σ。</li><li>把 D 替换为 J，把 C 替换为 G。</li><li>如果题目给 C 和 σ/ε，直接用 G=(σ/ε)C。</li></ol>
+    </section>
+    <section class="deep-card">
+      <h5>4. 常见题型</h5>
+      <ul><li>由电容求电导</li><li>平行板/同轴结构比拟</li><li>材料参数替换题</li><li>静电解迁移到电流场</li></ul>
+    </section>
+  </div>
+  <div class="quick-example"><b>速算例子：</b>C=2pF，σ/ε=10^6s^-1，则 G=2×10^-12×10^6=2×10^-6S。</div>
+</div>
+<details class="practice">
       <summary>小题：某结构 C=2 pF，σ/ε=10⁶ s⁻¹，求 G。</summary>
       <div class="steps">
         <ol><li>用 G=(σ/ε)C。</li><li>C=2×10⁻¹² F。</li><li>G=10⁶×2×10⁻¹²=2×10⁻⁶ S。</li></ol>
@@ -215,7 +388,34 @@
         <div class="box"><b>易错提醒</b><p>现实导体不是 σ 无限大，实际导线内部可以有很小电场。</p></div>
       </div>
       
-    <details class="practice">
+    
+<div class="deep-expand" id="deep-4-7">
+  <div class="deep-head">
+    <span>深度扩展</span>
+    <b>公式含义 · 字母拆解 · 计算方法 · 常见题型</b>
+  </div>
+  <div class="deep-grid">
+    <section class="deep-card meaning-card">
+      <h5>1. 这个公式/概念到底在说什么</h5>
+      <p>理想导电体的电导率趋于无穷大。若电流密度 J 有限，由 E=J/σ 可知内部恒定电场趋于 0。</p>
+      <div class="formula-network"><b>本知识点公式：</b><code>E = J σ ，当 σ→∞ 且 J 有限时，E→0</code></div>
+    </section>
+    <section class="deep-card">
+      <h5>2. 每个字母/符号代表什么</h5>
+      <table class="symbol-table"><tbody><tr><td><code>E</code></td><td>导体内部电场。</td></tr><tr><td><code>J</code></td><td>电流密度。</td></tr><tr><td><code>σ</code></td><td>电导率。</td></tr><tr><td><code>σ→∞</code></td><td>理想导体近似。</td></tr></tbody></table>
+    </section>
+    <section class="deep-card">
+      <h5>3. 遇到题目怎么算</h5>
+      <ol><li>从欧姆定律 J=σE 变形得到 E=J/σ。</li><li>判断 J 是否有限。</li><li>令 σ→∞，分母趋于无穷，E→0。</li></ol>
+    </section>
+    <section class="deep-card">
+      <h5>4. 常见题型</h5>
+      <ul><li>理想导体极限分析</li><li>导体内部电场判断</li><li>由 J 和 σ 求 E</li><li>导电率变化趋势题</li></ul>
+    </section>
+  </div>
+  <div class="quick-example"><b>速算例子：</b>若 J 有限且 σ→∞，则 E=J/σ→0。</div>
+</div>
+<details class="practice">
       <summary>小题：理想导体中若 J 有限，E 为多少？</summary>
       <div class="steps">
         <ol><li>由 J=σE 得 E=J/σ。</li><li>理想导体 σ→∞。</li><li>有限 J 除以无限大趋于 0。</li></ol>
@@ -237,5 +437,5 @@
 </div>
 
 <script src="../../assets/site.js"></script>
-</body>
+<div class="reader-tools"><a href="#top">回到顶部</a><button type="button" onclick="toggleTheme()">深色</button></div></body>
 </html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>思维导读｜电磁场与电磁波</title><link rel="stylesheet" href="assets/style.css"/></head>
+<body><a class="skip-link" href="#main">跳到正文</a>
+<div class="site-shell">
+<div class="topbar"><div class="breadcrumb"><a href="index.html">总入口</a> / 思维导读</div>
+<nav class="navlinks"><a href="index.html">总入口</a><a href="mindmaps/index.html">总导图</a><a href="search.html">全站检索</a><a href="formula-index.html">公式索引</a><a href="practice-index.html">题目索引</a>
+    <a href="type-map.html">题型地图</a><button class="tool-btn" type="button" onclick="toggleTheme()">深色模式</button></nav></div>
+<main id="main">
+<section class="hero"><span class="eyebrow">思维导读 · 学习顺序与公式主线</span><h1>先建立框架，再进入细节</h1><p class="subtitle">这一页不是普通导图，而是告诉你每章为什么学、先抓什么、公式怎么串、易错点在哪里。</p></section>
+<section class="learning-console">
+  <div class="console-card"><h2>总学习路径</h2><div class="guide-timeline">
+    <div class="guide-step"><div><b>第1步：先学工具</b><p>理解 ∇、梯度、散度、旋度。后面所有场方程都靠它们表达。</p></div></div>
+    <div class="guide-step"><div><b>第2步：进入静电场</b><p>电荷产生 E，电位 φ 简化计算，D 处理介质自由电荷。</p></div></div>
+    <div class="guide-step"><div><b>第3步：学习边值求解</b><p>根据区域有无电荷选择泊松/拉普拉斯方程，再用边界条件定解。</p></div></div>
+    <div class="guide-step"><div><b>第4步：迁移到电流场</b><p>J=σE 与 D=εE 类比，理解稳态电流连续。</p></div></div>
+    <div class="guide-step"><div><b>第5步：进入磁场</b><p>电流产生磁场，理解 B/H、磁介质和磁边界。</p></div></div>
+  </div></div>
+  <div class="console-card"><h2>横向公式主线</h2><div class="formula-network"><p><b>散度线：</b>∇·E、∇·D、∇·J、∇·B</p><p><b>旋度线：</b>∇×E、∇×H、斯托克斯定理</p><p><b>势函数线：</b>E=-∇φ → 泊松/拉普拉斯</p><p><b>材料线：</b>D=εE、J=σE、B=μH</p></div></div>
+</section>
+<div class="index-grid">
+<section class="index-card">
+  <h2>第1章｜矢量分析基础</h2>
+  <p>先学数学工具，否则后面看到 ∇·E、∇×E、E=-∇φ 会只剩背公式。</p>
+  <div class="formula-network"><b>公式主线：</b><code>∇φ → 梯度；∇·A → 散度；∇×A → 旋度；∮A·dl ↔ ∬(∇×A)·dS</code></div>
+  <div class="focus-pills"><span>场的概念</span><span>∇ 算子</span><span>梯度</span><span>散度</span><span>旋度</span><span>散度定理/斯托克斯定理</span></div>
+  <div class="action-row">
+    <a class="pill-link" href="mindmaps/guide-ch1.html">本章导读</a>
+    <a class="pill-link" href="chapters/ch1/index.html">进入正文</a>
+    <a class="pill-link" href="mindmaps/ch1.html">看导图</a>
+  </div>
+</section>
+
+<section class="index-card">
+  <h2>第2章｜静电场</h2>
+  <p>把第1章的数学工具变成电场语言：电荷产生 E，电位 φ 简化计算，D 处理介质。</p>
+  <div class="formula-network"><b>公式主线：</b><code>电荷 → E；E=-∇φ；D=εE；∇·D=ρf；边界：Et 连续、Dn 跳变</code></div>
+  <div class="focus-pills"><span>E 的定义</span><span>电场线</span><span>电位 φ</span><span>真空静电场方程</span><span>电位移 D</span><span>导体与边界</span><span>能量</span></div>
+  <div class="action-row">
+    <a class="pill-link" href="mindmaps/guide-ch2.html">本章导读</a>
+    <a class="pill-link" href="chapters/ch2/index.html">进入正文</a>
+    <a class="pill-link" href="mindmaps/ch2.html">看导图</a>
+  </div>
+</section>
+
+<section class="index-card">
+  <h2>第3章｜静电场边值问题</h2>
+  <p>从会看电场，进入会求电场：用方程和边界条件求 φ，再由 E=-∇φ 得到场。</p>
+  <div class="formula-network"><b>公式主线：</b><code>有源：∇²φ=-ρ/ε；无源：∇²φ=0；边界给 φ / ∂φ/∂n / 二者组合</code></div>
+  <div class="focus-pills"><span>边值问题</span><span>泊松方程</span><span>拉普拉斯方程</span><span>狄里赫利</span><span>诺依曼</span><span>混合条件</span><span>唯一性/镜像法</span></div>
+  <div class="action-row">
+    <a class="pill-link" href="mindmaps/guide-ch3.html">本章导读</a>
+    <a class="pill-link" href="chapters/ch3/index.html">进入正文</a>
+    <a class="pill-link" href="mindmaps/ch3.html">看导图</a>
+  </div>
+</section>
+
+<section class="index-card">
+  <h2>第4章｜恒定电流场</h2>
+  <p>把静电场方法迁移到导电介质：E 推动电荷形成 J，稳态时电流连续。</p>
+  <div class="formula-network"><b>公式主线：</b><code>J=σE；∇·J=0；p=J·E；静电比拟：σ↔ε，J↔D，G↔C</code></div>
+  <div class="focus-pills"><span>J=σE</span><span>I=∬J·dS</span><span>∇·J=0</span><span>边界条件</span><span>功率损耗</span><span>静电比拟</span></div>
+  <div class="action-row">
+    <a class="pill-link" href="mindmaps/guide-ch4.html">本章导读</a>
+    <a class="pill-link" href="chapters/ch4/index.html">进入正文</a>
+    <a class="pill-link" href="mindmaps/ch4.html">看导图</a>
+  </div>
+</section>
+
+<section class="index-card">
+  <h2>第5章｜恒定磁场</h2>
+  <p>从恒定电流进入磁场：电流产生 H/B，磁场有旋无散，并受磁介质影响。</p>
+  <div class="formula-network"><b>公式主线：</b><code>∇×H=J；∇·B=0；B=μH；Bn 连续；Ht 跳变由面电流决定</code></div>
+  <div class="focus-pills"><span>∇×H=J</span><span>∇·B=0</span><span>B=μH</span><span>磁化 M</span><span>磁边界</span><span>磁矩与转矩</span></div>
+  <div class="action-row">
+    <a class="pill-link" href="mindmaps/guide-ch5.html">本章导读</a>
+    <a class="pill-link" href="chapters/ch5/index.html">进入正文</a>
+    <a class="pill-link" href="mindmaps/ch5.html">看导图</a>
+  </div>
+</section>
+</div>
+</main></div><div class="reader-tools"><a href="#main">回到顶部</a><button type="button" onclick="toggleTheme()">深色</button></div><script src="assets/site.js"></script></body></html>
