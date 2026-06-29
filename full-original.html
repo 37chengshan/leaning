@@ -1,0 +1,1091 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>电磁场与电磁波 1-5章详细学习网页｜分章目录与步骤解析版</title>
+
+<style>
+:root{
+  --bg:#f5f7fb;--paper:#fff;--ink:#1f2937;--muted:#64748b;--line:#dbe4ef;
+  --blue:#2563eb;--blue-soft:#eff6ff;--green:#0f766e;--green-soft:#ecfdf5;
+  --orange:#b45309;--orange-soft:#fff7ed;--red:#b91c1c;--red-soft:#fef2f2;
+  --violet:#6d28d9;--violet-soft:#f5f3ff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--ink);
+  background:radial-gradient(circle at top left,rgba(37,99,235,.10),transparent 32rem),radial-gradient(circle at bottom right,rgba(15,118,110,.10),transparent 28rem),var(--bg);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+  font-size:17px;line-height:1.82;
+}
+.wrapper{max-width:1320px;margin:0 auto;padding:26px 20px 60px;display:grid;grid-template-columns:300px minmax(0,1fr);gap:24px}
+.sidebar{
+  position:sticky;top:16px;align-self:start;background:rgba(255,255,255,.92);
+  border:1px solid var(--line);border-radius:24px;padding:18px;box-shadow:0 14px 32px rgba(15,23,42,.08);
+  max-height:calc(100vh - 32px);overflow:auto;
+}
+.sidebar h2{font-size:18px;margin:0 0 12px;color:#0f172a}
+.sidebar .chapter-link{display:block;padding:10px 11px;margin:6px 0;text-decoration:none;color:#334155;border-radius:13px;font-weight:800;background:#f8fafc;border:1px solid #edf2f7}
+.sidebar .chapter-link:hover{background:var(--blue-soft);color:var(--blue)}
+.sidebar .sub a{display:block;padding:6px 12px;text-decoration:none;color:#64748b;font-size:14px;border-radius:10px}
+.sidebar .sub a:hover{background:#f8fafc;color:#0f172a}
+main{min-width:0}
+.hero{
+  border:1px solid var(--line);background:linear-gradient(135deg,#eff6ff 0%,#fff 52%,#ecfeff 100%);
+  border-radius:30px;padding:36px;box-shadow:0 18px 44px rgba(15,23,42,.08);margin-bottom:24px;
+}
+.eyebrow{display:inline-block;background:#dbeafe;color:#1d4ed8;border:1px solid #bfdbfe;border-radius:999px;padding:5px 12px;font-size:14px;font-weight:900;margin-bottom:12px}
+h1{font-size:40px;line-height:1.16;letter-spacing:-.035em;color:#0f172a;margin:0 0 14px}
+.subtitle{font-size:18px;color:#475569;margin:0;max-width:920px}
+.global-toc{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:22px}
+.global-toc a{text-decoration:none;border:1px solid #bfdbfe;background:white;color:#1d4ed8;border-radius:18px;padding:14px;font-weight:900;text-align:center}
+.chapter{margin:28px 0 46px}
+.chapter-head{
+  border:1px solid var(--line);border-radius:28px;padding:28px;background:linear-gradient(135deg,#fff,#f8fbff);
+  box-shadow:0 12px 32px rgba(15,23,42,.06);
+}
+.chapter-num{display:inline-block;font-weight:900;color:#fff;background:var(--blue);border-radius:999px;padding:5px 12px;margin-bottom:10px}
+h2{font-size:32px;line-height:1.2;margin:0 0 10px;color:#0f172a}
+.chapter-head p{font-size:18px;color:#475569;margin:0}
+.route-card,.relation-card,.review{
+  background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:22px;margin:18px 0;box-shadow:0 8px 24px rgba(15,23,42,.045)
+}
+h3{font-size:23px;margin:0 0 14px;color:#0f172a}
+.route{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:0;margin:0;list-style:none;counter-reset:item}
+.route li{background:#f8fafc;border:1px solid #e2e8f0;border-radius:18px;padding:14px;position:relative}
+.route li:before{counter-increment:item;content:counter(item);display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#dbeafe;color:#1d4ed8;font-weight:900;margin-right:6px}
+.route b{display:block;color:#0f172a;margin:6px 0 4px}
+.route span{display:block;color:#64748b;font-size:15px;line-height:1.55}
+.chapter-toc{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+.chapter-toc a{text-decoration:none;color:#1d4ed8;background:#fff;border:1px solid #bfdbfe;border-radius:999px;padding:6px 12px;font-size:14px;font-weight:800}
+.kp{
+  background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:24px;margin:18px 0;
+  box-shadow:0 10px 28px rgba(15,23,42,.055);
+}
+.kp h4{font-size:22px;line-height:1.35;margin:0 0 8px;color:#111827;border-left:6px solid var(--green);padding-left:12px}
+.tags{margin:6px 0 12px}.tag{display:inline-block;background:#e0f2fe;color:#0369a1;border-radius:999px;padding:3px 9px;font-size:13px;font-weight:900;margin-right:6px;margin-bottom:4px}
+.formula{
+  margin:15px 0;padding:18px 18px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:18px;
+  font-family:"Cambria Math","Times New Roman","STIX Two Math",serif;font-size:24px;line-height:1.75;color:#0f172a;overflow-x:auto;
+}
+.frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;line-height:1.05;margin:0 .16em;white-space:nowrap}
+.frac>span:first-child{border-bottom:1.8px solid currentColor;padding:0 .22em .08em}
+.frac>span:last-child{padding:.08em .22em 0}
+.explain-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:14px}
+.box{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:14px}
+.box b{display:block;margin-bottom:6px;color:#0f172a}
+.box ul{margin:6px 0 0;padding-left:20px}.box li{margin:3px 0}
+.note,.tip,.warn,.danger,.answer{border-radius:16px;padding:13px 15px;margin:12px 0;border:1px solid}
+.note{background:var(--blue-soft);border-color:#bfdbfe}.tip{background:var(--green-soft);border-color:#bbf7d0}.warn{background:var(--orange-soft);border-color:#fed7aa}.danger{background:var(--red-soft);border-color:#fecaca}.answer{background:#f0fdf4;border-color:#bbf7d0}
+.practice{margin-top:16px;background:#fbfffd;border:1px solid #bbf7d0;border-radius:18px;overflow:hidden}
+.practice summary{cursor:pointer;list-style:none;padding:14px 16px;font-weight:900;color:#14532d;background:#f0fdf4}
+.practice summary::-webkit-details-marker{display:none}
+.practice summary:after{content:"展开详细步骤";float:right;font-size:13px;color:#047857;background:#fff;border:1px solid #bbf7d0;padding:2px 8px;border-radius:999px}
+.practice[open] summary:after{content:"收起"}
+.steps{padding:12px 18px 0}.steps ol{margin:0;padding-left:24px}.steps li{margin:8px 0}
+code,.code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#f1f5f9;border:1px solid #cbd5e1;padding:1px 6px;border-radius:7px;color:#0f172a;white-space:nowrap}
+.footer{text-align:center;color:#64748b;font-size:14px;margin-top:28px}
+@media(max-width:1050px){
+  .wrapper{display:block;padding:16px 12px 42px}.sidebar{position:static;max-height:none;margin-top:20px}
+  h1{font-size:31px}.hero{padding:24px 20px}.global-toc{grid-template-columns:1fr}
+  .route{grid-template-columns:1fr}.explain-grid{grid-template-columns:1fr}
+  .kp{padding:19px 15px}.formula{font-size:21px;white-space:normal;word-break:break-word}
+  body{font-size:16.5px}
+}
+@media print{
+  body{background:#fff}.wrapper{display:block;max-width:none;padding:0}.sidebar{display:none}
+  .hero,.chapter-head,.kp,.route-card,.relation-card,.review{box-shadow:none;break-inside:avoid}
+}
+</style>
+
+</head>
+<body>
+<div class="wrapper">
+  <aside class="sidebar">
+    <h2>总目录｜每章独立入口</h2>
+    <a class="chapter-link" href="#ch1">第1章 矢量分析基础</a>
+    <div class="sub"><a href="#ch1-s1">知识点</a><a href="#ch1-review">复盘</a></div>
+    <a class="chapter-link" href="#ch2">第2章 静电场</a>
+    <div class="sub"><a href="#ch2-s1">知识点</a><a href="#ch2-review">复盘</a></div>
+    <a class="chapter-link" href="#ch3">第3章 静电场边值问题</a>
+    <div class="sub"><a href="#ch3-s1">知识点</a><a href="#ch3-review">复盘</a></div>
+    <a class="chapter-link" href="#ch4">第4章 恒定电流场</a>
+    <div class="sub"><a href="#ch4-s1">知识点</a><a href="#ch4-review">复盘</a></div>
+    <a class="chapter-link" href="#ch5">第5章 恒定磁场</a>
+    <div class="sub"><a href="#ch5-s1">知识点</a><a href="#ch5-review">复盘</a></div>
+  </aside>
+
+  <main id="top">
+    <section class="hero">
+      <span class="eyebrow">电磁场与电磁波 · 1–5章学习网页</span>
+      <h1>分章目录 + 独立学习路线 + 每个知识点配详细步骤题</h1>
+      <p class="subtitle">
+        这一版把 1–5 章拆成五个清晰模块。每章都有自己的目录、学习路线、与前后章节的联系；
+        每个知识点都配一道题，并提供详细步骤解析。所有除法类公式均采用上下分子/分母排布，便于电脑和手机阅读。
+      </p>
+      <nav class="global-toc">
+        <a href="#ch1">第1章<br>矢量分析基础</a>
+        <a href="#ch2">第2章<br>静电场</a>
+        <a href="#ch3">第3章<br>边值问题</a>
+        <a href="#ch4">第4章<br>恒定电流场</a>
+        <a href="#ch5">第5章<br>恒定磁场</a>
+      </nav>
+    </section>
+
+    <div class="tip"><b>整体学习主线：</b>第1章提供数学工具；第2章用这些工具描述静电场；第3章用电位和边界条件求解静电场；第4章把静电场思想迁移到恒定电流场；第5章进入恒定磁场，为第6章麦克斯韦方程组做准备。</div>
+
+    
+    <section class="chapter" id="ch1">
+      <div class="chapter-head">
+        <div class="chapter-num">第 1 章</div>
+        <h2>矢量分析基础</h2>
+        <p>本章是后面所有电场、磁场公式的数学语言。先理解场、矢量、∇、梯度、散度、旋度，后面才不会只是在背公式。</p>
+      </div>
+
+      <div class="route-card">
+        <h3>本章独立学习路线</h3>
+        <ol class="route"><li><b>场与矢量</b><span>知道物理量如何分布在空间里。</span></li><li><b>∇ 算子</b><span>理解空间变化如何被数学表达。</span></li><li><b>梯度/散度/旋度</b><span>分别理解变化最快、源汇、旋转。</span></li><li><b>积分定理</b><span>把局部性质和整体性质联系起来。</span></li></ol>
+      </div>
+
+      <div class="relation-card">
+        <h3>本章与前后章节的联系</h3>
+        <p>第一章是工具箱；第二章开始把这些工具用到静电场中，例如 ∇·E 表示电荷产生电场，∇×E=0 表示静电场无旋。</p>
+      </div>
+
+      <nav class="chapter-toc">
+        <a href="#ch1-s1">本章知识点</a>
+        <a href="#ch1-review">本章复盘</a>
+        <a href="#top">返回总目录</a>
+      </nav>
+
+      <div id="ch1-s1">
+        
+    <article class="kp">
+      <h4>1.1 场：空间中每一点都有一个物理量</h4>
+      <div class="tags"><span class="tag">概念</span><span class="tag">入门</span></div>
+      <p>场不是一个单独的数，而是一整片空间里的分布规律。比如教室里每个位置都有温度，这就是温度场；空间中每一点都有电场强度，这就是电场。</p>
+      <div class="formula">标量场：T = T(x, y, z, t)<br>矢量场：A = A(x, y, z, t)</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>你可以把场想成一张“空间地图”：地图上每个位置都写着一个数，或者画着一个箭头。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>T 表示温度这类只有大小的量。</li><li>A 表示矢量场，既有大小又有方向。</li><li>x、y、z 表示空间位置。</li><li>t 表示时间。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>看到题目说“某区域内每一点都有某个物理量”时，就要想到场。</p></div>
+        <div class="box"><b>易错提醒</b><p>不要把场理解成某一个点的量。某一点的值只是场在该点的取值。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：判断温度、电场、速度哪个属于场？</summary>
+      <div class="steps">
+        <ol><li>温度如果随空间位置变化，可写成 T(x,y,z)，是标量场。</li><li>电场强度 E(x,y,z) 在每点有大小和方向，是矢量场。</li><li>流体速度 v(x,y,z) 在每点有速度大小和方向，也是矢量场。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>三者都可以构成场；温度是标量场，电场和速度是矢量场。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>1.2 标量与矢量：只有大小，还是既有大小又有方向</h4>
+      <div class="tags"><span class="tag">基础</span><span class="tag">坐标分量</span></div>
+      <p>标量只有大小，比如温度、电位；矢量既有大小又有方向，比如力、速度、电场强度、磁场强度。</p>
+      <div class="formula">A = A<sub>x</sub>e<sub>x</sub> + A<sub>y</sub>e<sub>y</sub> + A<sub>z</sub>e<sub>z</sub><br>|A| = √(A<sub>x</sub><sup>2</sup> + A<sub>y</sub><sup>2</sup> + A<sub>z</sub><sup>2</sup>)</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>一个空间箭头可以拆成三个方向上的分量。模长就是这个箭头的真实长度，本质上是三维勾股定理。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>A 是矢量。</li><li>Aₓ、Aᵧ、A_z 是三个坐标方向的分量。</li><li>eₓ、eᵧ、e_z 是三个单位矢量。</li><li>|A| 是矢量大小。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>给出矢量分量时，用这个式子表达矢量或求矢量大小。</p></div>
+        <div class="box"><b>易错提醒</b><p>不要把分量当成矢量本身。分量只是数，乘上单位矢量后才说明方向。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：A=3eₓ+4eᵧ，求 |A|。</summary>
+      <div class="steps">
+        <ol><li>识别分量：Aₓ=3，Aᵧ=4，A_z=0。</li><li>代入模长公式：|A|=√(3²+4²+0²)。</li><li>计算：√25=5。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>|A|=5。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>1.3 点积与叉积：矢量相乘的两种方式</h4>
+      <div class="tags"><span class="tag">运算</span><span class="tag">方向</span></div>
+      <p>点积衡量两个矢量同向程度，结果是标量；叉积衡量两个矢量构成的垂直效果，结果是矢量。</p>
+      <div class="formula">A·B = |A||B|cosθ = A<sub>x</sub>B<sub>x</sub> + A<sub>y</sub>B<sub>y</sub> + A<sub>z</sub>B<sub>z</sub><br>|A×B| = |A||B|sinθ</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>点积像把一个矢量投影到另一个方向上；叉积像用右手定则判断旋转轴方向。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>θ 是 A 和 B 的夹角。</li><li>cosθ 描述同向程度。</li><li>sinθ 描述垂直程度。</li><li>A×B 的方向由右手定则决定。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>算功、通量、环量常用点积；算力矩、旋度方向、磁场力常用叉积。</p></div>
+        <div class="box"><b>易错提醒</b><p>点积结果不是矢量；叉积顺序不能随便换，A×B = −B×A。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：A=2eₓ+eᵧ，B=eₓ+3eᵧ，求 A·B。</summary>
+      <div class="steps">
+        <ol><li>写出分量：Aₓ=2，Aᵧ=1；Bₓ=1，Bᵧ=3。</li><li>用点积分量公式：A·B=AₓBₓ+AᵧBᵧ。</li><li>代入：2×1+1×3=5。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>A·B=5。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>1.4 ∇ 算子：空间变化检测器</h4>
+      <div class="tags"><span class="tag">核心工具</span><span class="tag">偏导</span></div>
+      <p>∇ 不是普通数字，而是由三个方向偏导数组成的微分算子。它负责检查一个场沿 x、y、z 三个方向怎么变化。</p>
+      <div class="formula">∇ = e<sub>x</sub><span class="frac"><span>∂</span><span>∂x</span></span> + e<sub>y</sub><span class="frac"><span>∂</span><span>∂y</span></span> + e<sub>z</sub><span class="frac"><span>∂</span><span>∂z</span></span></div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>它像一个三方向扫描器：分别扫描 x、y、z 方向上的变化。后面接标量得到梯度，点乘矢量得到散度，叉乘矢量得到旋度。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>∂/∂x 表示只看 x 方向变化。</li><li>∂/∂y 表示只看 y 方向变化。</li><li>∂/∂z 表示只看 z 方向变化。</li><li>eₓ、eᵧ、e_z 标明方向。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>遇到梯度、散度、旋度时，都先想到 ∇。</p></div>
+        <div class="box"><b>易错提醒</b><p>∇ 本身不是结果，它必须作用到某个标量场或矢量场上才有意义。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：∇φ、∇·A、∇×A 分别叫什么？</summary>
+      <div class="steps">
+        <ol><li>∇ 作用于标量 φ，得到 ∇φ，叫梯度。</li><li>∇ 与矢量 A 做点积，得到 ∇·A，叫散度。</li><li>∇ 与矢量 A 做叉积，得到 ∇×A，叫旋度。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>∇φ 是梯度，∇·A 是散度，∇×A 是旋度。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>1.5 梯度与方向导数：标量场变化最快的方向</h4>
+      <div class="tags"><span class="tag">梯度</span><span class="tag">方向导数</span></div>
+      <p>梯度用于标量场，告诉你该标量在哪个方向增加最快，以及增加得有多快。方向导数则是问沿某个指定方向变化多快。</p>
+      <div class="formula">∇φ = e<sub>x</sub><span class="frac"><span>∂φ</span><span>∂x</span></span> + e<sub>y</sub><span class="frac"><span>∂φ</span><span>∂y</span></span> + e<sub>z</sub><span class="frac"><span>∂φ</span><span>∂z</span></span><br><span class="frac"><span>∂φ</span><span>∂l</span></span> = ∇φ · e<sub>l</sub></div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>梯度像山坡上最陡的上坡方向。方向导数像你不一定沿最陡方向走，而是沿题目指定方向走，看看高度变化多快。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>φ 是标量场。</li><li>∇φ 是梯度矢量。</li><li>e_l 是指定方向的单位矢量。</li><li>∂φ/∂l 是沿 l 方向变化率。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>求温度、电位、高度等标量场变化方向时用梯度；题目问“沿某方向变化率”时用方向导数。</p></div>
+        <div class="box"><b>易错提醒</b><p>方向向量必须先单位化，否则方向导数会被长度放大。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：φ=x²+y²，求点(1,2)处梯度。</summary>
+      <div class="steps">
+        <ol><li>求偏导：∂φ/∂x=2x，∂φ/∂y=2y。</li><li>代入点(1,2)：∂φ/∂x=2，∂φ/∂y=4。</li><li>写成矢量：∇φ=2eₓ+4eᵧ。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>∇φ|(1,2)=2eₓ+4eᵧ。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>1.6 散度与通量：有没有源、有没有净流出</h4>
+      <div class="tags"><span class="tag">散度</span><span class="tag">通量</span></div>
+      <p>散度是局部概念，判断某点附近是否像源一样向外发散；通量是整体概念，计算穿过一个面的总量。</p>
+      <div class="formula">∇·A = <span class="frac"><span>∂A<sub>x</sub></span><span>∂x</span></span> + <span class="frac"><span>∂A<sub>y</sub></span><span>∂y</span></span> + <span class="frac"><span>∂A<sub>z</sub></span><span>∂z</span></span><br>Φ = ∬<sub>S</sub> A·dS</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>散度像看一个点是不是喷泉或排水口。通量像看一张网有多少水流穿过去。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>A 是矢量场。</li><li>Aₓ、Aᵧ、A_z 是分量。</li><li>S 是曲面。</li><li>dS 是带方向的小面积。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>判断场是否有源时用散度；求穿过某个面或闭合面的总量时用通量。</p></div>
+        <div class="box"><b>易错提醒</b><p>通量为零不一定说明没有场，可能是进出抵消。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：A=xeₓ+yeᵧ+ze_z，求散度。</summary>
+      <div class="steps">
+        <ol><li>识别分量：Aₓ=x，Aᵧ=y，A_z=z。</li><li>逐项求偏导：∂Aₓ/∂x=1，∂Aᵧ/∂y=1，∂A_z/∂z=1。</li><li>相加：∇·A=3。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>散度为 3，表示该场处处有向外发散趋势。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>1.7 旋度与环量：有没有局部打转</h4>
+      <div class="tags"><span class="tag">旋度</span><span class="tag">环量</span></div>
+      <p>旋度判断矢量场局部有没有旋转趋势；环量计算沿闭合路径走一圈的总绕行效果。</p>
+      <div class="formula">∇×A = (<span class="frac"><span>∂A<sub>z</sub></span><span>∂y</span></span> − <span class="frac"><span>∂A<sub>y</sub></span><span>∂z</span></span>)e<sub>x</sub> + (<span class="frac"><span>∂A<sub>x</sub></span><span>∂z</span></span> − <span class="frac"><span>∂A<sub>z</sub></span><span>∂x</span></span>)e<sub>y</sub> + (<span class="frac"><span>∂A<sub>y</sub></span><span>∂x</span></span> − <span class="frac"><span>∂A<sub>x</sub></span><span>∂y</span></span>)e<sub>z</sub><br>Γ = ∮<sub>L</sub>A·dl</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>把小叶轮放进场里，如果叶轮会转，说明旋度不为零。环量则是沿一整条闭合曲线累加这个绕行效果。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>∇×A 是旋度，结果是矢量。</li><li>Γ 是环量。</li><li>L 是闭合曲线。</li><li>dl 是沿路径方向的小线段。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>判断场是否无旋、是否能写成某个势函数梯度时用旋度。</p></div>
+        <div class="box"><b>易错提醒</b><p>旋度公式正负号容易写反，建议按行列式顺序记。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：A=−yeₓ+xeᵧ，求旋度 z 分量。</summary>
+      <div class="steps">
+        <ol><li>识别 Aₓ=−y，Aᵧ=x。</li><li>z 分量公式：(∇×A)_z=∂Aᵧ/∂x−∂Aₓ/∂y。</li><li>计算：∂x/∂x=1，∂(−y)/∂y=−1。</li><li>相减：1−(−1)=2。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>(∇×A)_z=2，说明绕 z 轴有旋转趋势。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>1.8 散度定理与斯托克斯定理：局部和整体互相转换</h4>
+      <div class="tags"><span class="tag">积分定理</span><span class="tag">高斯定理</span></div>
+      <p>散度定理把体内散度与边界通量联系起来；斯托克斯定理把曲面上的旋度与边界环量联系起来。</p>
+      <div class="formula">∯<sub>S</sub>A·dS = ∭<sub>V</sub>(∇·A)dV<br>∮<sub>L</sub>A·dl = ∬<sub>S</sub>(∇×A)·dS</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>第一条说：内部所有源的总和等于边界总流出。第二条说：边界绕行效果等于内部所有局部旋转效果的总和。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>S 是闭合曲面。</li><li>V 是曲面包围的体积。</li><li>L 是曲面的边界曲线。</li><li>dV 是体积元。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>复杂面积分和体积分之间转换时使用；后面高斯定律、安培环路定理都会用到这些思想。</p></div>
+        <div class="box"><b>易错提醒</b><p>散度定理要求 S 是闭合曲面；斯托克斯定理的 L 是曲面 S 的边界。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：闭合面通量为正说明什么？</summary>
+      <div class="steps">
+        <ol><li>通量是穿过闭合面的净流出量。</li><li>通量为正，说明流出多于流入。</li><li>用散度定理看，内部散度积分为正，表示内部存在净源。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>闭合面内存在净源，整体向外流出。</div>
+    </details>
+    
+    </article>
+    
+      </div>
+
+      <div class="review" id="ch1-review">
+        <h3>第 1 章复盘</h3>
+        <p>学完本章后，建议你用一句话复述每个公式的含义，再做一遍每个知识点后面的题目。能说出“为什么用这个公式”，比只会代入更重要。</p>
+      </div>
+    </section>
+    
+    
+    <section class="chapter" id="ch2">
+      <div class="chapter-head">
+        <div class="chapter-num">第 2 章</div>
+        <h2>静电场</h2>
+        <p>本章把第一章的数学工具用到电荷和电场中，核心是 E、φ、D、边界条件和静电能量。</p>
+      </div>
+
+      <div class="route-card">
+        <h3>本章独立学习路线</h3>
+        <ol class="route"><li><b>电场强度</b><span>先理解电场是单位正电荷受到的力。</span></li><li><b>电位</b><span>再用标量 φ 简化静电场计算。</span></li><li><b>介质与导体</b><span>理解材料对电场的影响。</span></li><li><b>边界与能量</b><span>掌握分界面和储能问题。</span></li></ol>
+      </div>
+
+      <div class="relation-card">
+        <h3>本章与前后章节的联系</h3>
+        <p>第二章直接使用第一章的散度、旋度和梯度。第三章会进一步把电位 φ 用于边值问题，例如泊松方程、拉普拉斯方程和镜像法。</p>
+      </div>
+
+      <nav class="chapter-toc">
+        <a href="#ch2-s1">本章知识点</a>
+        <a href="#ch2-review">本章复盘</a>
+        <a href="#top">返回总目录</a>
+      </nav>
+
+      <div id="ch2-s1">
+        
+    <article class="kp">
+      <h4>2.1 电场强度 E：单位正电荷受到的力</h4>
+      <div class="tags"><span class="tag">静电场</span><span class="tag">定义</span></div>
+      <p>电场强度描述某点电场有多强、方向朝哪里。它的方向规定为正电荷在该点受到的力的方向。</p>
+      <div class="formula">E = <span class="frac"><span>F</span><span>q</span></span></div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>把一个很小的正试探电荷放到某点，看它受到多少力。每 1 C 电荷受到的力，就是该点电场强度。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>E 是电场强度，单位 N/C 或 V/m。</li><li>F 是电场力。</li><li>q 是试探电荷量。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>题目给电场力和试探电荷时，用定义式。</p></div>
+        <div class="box"><b>易错提醒</b><p>如果试探电荷是负电荷，受力方向和电场方向相反。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：q=2 μC，受力 6 mN，求 E。</summary>
+      <div class="steps">
+        <ol><li>统一单位：q=2×10⁻⁶ C，F=6×10⁻³ N。</li><li>代入 E=F/q。</li><li>E=(6×10⁻³)/(2×10⁻⁶)=3×10³ N/C。</li><li>若 q 为正，E 方向与 F 相同。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>E=3×10³ N/C，方向与正电荷受力方向一致。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>2.2 电场线：用图像看方向和强弱</h4>
+      <div class="tags"><span class="tag">电场线</span><span class="tag">直观理解</span></div>
+      <p>电场线是人为画出的辅助线。切线方向表示电场方向，疏密表示电场强弱。</p>
+      <div class="formula"><span class="frac"><span>dx</span><span>E<sub>x</sub></span></span> = <span class="frac"><span>dy</span><span>E<sub>y</sub></span></span> = <span class="frac"><span>dz</span><span>E<sub>z</sub></span></span></div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>这表示电场线在任一点的前进方向，都和该点电场矢量方向一致。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>dx、dy、dz 是电场线小位移分量。</li><li>Eₓ、Eᵧ、E_z 是电场分量。</li><li>比例相等说明线的切向与 E 平行。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>判断电场线方向、画电场分布示意图时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>电场线不是实际存在的绳子，它只是辅助表示。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：电场线越密代表什么？</summary>
+      <div class="steps">
+        <ol><li>电场线疏密用来表示电场强弱。</li><li>越密说明单位面积穿过的电场线越多。</li><li>因此该区域电场强度较大。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>电场线越密，电场越强。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>2.3 电位 φ 与电场 E：电场指向电位降低最快方向</h4>
+      <div class="tags"><span class="tag">电位</span><span class="tag">负梯度</span></div>
+      <p>静电场中可以用标量电位 φ 描述电场。电场强度等于电位梯度的负值。</p>
+      <div class="formula">E = −∇φ<br>φ<sub>A</sub> − φ<sub>B</sub> = ∫<sub>A</sub><sup>B</sup>E·dl</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>电位像高度，正电荷会沿电位降低方向运动，所以电场方向是电位下降最快方向。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>φ 是电位，单位 V。</li><li>∇φ 指向电位增加最快方向。</li><li>负号说明 E 指向电位降低方向。</li><li>E·dl 表示沿路径方向的电场贡献。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>已知电位求电场时，用 E=−∇φ；求两点电位差时用线积分。</p></div>
+        <div class="box"><b>易错提醒</b><p>最常见错误是漏掉负号。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：φ=3x，求 E。</summary>
+      <div class="steps">
+        <ol><li>求梯度：∇φ=3eₓ。</li><li>用 E=−∇φ。</li><li>得到 E=−3eₓ。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>E=−3eₓ V/m。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>2.4 真空中静电场方程：有源无旋</h4>
+      <div class="tags"><span class="tag">高斯定律</span><span class="tag">无旋</span></div>
+      <p>静电场有两个基本性质：电荷是电场的源，所以散度与电荷密度有关；静电场无旋，所以可以引入电位。</p>
+      <div class="formula">∇·E = <span class="frac"><span>ρ</span><span>ε₀</span></span><br>∇×E = 0<br>∯<sub>S</sub>E·dS = <span class="frac"><span>Q</span><span>ε₀</span></span><br>∮<sub>L</sub>E·dl = 0</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>∇·E 表示电场线发散程度；∇×E=0 表示静电场没有旋涡，沿闭合路径一圈做功为零。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>ρ 是体电荷密度。</li><li>ε₀ 是真空介电常数。</li><li>Q 是闭合面内总电荷。</li><li>S 是闭合曲面，L 是闭合路径。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>高斯定律适合对称电荷分布求 E；无旋性质用于引入电位。</p></div>
+        <div class="box"><b>易错提醒</b><p>高斯定律总成立，但不一定总方便求解。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：某处 ρ>0，∇·E 是正还是负？</summary>
+      <div class="steps">
+        <ol><li>根据 ∇·E=ρ/ε₀。</li><li>ε₀ 为正。</li><li>ρ>0，所以 ∇·E>0。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>∇·E 为正，说明该处电场线向外发散。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>2.5 电介质中的 D：把自由电荷单独拿出来处理</h4>
+      <div class="tags"><span class="tag">电介质</span><span class="tag">电位移</span></div>
+      <p>介质会被电场极化。引入 D 的目的，是在介质中更方便地处理自由电荷。</p>
+      <div class="formula">D = εE = ε<sub>r</sub>ε₀E<br>∇·D = ρ<sub>f</sub><br>∯<sub>S</sub>D·dS = Q<sub>f</sub></div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>E 描述电场强度；D 是为了处理介质中自由电荷而引入的辅助矢量。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>D 是电位移矢量，单位 C/m²。</li><li>ε 是介电常数。</li><li>εᵣ 是相对介电常数。</li><li>ρ_f 是自由电荷密度。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>介质中的高斯定律通常先求 D，再用 D=εE 求 E。</p></div>
+        <div class="box"><b>易错提醒</b><p>不要把自由电荷和束缚电荷混为一谈。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：线性介质中 D=4ε₀E，求 εᵣ。</summary>
+      <div class="steps">
+        <ol><li>线性介质关系：D=εᵣε₀E。</li><li>与题中 D=4ε₀E 比较。</li><li>得到 εᵣ=4。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>εᵣ=4。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>2.6 导体静电平衡：内部 E=0，导体是等位体</h4>
+      <div class="tags"><span class="tag">导体</span><span class="tag">等位体</span></div>
+      <p>导体中自由电荷能移动。静电平衡时如果内部仍有电场，电荷会继续移动，所以平衡条件是导体内部电场为零。</p>
+      <div class="formula">E<sub>inside</sub> = 0<br>φ = constant</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>E=−∇φ。若 E=0，则 ∇φ=0，说明导体内部电位不随位置变化，所以导体是等位体。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>E_inside 是导体内部电场。</li><li>φ=constant 表示电位处处相同。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>判断导体静电平衡、导体表面电荷分布时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>导体内部 E=0 不代表导体表面没有电荷，多余电荷通常在表面。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：静电平衡导体内部两点电位差是多少？</summary>
+      <div class="steps">
+        <ol><li>导体内部 E=0。</li><li>电位差与电场线积分有关。</li><li>E=0，所以积分为 0。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>导体内部任意两点电位差为 0。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>2.7 静电场边界条件：切向看 E，法向看 D</h4>
+      <div class="tags"><span class="tag">边界条件</span><span class="tag">介质界面</span></div>
+      <p>场穿过不同介质分界面时，要分解成切向和法向。静电场中切向 E 连续，法向 D 的跳变由自由面电荷决定。</p>
+      <div class="formula">E<sub>1t</sub> = E<sub>2t</sub><br>D<sub>2n</sub> − D<sub>1n</sub> = ρ<sub>s</sub><br>导体表面：E<sub>t</sub>=0，D<sub>n</sub>=ρ<sub>s</sub></div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>切向方向沿界面，法向方向垂直界面。边界条件就是告诉你场跨过界面时哪些分量不能乱跳。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>t 表示切向。</li><li>n 表示法向。</li><li>ρ_s 是自由面电荷密度。</li><li>D=εE 可把 D 条件转成 E 条件。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>介质分层、电场折射、导体表面电场题都要用。</p></div>
+        <div class="box"><b>易错提醒</b><p>不要把 E_t 连续误写成 D_t 连续；也不要把 D_n 条件直接当 E_n 连续。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：无自由面电荷时，D₁n 与 D₂n 关系？</summary>
+      <div class="steps">
+        <ol><li>边界条件：D₂n−D₁n=ρ_s。</li><li>无自由面电荷：ρ_s=0。</li><li>所以 D₂n−D₁n=0。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>D₁n = D₂n。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>2.8 静电场能量：电场本身储存能量</h4>
+      <div class="tags"><span class="tag">能量</span><span class="tag">电容</span></div>
+      <p>电场可以对电荷做功，所以电场本身具有能量。能量密度描述单位体积储存多少能量。</p>
+      <div class="formula">w<sub>e</sub> = <span class="frac"><span>1</span><span>2</span></span>E·D<br>W<sub>e</sub> = <span class="frac"><span>1</span><span>2</span></span>∭<sub>V</sub>E·D dV<br>W = <span class="frac"><span>1</span><span>2</span></span>CU<sup>2</sup> = <span class="frac"><span>1</span><span>2</span></span>QU = <span class="frac"><span>Q<sup>2</sup></span><span>2C</span></span></div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>能量密度是局部量，总能量是把所有小体积里的能量加起来。电容器公式是常用特例。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>w_e 是能量密度。</li><li>W_e 是总能量。</li><li>C 是电容。</li><li>U 是电压，Q 是电荷量。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>计算电场储能、电容器能量时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>公式选择看题目给什么量：给 C/U 用 1/2CU²，给 Q/C 用 Q²/2C。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：C=2 μF，U=10 V，求电容器能量。</summary>
+      <div class="steps">
+        <ol><li>统一单位：C=2×10⁻⁶ F。</li><li>选公式 W=1/2CU²。</li><li>代入：W=1/2×2×10⁻⁶×10²。</li><li>计算：W=1×10⁻⁴ J。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>W=1.0×10⁻⁴ J。</div>
+    </details>
+    
+    </article>
+    
+      </div>
+
+      <div class="review" id="ch2-review">
+        <h3>第 2 章复盘</h3>
+        <p>学完本章后，建议你用一句话复述每个公式的含义，再做一遍每个知识点后面的题目。能说出“为什么用这个公式”，比只会代入更重要。</p>
+      </div>
+    </section>
+    
+    
+    <section class="chapter" id="ch3">
+      <div class="chapter-head">
+        <div class="chapter-num">第 3 章</div>
+        <h2>静电场边值问题</h2>
+        <p>本章把第二章的电位 φ 作为主角，学习如何通过边界条件求空间电位。</p>
+      </div>
+
+      <div class="route-card">
+        <h3>本章独立学习路线</h3>
+        <ol class="route"><li><b>从 E 转向 φ</b><span>用电位简化静电场求解。</span></li><li><b>判断方程</b><span>有源用泊松，无源用拉普拉斯。</span></li><li><b>识别边界条件</b><span>分清电位、法向导数和混合条件。</span></li><li><b>使用镜像法</b><span>用等效电荷处理特殊边界。</span></li></ol>
+      </div>
+
+      <div class="relation-card">
+        <h3>本章与前后章节的联系</h3>
+        <p>第三章承接第二章的电位与边界条件。第四章会进入恒定电流场，它和静电场有很强的数学相似性，可以进行静电比拟。</p>
+      </div>
+
+      <nav class="chapter-toc">
+        <a href="#ch3-s1">本章知识点</a>
+        <a href="#ch3-review">本章复盘</a>
+        <a href="#top">返回总目录</a>
+      </nav>
+
+      <div id="ch3-s1">
+        
+    <article class="kp">
+      <h4>3.1 静电场边值问题：已知边界，求空间电位</h4>
+      <div class="tags"><span class="tag">边值问题</span><span class="tag">电位</span></div>
+      <p>边值问题就是：边界上的电位或电位导数已知，要求区域内部每一点的电位分布。</p>
+      <div class="formula">已知边界条件 → 求 φ(x,y,z) → 再由 E = −∇φ 求电场</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>它像知道房间墙壁温度，求房间内部温度分布；静电场中则是知道边界电位，求空间电位。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>φ 是待求电位。</li><li>边界条件是求解所需的约束。</li><li>E=−∇φ 用于由电位求电场。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>遇到导体边界、电位已知、空间区域待求时使用边值问题思想。</p></div>
+        <div class="box"><b>易错提醒</b><p>边值问题不是只求某一点，而是求整个区域的函数分布。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：已知导体球表面电位，求球外电位属于什么问题？</summary>
+      <div class="steps">
+        <ol><li>题目给了边界上的电位。</li><li>要求空间区域中的电位。</li><li>这符合边值问题定义。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>属于静电场边值问题，具体是第一类边界条件问题。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>3.2 泊松方程与拉普拉斯方程</h4>
+      <div class="tags"><span class="tag">微分方程</span><span class="tag">电位</span></div>
+      <p>电位 φ 满足的方程取决于区域内有没有电荷。有电荷源时是泊松方程；无电荷区域是拉普拉斯方程。</p>
+      <div class="formula">泊松方程：∇²φ = −<span class="frac"><span>ρ</span><span>ε</span></span><br>拉普拉斯方程：∇²φ = 0</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>ρ 是电荷源。如果区域里有电荷，电位会被源项驱动；如果没有电荷，电位只由边界决定。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>∇² 是拉普拉斯算子。</li><li>ρ 是体电荷密度。</li><li>ε 是介电常数。</li><li>φ 是电位。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>判断区域有源或无源时选择对应方程。</p></div>
+        <div class="box"><b>易错提醒</b><p>不要把“空间里有电场”和“区域内有电荷”混淆。无源区也可以有电场。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：无电荷区域中电位满足什么方程？</summary>
+      <div class="steps">
+        <ol><li>无电荷说明 ρ=0。</li><li>泊松方程 ∇²φ=−ρ/ε。</li><li>代入 ρ=0，得到 ∇²φ=0。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>满足拉普拉斯方程 ∇²φ=0。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>3.3 三类边界条件：狄里赫利、诺依曼、混合</h4>
+      <div class="tags"><span class="tag">边界条件</span><span class="tag">分类</span></div>
+      <p>边界条件告诉你边界上已知什么。已知电位是第一类；已知法向导数是第二类；已知二者组合是第三类。</p>
+      <div class="formula">第一类：φ|<sub>S</sub>=f₁(r)<br>第二类：<span class="frac"><span>∂φ</span><span>∂n</span></span>|<sub>S</sub>=f₂(r)<br>第三类：aφ + b<span class="frac"><span>∂φ</span><span>∂n</span></span> = f₃(r)</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>第一类像告诉你海拔高度；第二类像告诉你坡度；第三类是高度和坡度的组合约束。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>S 是边界。</li><li>∂φ/∂n 是沿法线方向的变化率。</li><li>f₁、f₂、f₃ 是边界上给定函数。</li><li>a、b 是系数。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>读题时先判断给的是电位、场的法向分量，还是二者组合。</p></div>
+        <div class="box"><b>易错提醒</b><p>法向导数和电场法向有关，因为 E_n=−∂φ/∂n。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：导体表面电位给定为 V₀，属于哪类边界条件？</summary>
+      <div class="steps">
+        <ol><li>题目直接给出边界电位。</li><li>第一类边界条件定义为 φ|S=f。</li><li>因此属于狄里赫利条件。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>属于第一类边界条件，也叫狄里赫利条件。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>3.4 唯一性定理：解只要满足方程和边界，就不会错</h4>
+      <div class="tags"><span class="tag">唯一性</span><span class="tag">理论基础</span></div>
+      <p>唯一性定理说明，在给定区域内，只要电位满足泊松/拉普拉斯方程，并满足边界条件，那么解就是唯一的。</p>
+      <div class="formula">方程 + 边界条件 → 唯一电位分布</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>这给镜像法等方法提供了底气：不管你怎么构造，只要边界和区域方程对，结果就是原问题的解。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>方程描述区域内部规律。</li><li>边界条件描述区域边缘约束。</li><li>唯一性说明不会存在两个不同正确解。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>证明镜像法、判断构造解是否正确时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>唯一性定理不一定告诉你怎么找解，但告诉你找到后为什么可信。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：为什么镜像法只需检查边界条件？</summary>
+      <div class="steps">
+        <ol><li>镜像法构造的新电荷只放在求解区域外。</li><li>求解区域内仍满足原来的方程。</li><li>如果边界条件也相同，根据唯一性定理，区域内解相同。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>因为唯一性定理保证满足同一方程和同一边界条件的解唯一。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>3.5 镜像法：用等效电荷代替导体边界影响</h4>
+      <div class="tags"><span class="tag">镜像法</span><span class="tag">技巧</span></div>
+      <p>镜像法把复杂导体边界的作用，用边界外的等效电荷代替，使原问题变成无界空间中的电荷叠加问题。</p>
+      <div class="formula">原电荷 + 镜像电荷 → 满足边界条件的等效问题</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>镜像电荷不是真实存在的，它只是数学替身。它的作用是让导体表面电位条件被自动满足。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>原电荷是真实电荷。</li><li>镜像电荷是构造的等效电荷。</li><li>边界条件是镜像法成功的关键。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>点电荷与无限大接地导体平面、导体球、导体圆柱等问题常用。</p></div>
+        <div class="box"><b>易错提醒</b><p>镜像电荷只能用于求解区域外或导体内部的数学构造，不能把它当真实电荷。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：点电荷 q 距接地无限导体平面 a，镜像电荷怎么放？</summary>
+      <div class="steps">
+        <ol><li>接地平面要求平面上电位为 0。</li><li>在平面对称位置放一个 −q。</li><li>原电荷和平面另一侧镜像电荷在平面上产生等大反号电位。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>在平面另一侧对称位置放镜像电荷 −q。</div>
+    </details>
+    
+    </article>
+    
+      </div>
+
+      <div class="review" id="ch3-review">
+        <h3>第 3 章复盘</h3>
+        <p>学完本章后，建议你用一句话复述每个公式的含义，再做一遍每个知识点后面的题目。能说出“为什么用这个公式”，比只会代入更重要。</p>
+      </div>
+    </section>
+    
+    
+    <section class="chapter" id="ch4">
+      <div class="chapter-head">
+        <div class="chapter-num">第 4 章</div>
+        <h2>恒定电流场</h2>
+        <p>本章把电场放进导电介质里，研究稳态电流如何流动、如何满足连续性以及如何产生功率损耗。</p>
+      </div>
+
+      <div class="route-card">
+        <h3>本章独立学习路线</h3>
+        <ol class="route"><li><b>电流密度 J</b><span>理解电流不只是总量，还可以是空间分布。</span></li><li><b>连续性</b><span>掌握 ∇·J=0 的物理意义。</span></li><li><b>边界条件</b><span>学会跨介质处理 J 和 E。</span></li><li><b>静电比拟</b><span>把静电场方法迁移到电流场。</span></li></ol>
+      </div>
+
+      <div class="relation-card">
+        <h3>本章与前后章节的联系</h3>
+        <p>第四章和第二章的数学结构非常像：静电场中 D=εE，电流场中 J=σE。第五章会从电场转向磁场，研究电流如何产生磁场。</p>
+      </div>
+
+      <nav class="chapter-toc">
+        <a href="#ch4-s1">本章知识点</a>
+        <a href="#ch4-review">本章复盘</a>
+        <a href="#top">返回总目录</a>
+      </nav>
+
+      <div id="ch4-s1">
+        
+    <article class="kp">
+      <h4>4.1 恒定电流场：电荷持续定向运动形成电流</h4>
+      <div class="tags"><span class="tag">恒定电流</span><span class="tag">电流密度</span></div>
+      <p>恒定电流场研究稳态导电介质中的电流分布。稳态意味着各处电流不随时间改变。</p>
+      <div class="formula">J = σE<br>I = ∬<sub>S</sub>J·dS</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>J 描述单位面积上通过多少电流；σE 说明导电材料中电场推动电荷形成电流。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>J 是电流密度，单位 A/m²。</li><li>σ 是电导率。</li><li>E 是电场强度。</li><li>I 是通过截面的总电流。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>求导体或导电介质中电流、电流密度时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>J 是面密度意义的矢量，不等同于总电流 I。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：σ=2 S/m，E=5 V/m，求 J。</summary>
+      <div class="steps">
+        <ol><li>使用欧姆定律微分形式 J=σE。</li><li>代入 σ=2，E=5。</li><li>J=10 A/m²，方向与 E 相同。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>J=10 A/m²。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>4.2 恒定电流场方程：电流连续且无旋电场</h4>
+      <div class="tags"><span class="tag">场方程</span><span class="tag">连续性</span></div>
+      <p>稳态时没有电荷持续堆积，所以电流密度散度为零；恒定电场仍满足静电型无旋条件。</p>
+      <div class="formula">∇·J = 0<br>∯<sub>S</sub>J·dS = 0<br>∇×E = 0<br>∮<sub>L</sub>E·dl = 0</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>∇·J=0 表示电流线没有起点和终点，不会在某处凭空产生或消失。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>J 是电流密度。</li><li>E 是电场强度。</li><li>S 是闭合面。</li><li>L 是闭合曲线。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>判断稳态电流分布和建立边界条件时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>∇·J=0 不是说 J=0，而是说流入和流出平衡。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：闭合面内恒定电流净流出为多少？</summary>
+      <div class="steps">
+        <ol><li>恒定电流满足 ∯J·dS=0。</li><li>这表示任意闭合面净电流为零。</li><li>所以流入等于流出。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>净流出为 0。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>4.3 电流连续性原理：电流线必须闭合</h4>
+      <div class="tags"><span class="tag">连续性</span><span class="tag">物理意义</span></div>
+      <p>恒定电流线没有起点和终点，必须连续闭合。这和静电场线不同，静电场线可以起于正电荷、止于负电荷。</p>
+      <div class="formula">稳态：∇·J = 0</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>如果某处电流线突然终止，就意味着电荷在那里不断堆积，这就不是恒定状态。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>∇·J 表示电流密度的散度。</li><li>等于 0 表示没有净源汇。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>解释导电介质中电流分布、边界法向电流连续时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>不要把电流线和电场线混同。电流线在稳态中闭合，静电场线可起止于电荷。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：为什么稳态导线中电流处处相等？</summary>
+      <div class="steps">
+        <ol><li>若某截面电流大、另一截面小，中间会出现电荷堆积或减少。</li><li>稳态不允许持续堆积。</li><li>所以沿串联导线路径电流连续。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>因为恒定电流满足连续性，不能在导线中途凭空产生或消失。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>4.4 恒定电流场边界条件</h4>
+      <div class="tags"><span class="tag">边界条件</span><span class="tag">导电介质</span></div>
+      <p>两种导电介质交界面上，法向电流密度连续，切向电场强度连续。</p>
+      <div class="formula">J<sub>1n</sub> = J<sub>2n</sub><br>E<sub>1t</sub> = E<sub>2t</sub></div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>法向 J 连续保证电流不在界面堆积；切向 E 连续来自恒定电场的无旋性。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>J₁n、J₂n 是界面两侧法向电流密度。</li><li>E₁t、E₂t 是界面两侧切向电场。</li><li>n 是法向，t 是切向。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>分层导电介质、电流折射问题使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>法向连续的是 J，不一定是 E；因为 J=σE，σ 不同时 E_n 会改变。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：σ₁≠σ₂ 且 J₁n=J₂n，E₁n 与 E₂n 一定相等吗？</summary>
+      <div class="steps">
+        <ol><li>由 J=σE 得 J_n=σE_n。</li><li>边界条件为 σ₁E₁n=σ₂E₂n。</li><li>若 σ₁≠σ₂，则 E₁n 一般不等于 E₂n。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>不一定相等。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>4.5 导电介质功率损耗</h4>
+      <div class="tags"><span class="tag">功率</span><span class="tag">焦耳热</span></div>
+      <p>电流在导电介质中流动会产生热损耗。单位体积损耗由 J·E 描述。</p>
+      <div class="formula">p = J·E = σE² = <span class="frac"><span>J²</span><span>σ</span></span><br>P = ∭<sub>V</sub>p dV</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>电场推动电荷运动，介质阻碍运动，这部分能量转化为热。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>p 是单位体积功率损耗。</li><li>P 是总功率损耗。</li><li>σ 是电导率。</li><li>V 是导电区域体积。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>求导体发热、介质损耗时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>注意 p 是功率密度，P 才是总功率。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：σ=4 S/m，E=3 V/m，求 p。</summary>
+      <div class="steps">
+        <ol><li>用 p=σE²。</li><li>代入 σ=4，E=3。</li><li>p=4×9=36 W/m³。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>p=36 W/m³。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>4.6 静电比拟：恒定电场与静电场的相似性</h4>
+      <div class="tags"><span class="tag">比拟</span><span class="tag">电导电容</span></div>
+      <p>均匀导电媒质中的恒定电场，与均匀介质无源区中的静电场形式相似，可以用静电问题的结果类比电流问题。</p>
+      <div class="formula">σ ↔ ε<br>J ↔ D<br>G ↔ C<br>G = (σ/ε)C</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>把电导率 σ 看成介电常数 ε 的对应物，把电流密度 J 看成电位移 D 的对应物，就能迁移解法。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>σ 是电导率。</li><li>ε 是介电常数。</li><li>G 是电导。</li><li>C 是电容。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>几何形状相同、边界条件相同时，用已知电容推电导。</p></div>
+        <div class="box"><b>易错提醒</b><p>比拟要求边界条件和几何结构对应，不能随意套。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：某结构 C=2 pF，σ/ε=10⁶ s⁻¹，求 G。</summary>
+      <div class="steps">
+        <ol><li>用 G=(σ/ε)C。</li><li>C=2×10⁻¹² F。</li><li>G=10⁶×2×10⁻¹²=2×10⁻⁶ S。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>G=2 μS。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>4.7 理想导电体中不存在恒定电场</h4>
+      <div class="tags"><span class="tag">理想导体</span><span class="tag">极限思想</span></div>
+      <p>理想导电体电导率 σ→∞。若有限电流密度 J 存在，由 J=σE 可知 E 必须趋于 0。</p>
+      <div class="formula">E = <span class="frac"><span>J</span><span>σ</span></span>，当 σ→∞ 且 J 有限时，E→0</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>理想导体几乎不需要电场就能维持电流，因此内部恒定电场为零。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>σ 是电导率。</li><li>J 是电流密度。</li><li>E 是电场强度。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>判断理想导体、电磁边界理想化时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>现实导体不是 σ 无限大，实际导线内部可以有很小电场。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：理想导体中若 J 有限，E 为多少？</summary>
+      <div class="steps">
+        <ol><li>由 J=σE 得 E=J/σ。</li><li>理想导体 σ→∞。</li><li>有限 J 除以无限大趋于 0。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>E=0。</div>
+    </details>
+    
+    </article>
+    
+      </div>
+
+      <div class="review" id="ch4-review">
+        <h3>第 4 章复盘</h3>
+        <p>学完本章后，建议你用一句话复述每个公式的含义，再做一遍每个知识点后面的题目。能说出“为什么用这个公式”，比只会代入更重要。</p>
+      </div>
+    </section>
+    
+    
+    <section class="chapter" id="ch5">
+      <div class="chapter-head">
+        <div class="chapter-num">第 5 章</div>
+        <h2>恒定磁场</h2>
+        <p>本章研究恒定电流如何产生磁场，以及磁场在介质中如何表现、如何跨边界变化、如何对载流线圈产生转矩。</p>
+      </div>
+
+      <div class="route-card">
+        <h3>本章独立学习路线</h3>
+        <ol class="route"><li><b>从电流到磁场</b><span>理解恒定电流是磁场旋度的来源。</span></li><li><b>B 与 H</b><span>区分磁感应强度和磁场强度。</span></li><li><b>磁化</b><span>理解材料内部磁矩排列造成的宏观效应。</span></li><li><b>边界和转矩</b><span>掌握磁介质边界条件与线圈受力矩。</span></li></ol>
+      </div>
+
+      <div class="relation-card">
+        <h3>本章与前后章节的联系</h3>
+        <p>第五章建立磁场的静态规律。第六章麦克斯韦方程组会把电场和磁场统一起来：变化的电场能产生磁场，变化的磁场也能产生电场。</p>
+      </div>
+
+      <nav class="chapter-toc">
+        <a href="#ch5-s1">本章知识点</a>
+        <a href="#ch5-review">本章复盘</a>
+        <a href="#top">返回总目录</a>
+      </nav>
+
+      <div id="ch5-s1">
+        
+    <article class="kp">
+      <h4>5.1 真空中恒定磁场方程：有旋无散</h4>
+      <div class="tags"><span class="tag">磁场</span><span class="tag">安培环路定理</span></div>
+      <p>恒定磁场由恒定电流产生。磁场没有磁单极子，所以 B 的散度为零；电流会激发磁场旋度。</p>
+      <div class="formula">∇×B = μ₀J<br>∇·B = 0<br>∮<sub>L</sub>B·dl = μ₀I</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>电流像磁场的旋涡源；磁感应线没有头尾，总是闭合的。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>B 是磁感应强度。</li><li>J 是电流密度。</li><li>μ₀ 是真空磁导率。</li><li>I 是闭合曲线包围的电流。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>分析真空中电流产生磁场时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>磁场线没有起点和终点，不像静电场线起于正电荷止于负电荷。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：为什么 ∇·B=0 表示磁力线闭合？</summary>
+      <div class="steps">
+        <ol><li>散度表示源汇。</li><li>∇·B=0 表示磁场没有源或汇。</li><li>没有源汇的场线不能凭空开始或结束，只能闭合或延伸到无穷远。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>表示磁场无源，磁力线无头无尾。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>5.2 介质中的恒定磁场方程：用 H 处理传导电流</h4>
+      <div class="tags"><span class="tag">H</span><span class="tag">介质磁场</span></div>
+      <p>在磁介质中，用磁场强度 H 表述安培环路定理，右边只考虑传导电流。</p>
+      <div class="formula">∇×H = J<br>∇·B = 0<br>∮<sub>L</sub>H·dl = I</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>H 的引入类似 D：把介质磁化影响从源项中分离出来，让方程右边主要看传导电流。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>H 是磁场强度，单位 A/m。</li><li>B 是磁感应强度，单位 T。</li><li>J 是传导电流密度。</li><li>I 是传导电流。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>磁介质中使用安培环路定理时常用 H。</p></div>
+        <div class="box"><b>易错提醒</b><p>不要把 B 和 H 混为一谈，它们通过介质本构关系联系。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：若闭合路径包围电流 5 A，则 ∮H·dl 等于多少？</summary>
+      <div class="steps">
+        <ol><li>介质中安培环路定理：∮H·dl=I。</li><li>题中 I=5 A。</li><li>直接得到结果。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>∮H·dl=5 A。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>5.3 磁介质本构关系：B、H、M 的联系</h4>
+      <div class="tags"><span class="tag">磁化</span><span class="tag">本构关系</span></div>
+      <p>磁介质在外磁场作用下会磁化。磁化强度 M 描述单位体积内磁矩的合成效果。</p>
+      <div class="formula">B = μ₀(H + M)<br>线性各向同性介质：B = μH = μ<sub>r</sub>μ₀H</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>H 描述由传导电流激发的磁场强度，M 描述材料被磁化后的贡献，B 是综合后的磁感应强度。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>M 是磁化强度。</li><li>μ 是磁导率。</li><li>μᵣ 是相对磁导率。</li><li>μ₀ 是真空磁导率。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>处理磁介质、铁磁材料、磁屏蔽时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>线性关系 B=μH 不适用于所有强非线性铁磁材料的全过程。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：μᵣ=100，H=10 A/m，求 B 大小。</summary>
+      <div class="steps">
+        <ol><li>用 B=μᵣμ₀H。</li><li>代入 μᵣ=100，H=10。</li><li>B=1000μ₀ T。</li><li>若 μ₀=4π×10⁻⁷，则 B≈1.26×10⁻³ T。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>B=1000μ₀ T≈1.26 mT。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>5.4 磁化电流：磁化也等效为电流</h4>
+      <div class="tags"><span class="tag">磁化电流</span><span class="tag">M</span></div>
+      <p>材料内部微观电流环在宏观上产生磁化效果，可以等效为磁化电流体密度和面密度。</p>
+      <div class="formula">J<sub>m</sub> = ∇×M<br>K<sub>m</sub> = M×n</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>如果 M 在空间中有旋转变化，会形成体磁化电流；如果磁化介质有表面，会出现面磁化电流。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>J_m 是磁化电流体密度。</li><li>K_m 是磁化电流面密度。</li><li>M 是磁化强度。</li><li>n 是表面法向单位矢量。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>分析磁化介质等效电流时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>磁化电流不是外接电源提供的传导电流，而是材料内部磁化的等效描述。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：均匀 M 且无空间变化时，J_m 如何？</summary>
+      <div class="steps">
+        <ol><li>J_m=∇×M。</li><li>若 M 均匀不随空间变化，各偏导为 0。</li><li>因此旋度为 0。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>J_m=0，但表面仍可能有 K_m。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>5.5 恒定磁场边界条件</h4>
+      <div class="tags"><span class="tag">边界条件</span><span class="tag">磁介质</span></div>
+      <p>两种磁介质分界面上，B 的法向分量连续；H 的切向分量是否跳变取决于界面传导面电流。</p>
+      <div class="formula">B<sub>1n</sub> = B<sub>2n</sub><br>H<sub>2t</sub> − H<sub>1t</sub> = K<sub>s</sub></div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>B 法向连续来自 ∇·B=0；H 切向条件来自安培环路定理。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>B₁n、B₂n 是法向磁感应强度。</li><li>H₁t、H₂t 是切向磁场强度。</li><li>K_s 是传导面电流密度。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>磁场跨介质边界、磁场折射、磁屏蔽问题使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>无面电流时 H_t 连续；不要误以为所有情况下 H_t 都连续。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：无面电流时 H₁t 与 H₂t 关系？</summary>
+      <div class="steps">
+        <ol><li>边界条件：H₂t−H₁t=K_s。</li><li>无面电流：K_s=0。</li><li>因此 H₂t=H₁t。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>H₁t=H₂t。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>5.6 理想导磁体：μ→∞ 时 H 趋于 0</h4>
+      <div class="tags"><span class="tag">理想导磁体</span><span class="tag">极限思想</span></div>
+      <p>理想导磁体磁导率 μ→∞。若 B 有限，由 B=μH 可知 H 必须趋于 0。</p>
+      <div class="formula">H = <span class="frac"><span>B</span><span>μ</span></span>，当 μ→∞ 且 B 有限时，H→0</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>这和理想导电体中 E→0 的逻辑相似：材料越容易导磁，维持有限 B 所需的 H 越小。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>μ 是磁导率。</li><li>B 是磁感应强度。</li><li>H 是磁场强度。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>理解理想磁边界、强磁导材料近似时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>H 趋于 0 不等于 B 一定为 0，二者不是同一个量。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：μ→∞ 且 B 有限，H 为多少？</summary>
+      <div class="steps">
+        <ol><li>由 B=μH 得 H=B/μ。</li><li>B 有限，μ 无限大。</li><li>有限量除以无限大趋于 0。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>H→0。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4>5.7 磁矩与转矩：载流线圈在磁场中会转动</h4>
+      <div class="tags"><span class="tag">磁矩</span><span class="tag">转矩</span></div>
+      <p>载流线圈相当于一个磁偶极子，放入外磁场后会受到转矩，使磁矩趋向与磁场方向一致。</p>
+      <div class="formula">m = NIS n<br>T = m×B<br>|T| = mB sinθ</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>线圈像一个小指南针，外磁场会让它转到稳定方向。θ=90° 时转矩最大，θ=0° 时稳定平衡。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>m 是磁矩。</li><li>N 是匝数。</li><li>I 是电流。</li><li>S 是面积。</li><li>B 是磁感应强度。</li><li>T 是转矩。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>求载流线圈受力矩、平衡位置时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>线圈平面与 B 平行时，磁矩 m 与 B 垂直，不要把线圈平面方向和法向方向混淆。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：N=100，I=2A，S=0.02m²，B=0.5T，θ=60°，求转矩。</summary>
+      <div class="steps">
+        <ol><li>先求磁矩：m=NIS=100×2×0.02=4 A·m²。</li><li>用 |T|=mBsinθ。</li><li>代入：|T|=4×0.5×sin60°。</li><li>sin60°=√3/2，所以 |T|=√3≈1.73 N·m。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>|T|≈1.73 N·m。</div>
+    </details>
+    
+    </article>
+    
+      </div>
+
+      <div class="review" id="ch5-review">
+        <h3>第 5 章复盘</h3>
+        <p>学完本章后，建议你用一句话复述每个公式的含义，再做一遍每个知识点后面的题目。能说出“为什么用这个公式”，比只会代入更重要。</p>
+      </div>
+    </section>
+    
+
+    <section class="review">
+      <h3>三轮优化检查记录</h3>
+      <p><b>第1轮：结构检查。</b>已将 1–5 章拆成独立章节，每章有章节标题、学习路线、章节联系、章节内目录和复盘。</p>
+      <p><b>第2轮：题目检查。</b>每个知识点均配套一个题目，且不是只给答案，而是有分步解析。</p>
+      <p><b>第3轮：公式与阅读检查。</b>所有除法类公式均使用上下分子/分母结构；页面采用响应式排版，手机端自动单列显示。</p>
+    </section>
+
+    <p class="footer">电磁场与电磁波 1–5章详细学习网页 · 分章目录与步骤解析版</p>
+  </main>
+</div>
+</body>
+</html>

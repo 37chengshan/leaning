@@ -1,1 +1,241 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>第4章 恒定电流场</title><link rel="stylesheet" href="../../assets/style.css"></head><body><main class="wrap"><nav class="nav"><a href="../../index.html">总入口</a><a href="../../mindmaps/ch4.html">本章思维导图</a><a href="../ch3/index.html">上一章</a><a href="../ch5/index.html">下一章</a></nav><section class="hero"><p class="eyebrow">第4章</p><h1>恒定电流场</h1><p>本章研究稳态电流在导电介质中的分布，以及它和静电场的相似性。</p></section><section class="panel"><h2>本章学习路线</h2><ol class="route"><li>电流密度 J</li><li>连续性</li><li>边界条件</li><li>损耗与静电比拟</li></ol></section><article class="kp"><h2>4.1 电流密度</h2><p>J 表示单位面积上通过多少电流。导电介质中电场推动电荷形成电流。</p><div class="formula">J=σE<br>I=∬<sub>S</sub>J·dS</div><div class="practice"><b>题目：</b>σ=2S/m，E=5V/m，求J。<br><b>步骤：</b>J=σE=10A/m²。</div></article><article class="kp"><h2>4.2 连续性</h2><p>稳态时没有电荷堆积，所以电流密度散度为零。</p><div class="formula">∇·J=0</div><div class="practice"><b>题目：</b>闭合面内恒定电流净流出是多少？<br><b>步骤：</b>∯J·dS=0，所以净流出为0。</div></article><article class="kp"><h2>4.3 功率损耗与静电比拟</h2><p>电流流过介质会产生热损耗；恒定电流场和静电场可类比。</p><div class="formula">p=J·E=σE²=<span class="frac"><span>J²</span><span>σ</span></span><br>σ↔ε，J↔D，G↔C</div><div class="practice"><b>题目：</b>σ=4，E=3，求p。<br><b>步骤：</b>p=σE²=4×9=36W/m³。</div></article></main></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="电磁场与电磁波 1-5章完整分章学习网站，包含章节正文、公式、步骤题、思维导图和检索。"/>
+<title>第4章 恒定电流场｜完整章节页</title>
+<link rel="stylesheet" href="../../assets/style.css"/>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+
+<div class="site-shell chapter-page">
+
+<div class="topbar">
+  <div class="breadcrumb"><a href="../../index.html">总入口</a> / 第4章 恒定电流场</div>
+  <nav class="navlinks" aria-label="主导航">
+    <a href="../../index.html">总入口</a>
+    <a href="../../search.html">全站检索</a>
+    <a href="../../formula-index.html">公式索引</a>
+    <a href="../../practice-index.html">题目索引</a>
+    <a href="../../study-roadmap.html">复习路线</a>
+    <a href="../../audit.html">审查报告</a>
+    <a href="../../mindmaps/index.html">总导图</a>
+    <button class="tool-btn" type="button" onclick="toggleTheme()">深色模式</button>
+  </nav>
+</div>
+<div class="chapter-layout">
+  <aside class="local-sidebar">
+    <h2>第4章目录</h2>
+    <a class="strong" href="../../mindmaps/ch4.html">本章独立思维导图</a>
+    <a class="strong" href="../../search.html">全站检索</a>
+    <a class="strong" href="../../formula-index.html">公式索引</a>
+    <a class="strong" href="../../practice-index.html">题目索引</a>
+    <a class="strong" href="#top">本章开头</a>
+    <a class="strong" href="#ch4-s1">知识点区</a>
+    <a href="#kp1">1. 4.1 恒定电流场：电荷持续定向运动形成电流</a><a href="#kp2">2. 4.2 恒定电流场方程：电流连续且无旋电场</a><a href="#kp3">3. 4.3 电流连续性原理：电流线必须闭合</a><a href="#kp4">4. 4.4 恒定电流场边界条件</a><a href="#kp5">5. 4.5 导电介质功率损耗</a><a href="#kp6">6. 4.6 静电比拟：恒定电场与静电场的相似性</a><a href="#kp7">7. 4.7 理想导电体中不存在恒定电场</a>
+    <a class="strong" href="#ch4-review">本章复盘</a>
+    <a class="strong" href="../../index.html">返回总入口</a>
+  </aside>
+  <main id="main">
+    <div class="full-preserve"><b>完整性校验：</b>本章从原网页完整拆出。文本指纹：<code>c1f976fceec8</code>。共 7 个知识点、7 个公式块、7 道步骤题。</div>
+    <section class="progress-box" data-progress-scope>
+      <h3>本章学习进度</h3>
+      <div class="progress-bar"><span data-progress-bar></span></div>
+      <p data-progress-text>0/7 已完成（0%）</p>
+      <div class="progress-row"><label><input type="checkbox" data-progress-key="ch4-kp1"> 1. 4.1 恒定电流场：电荷持续定向运动形成电流</label><a class="pill-link" href="#kp1">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch4-kp2"> 2. 4.2 恒定电流场方程：电流连续且无旋电场</label><a class="pill-link" href="#kp2">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch4-kp3"> 3. 4.3 电流连续性原理：电流线必须闭合</label><a class="pill-link" href="#kp3">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch4-kp4"> 4. 4.4 恒定电流场边界条件</label><a class="pill-link" href="#kp4">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch4-kp5"> 5. 4.5 导电介质功率损耗</label><a class="pill-link" href="#kp5">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch4-kp6"> 6. 4.6 静电比拟：恒定电场与静电场的相似性</label><a class="pill-link" href="#kp6">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch4-kp7"> 7. 4.7 理想导电体中不存在恒定电场</label><a class="pill-link" href="#kp7">跳转</a></div>
+    </section>
+    <span id="top"></span><section class="chapter" id="ch4">
+      <div class="chapter-head">
+        <div class="chapter-num">第 4 章</div>
+        <h2>恒定电流场</h2>
+        <p>本章把电场放进导电介质里，研究稳态电流如何流动、如何满足连续性以及如何产生功率损耗。</p>
+      </div>
+
+      <div class="route-card">
+        <h3>本章独立学习路线</h3>
+        <ol class="route"><li><b>电流密度 J</b><span>理解电流不只是总量，还可以是空间分布。</span></li><li><b>连续性</b><span>掌握 ∇·J=0 的物理意义。</span></li><li><b>边界条件</b><span>学会跨介质处理 J 和 E。</span></li><li><b>静电比拟</b><span>把静电场方法迁移到电流场。</span></li></ol>
+      </div>
+
+      <div class="relation-card">
+        <h3>本章与前后章节的联系</h3>
+        <p>第四章和第二章的数学结构非常像：静电场中 D=εE，电流场中 J=σE。第五章会从电场转向磁场，研究电流如何产生磁场。</p>
+      </div>
+
+      <nav class="chapter-toc">
+        <a href="#ch4-s1">本章知识点</a>
+        <a href="#ch4-review">本章复盘</a>
+        <a href="#top">返回总目录</a>
+      </nav>
+
+      <div id="ch4-s1">
+        
+    <article class="kp">
+      <h4 id="kp1">4.1 恒定电流场：电荷持续定向运动形成电流</h4>
+      <div class="tags"><span class="tag">恒定电流</span><span class="tag">电流密度</span></div>
+      <p>恒定电流场研究稳态导电介质中的电流分布。稳态意味着各处电流不随时间改变。</p>
+      <div class="formula">J = σE<br>I = ∬<sub>S</sub>J·dS</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>J 描述单位面积上通过多少电流；σE 说明导电材料中电场推动电荷形成电流。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>J 是电流密度，单位 A/m²。</li><li>σ 是电导率。</li><li>E 是电场强度。</li><li>I 是通过截面的总电流。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>求导体或导电介质中电流、电流密度时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>J 是面密度意义的矢量，不等同于总电流 I。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：σ=2 S/m，E=5 V/m，求 J。</summary>
+      <div class="steps">
+        <ol><li>使用欧姆定律微分形式 J=σE。</li><li>代入 σ=2，E=5。</li><li>J=10 A/m²，方向与 E 相同。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>J=10 A/m²。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp2">4.2 恒定电流场方程：电流连续且无旋电场</h4>
+      <div class="tags"><span class="tag">场方程</span><span class="tag">连续性</span></div>
+      <p>稳态时没有电荷持续堆积，所以电流密度散度为零；恒定电场仍满足静电型无旋条件。</p>
+      <div class="formula">∇·J = 0<br>∯<sub>S</sub>J·dS = 0<br>∇×E = 0<br>∮<sub>L</sub>E·dl = 0</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>∇·J=0 表示电流线没有起点和终点，不会在某处凭空产生或消失。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>J 是电流密度。</li><li>E 是电场强度。</li><li>S 是闭合面。</li><li>L 是闭合曲线。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>判断稳态电流分布和建立边界条件时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>∇·J=0 不是说 J=0，而是说流入和流出平衡。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：闭合面内恒定电流净流出为多少？</summary>
+      <div class="steps">
+        <ol><li>恒定电流满足 ∯J·dS=0。</li><li>这表示任意闭合面净电流为零。</li><li>所以流入等于流出。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>净流出为 0。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp3">4.3 电流连续性原理：电流线必须闭合</h4>
+      <div class="tags"><span class="tag">连续性</span><span class="tag">物理意义</span></div>
+      <p>恒定电流线没有起点和终点，必须连续闭合。这和静电场线不同，静电场线可以起于正电荷、止于负电荷。</p>
+      <div class="formula">稳态：∇·J = 0</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>如果某处电流线突然终止，就意味着电荷在那里不断堆积，这就不是恒定状态。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>∇·J 表示电流密度的散度。</li><li>等于 0 表示没有净源汇。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>解释导电介质中电流分布、边界法向电流连续时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>不要把电流线和电场线混同。电流线在稳态中闭合，静电场线可起止于电荷。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：为什么稳态导线中电流处处相等？</summary>
+      <div class="steps">
+        <ol><li>若某截面电流大、另一截面小，中间会出现电荷堆积或减少。</li><li>稳态不允许持续堆积。</li><li>所以沿串联导线路径电流连续。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>因为恒定电流满足连续性，不能在导线中途凭空产生或消失。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp4">4.4 恒定电流场边界条件</h4>
+      <div class="tags"><span class="tag">边界条件</span><span class="tag">导电介质</span></div>
+      <p>两种导电介质交界面上，法向电流密度连续，切向电场强度连续。</p>
+      <div class="formula">J<sub>1n</sub> = J<sub>2n</sub><br>E<sub>1t</sub> = E<sub>2t</sub></div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>法向 J 连续保证电流不在界面堆积；切向 E 连续来自恒定电场的无旋性。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>J₁n、J₂n 是界面两侧法向电流密度。</li><li>E₁t、E₂t 是界面两侧切向电场。</li><li>n 是法向，t 是切向。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>分层导电介质、电流折射问题使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>法向连续的是 J，不一定是 E；因为 J=σE，σ 不同时 E_n 会改变。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：σ₁≠σ₂ 且 J₁n=J₂n，E₁n 与 E₂n 一定相等吗？</summary>
+      <div class="steps">
+        <ol><li>由 J=σE 得 J_n=σE_n。</li><li>边界条件为 σ₁E₁n=σ₂E₂n。</li><li>若 σ₁≠σ₂，则 E₁n 一般不等于 E₂n。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>不一定相等。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp5">4.5 导电介质功率损耗</h4>
+      <div class="tags"><span class="tag">功率</span><span class="tag">焦耳热</span></div>
+      <p>电流在导电介质中流动会产生热损耗。单位体积损耗由 J·E 描述。</p>
+      <div class="formula">p = J·E = σE² = <span class="frac"><span>J²</span><span>σ</span></span><br>P = ∭<sub>V</sub>p dV</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>电场推动电荷运动，介质阻碍运动，这部分能量转化为热。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>p 是单位体积功率损耗。</li><li>P 是总功率损耗。</li><li>σ 是电导率。</li><li>V 是导电区域体积。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>求导体发热、介质损耗时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>注意 p 是功率密度，P 才是总功率。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：σ=4 S/m，E=3 V/m，求 p。</summary>
+      <div class="steps">
+        <ol><li>用 p=σE²。</li><li>代入 σ=4，E=3。</li><li>p=4×9=36 W/m³。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>p=36 W/m³。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp6">4.6 静电比拟：恒定电场与静电场的相似性</h4>
+      <div class="tags"><span class="tag">比拟</span><span class="tag">电导电容</span></div>
+      <p>均匀导电媒质中的恒定电场，与均匀介质无源区中的静电场形式相似，可以用静电问题的结果类比电流问题。</p>
+      <div class="formula">σ ↔ ε<br>J ↔ D<br>G ↔ C<br>G = (σ/ε)C</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>把电导率 σ 看成介电常数 ε 的对应物，把电流密度 J 看成电位移 D 的对应物，就能迁移解法。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>σ 是电导率。</li><li>ε 是介电常数。</li><li>G 是电导。</li><li>C 是电容。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>几何形状相同、边界条件相同时，用已知电容推电导。</p></div>
+        <div class="box"><b>易错提醒</b><p>比拟要求边界条件和几何结构对应，不能随意套。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：某结构 C=2 pF，σ/ε=10⁶ s⁻¹，求 G。</summary>
+      <div class="steps">
+        <ol><li>用 G=(σ/ε)C。</li><li>C=2×10⁻¹² F。</li><li>G=10⁶×2×10⁻¹²=2×10⁻⁶ S。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>G=2 μS。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp7">4.7 理想导电体中不存在恒定电场</h4>
+      <div class="tags"><span class="tag">理想导体</span><span class="tag">极限思想</span></div>
+      <p>理想导电体电导率 σ→∞。若有限电流密度 J 存在，由 J=σE 可知 E 必须趋于 0。</p>
+      <div class="formula">E = <span class="frac"><span>J</span><span>σ</span></span>，当 σ→∞ 且 J 有限时，E→0</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>理想导体几乎不需要电场就能维持电流，因此内部恒定电场为零。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>σ 是电导率。</li><li>J 是电流密度。</li><li>E 是电场强度。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>判断理想导体、电磁边界理想化时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>现实导体不是 σ 无限大，实际导线内部可以有很小电场。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：理想导体中若 J 有限，E 为多少？</summary>
+      <div class="steps">
+        <ol><li>由 J=σE 得 E=J/σ。</li><li>理想导体 σ→∞。</li><li>有限 J 除以无限大趋于 0。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>E=0。</div>
+    </details>
+    
+    </article>
+    
+      </div>
+
+      <div class="review" id="ch4-review">
+        <h3>第 4 章复盘</h3>
+        <p>学完本章后，建议你用一句话复述每个公式的含义，再做一遍每个知识点后面的题目。能说出“为什么用这个公式”，比只会代入更重要。</p>
+      </div>
+    </section>
+  </main>
+</div>
+</div>
+
+<script src="../../assets/site.js"></script>
+</body>
+</html>

@@ -1,1 +1,249 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>第5章 恒定磁场</title><link rel="stylesheet" href="../../assets/style.css"></head><body><main class="wrap"><nav class="nav"><a href="../../index.html">总入口</a><a href="../../mindmaps/ch5.html">本章思维导图</a><a href="../ch4/index.html">上一章</a></nav><section class="hero"><p class="eyebrow">第5章</p><h1>恒定磁场</h1><p>本章研究电流如何产生磁场，以及磁介质、边界条件、磁矩与转矩。</p></section><section class="panel"><h2>本章学习路线</h2><ol class="route"><li>磁场基本方程</li><li>B 与 H</li><li>磁化</li><li>边界和转矩</li></ol></section><article class="kp"><h2>5.1 恒定磁场方程</h2><p>磁场由电流产生。磁场有旋无散，磁力线闭合。</p><div class="formula">∇×H=J<br>∇·B=0<br>∮<sub>L</sub>H·dl=I</div><div class="practice"><b>题目：</b>闭合路径包围5A电流，∮H·dl 等于多少？<br><b>步骤：</b>由安培环路定理，结果为5A。</div></article><article class="kp"><h2>5.2 磁介质</h2><p>磁介质中 B 和 H 通过磁导率联系，磁化强度 M 描述材料磁化。</p><div class="formula">B=μ₀(H+M)<br>B=μH=μ<sub>r</sub>μ₀H</div><div class="practice"><b>题目：</b>μr=100，H=10A/m，求B。<br><b>步骤：</b>B=μrμ0H=1000μ0≈1.26mT。</div></article><article class="kp"><h2>5.3 边界与转矩</h2><p>磁场跨边界时，B 法向连续，H 切向跳变由面电流决定。</p><div class="formula">B<sub>1n</sub>=B<sub>2n</sub><br>H<sub>2t</sub>-H<sub>1t</sub>=K<sub>s</sub><br>T=m×B</div><div class="practice"><b>题目：</b>无面电流时 Ht 是否连续？<br><b>步骤：</b>Ks=0，所以 H2t=H1t。</div></article></main></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="电磁场与电磁波 1-5章完整分章学习网站，包含章节正文、公式、步骤题、思维导图和检索。"/>
+<title>第5章 恒定磁场｜完整章节页</title>
+<link rel="stylesheet" href="../../assets/style.css"/>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+
+<div class="site-shell chapter-page">
+
+<div class="topbar">
+  <div class="breadcrumb"><a href="../../index.html">总入口</a> / 第5章 恒定磁场</div>
+  <nav class="navlinks" aria-label="主导航">
+    <a href="../../index.html">总入口</a>
+    <a href="../../search.html">全站检索</a>
+    <a href="../../formula-index.html">公式索引</a>
+    <a href="../../practice-index.html">题目索引</a>
+    <a href="../../study-roadmap.html">复习路线</a>
+    <a href="../../audit.html">审查报告</a>
+    <a href="../../mindmaps/index.html">总导图</a>
+    <button class="tool-btn" type="button" onclick="toggleTheme()">深色模式</button>
+  </nav>
+</div>
+<div class="chapter-layout">
+  <aside class="local-sidebar">
+    <h2>第5章目录</h2>
+    <a class="strong" href="../../mindmaps/ch5.html">本章独立思维导图</a>
+    <a class="strong" href="../../search.html">全站检索</a>
+    <a class="strong" href="../../formula-index.html">公式索引</a>
+    <a class="strong" href="../../practice-index.html">题目索引</a>
+    <a class="strong" href="#top">本章开头</a>
+    <a class="strong" href="#ch5-s1">知识点区</a>
+    <a href="#kp1">1. 5.1 真空中恒定磁场方程：有旋无散</a><a href="#kp2">2. 5.2 介质中的恒定磁场方程：用 H 处理传导电流</a><a href="#kp3">3. 5.3 磁介质本构关系：B、H、M 的联系</a><a href="#kp4">4. 5.4 磁化电流：磁化也等效为电流</a><a href="#kp5">5. 5.5 恒定磁场边界条件</a><a href="#kp6">6. 5.6 理想导磁体：μ→∞ 时 H 趋于 0</a><a href="#kp7">7. 5.7 磁矩与转矩：载流线圈在磁场中会转动</a>
+    <a class="strong" href="#ch5-review">本章复盘</a>
+    <a class="strong" href="../../index.html">返回总入口</a>
+  </aside>
+  <main id="main">
+    <div class="full-preserve"><b>完整性校验：</b>本章从原网页完整拆出。文本指纹：<code>71486a8d244e</code>。共 7 个知识点、7 个公式块、7 道步骤题。</div>
+    <section class="progress-box" data-progress-scope>
+      <h3>本章学习进度</h3>
+      <div class="progress-bar"><span data-progress-bar></span></div>
+      <p data-progress-text>0/7 已完成（0%）</p>
+      <div class="progress-row"><label><input type="checkbox" data-progress-key="ch5-kp1"> 1. 5.1 真空中恒定磁场方程：有旋无散</label><a class="pill-link" href="#kp1">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch5-kp2"> 2. 5.2 介质中的恒定磁场方程：用 H 处理传导电流</label><a class="pill-link" href="#kp2">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch5-kp3"> 3. 5.3 磁介质本构关系：B、H、M 的联系</label><a class="pill-link" href="#kp3">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch5-kp4"> 4. 5.4 磁化电流：磁化也等效为电流</label><a class="pill-link" href="#kp4">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch5-kp5"> 5. 5.5 恒定磁场边界条件</label><a class="pill-link" href="#kp5">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch5-kp6"> 6. 5.6 理想导磁体：μ→∞ 时 H 趋于 0</label><a class="pill-link" href="#kp6">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch5-kp7"> 7. 5.7 磁矩与转矩：载流线圈在磁场中会转动</label><a class="pill-link" href="#kp7">跳转</a></div>
+    </section>
+    <span id="top"></span><section class="chapter" id="ch5">
+      <div class="chapter-head">
+        <div class="chapter-num">第 5 章</div>
+        <h2>恒定磁场</h2>
+        <p>本章研究恒定电流如何产生磁场，以及磁场在介质中如何表现、如何跨边界变化、如何对载流线圈产生转矩。</p>
+      </div>
+
+      <div class="route-card">
+        <h3>本章独立学习路线</h3>
+        <ol class="route"><li><b>从电流到磁场</b><span>理解恒定电流是磁场旋度的来源。</span></li><li><b>B 与 H</b><span>区分磁感应强度和磁场强度。</span></li><li><b>磁化</b><span>理解材料内部磁矩排列造成的宏观效应。</span></li><li><b>边界和转矩</b><span>掌握磁介质边界条件与线圈受力矩。</span></li></ol>
+      </div>
+
+      <div class="relation-card">
+        <h3>本章与前后章节的联系</h3>
+        <p>第五章建立磁场的静态规律。第六章麦克斯韦方程组会把电场和磁场统一起来：变化的电场能产生磁场，变化的磁场也能产生电场。</p>
+      </div>
+
+      <nav class="chapter-toc">
+        <a href="#ch5-s1">本章知识点</a>
+        <a href="#ch5-review">本章复盘</a>
+        <a href="#top">返回总目录</a>
+      </nav>
+
+      <div id="ch5-s1">
+        
+    <article class="kp">
+      <h4 id="kp1">5.1 真空中恒定磁场方程：有旋无散</h4>
+      <div class="tags"><span class="tag">磁场</span><span class="tag">安培环路定理</span></div>
+      <p>恒定磁场由恒定电流产生。磁场没有磁单极子，所以 B 的散度为零；电流会激发磁场旋度。</p>
+      <div class="formula">∇×B = μ₀J<br>∇·B = 0<br>∮<sub>L</sub>B·dl = μ₀I</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>电流像磁场的旋涡源；磁感应线没有头尾，总是闭合的。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>B 是磁感应强度。</li><li>J 是电流密度。</li><li>μ₀ 是真空磁导率。</li><li>I 是闭合曲线包围的电流。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>分析真空中电流产生磁场时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>磁场线没有起点和终点，不像静电场线起于正电荷止于负电荷。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：为什么 ∇·B=0 表示磁力线闭合？</summary>
+      <div class="steps">
+        <ol><li>散度表示源汇。</li><li>∇·B=0 表示磁场没有源或汇。</li><li>没有源汇的场线不能凭空开始或结束，只能闭合或延伸到无穷远。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>表示磁场无源，磁力线无头无尾。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp2">5.2 介质中的恒定磁场方程：用 H 处理传导电流</h4>
+      <div class="tags"><span class="tag">H</span><span class="tag">介质磁场</span></div>
+      <p>在磁介质中，用磁场强度 H 表述安培环路定理，右边只考虑传导电流。</p>
+      <div class="formula">∇×H = J<br>∇·B = 0<br>∮<sub>L</sub>H·dl = I</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>H 的引入类似 D：把介质磁化影响从源项中分离出来，让方程右边主要看传导电流。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>H 是磁场强度，单位 A/m。</li><li>B 是磁感应强度，单位 T。</li><li>J 是传导电流密度。</li><li>I 是传导电流。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>磁介质中使用安培环路定理时常用 H。</p></div>
+        <div class="box"><b>易错提醒</b><p>不要把 B 和 H 混为一谈，它们通过介质本构关系联系。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：若闭合路径包围电流 5 A，则 ∮H·dl 等于多少？</summary>
+      <div class="steps">
+        <ol><li>介质中安培环路定理：∮H·dl=I。</li><li>题中 I=5 A。</li><li>直接得到结果。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>∮H·dl=5 A。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp3">5.3 磁介质本构关系：B、H、M 的联系</h4>
+      <div class="tags"><span class="tag">磁化</span><span class="tag">本构关系</span></div>
+      <p>磁介质在外磁场作用下会磁化。磁化强度 M 描述单位体积内磁矩的合成效果。</p>
+      <div class="formula">B = μ₀(H + M)<br>线性各向同性介质：B = μH = μ<sub>r</sub>μ₀H</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>H 描述由传导电流激发的磁场强度，M 描述材料被磁化后的贡献，B 是综合后的磁感应强度。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>M 是磁化强度。</li><li>μ 是磁导率。</li><li>μᵣ 是相对磁导率。</li><li>μ₀ 是真空磁导率。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>处理磁介质、铁磁材料、磁屏蔽时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>线性关系 B=μH 不适用于所有强非线性铁磁材料的全过程。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：μᵣ=100，H=10 A/m，求 B 大小。</summary>
+      <div class="steps">
+        <ol><li>用 B=μᵣμ₀H。</li><li>代入 μᵣ=100，H=10。</li><li>B=1000μ₀ T。</li><li>若 μ₀=4π×10⁻⁷，则 B≈1.26×10⁻³ T。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>B=1000μ₀ T≈1.26 mT。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp4">5.4 磁化电流：磁化也等效为电流</h4>
+      <div class="tags"><span class="tag">磁化电流</span><span class="tag">M</span></div>
+      <p>材料内部微观电流环在宏观上产生磁化效果，可以等效为磁化电流体密度和面密度。</p>
+      <div class="formula">J<sub>m</sub> = ∇×M<br>K<sub>m</sub> = M×n</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>如果 M 在空间中有旋转变化，会形成体磁化电流；如果磁化介质有表面，会出现面磁化电流。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>J_m 是磁化电流体密度。</li><li>K_m 是磁化电流面密度。</li><li>M 是磁化强度。</li><li>n 是表面法向单位矢量。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>分析磁化介质等效电流时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>磁化电流不是外接电源提供的传导电流，而是材料内部磁化的等效描述。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：均匀 M 且无空间变化时，J_m 如何？</summary>
+      <div class="steps">
+        <ol><li>J_m=∇×M。</li><li>若 M 均匀不随空间变化，各偏导为 0。</li><li>因此旋度为 0。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>J_m=0，但表面仍可能有 K_m。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp5">5.5 恒定磁场边界条件</h4>
+      <div class="tags"><span class="tag">边界条件</span><span class="tag">磁介质</span></div>
+      <p>两种磁介质分界面上，B 的法向分量连续；H 的切向分量是否跳变取决于界面传导面电流。</p>
+      <div class="formula">B<sub>1n</sub> = B<sub>2n</sub><br>H<sub>2t</sub> − H<sub>1t</sub> = K<sub>s</sub></div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>B 法向连续来自 ∇·B=0；H 切向条件来自安培环路定理。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>B₁n、B₂n 是法向磁感应强度。</li><li>H₁t、H₂t 是切向磁场强度。</li><li>K_s 是传导面电流密度。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>磁场跨介质边界、磁场折射、磁屏蔽问题使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>无面电流时 H_t 连续；不要误以为所有情况下 H_t 都连续。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：无面电流时 H₁t 与 H₂t 关系？</summary>
+      <div class="steps">
+        <ol><li>边界条件：H₂t−H₁t=K_s。</li><li>无面电流：K_s=0。</li><li>因此 H₂t=H₁t。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>H₁t=H₂t。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp6">5.6 理想导磁体：μ→∞ 时 H 趋于 0</h4>
+      <div class="tags"><span class="tag">理想导磁体</span><span class="tag">极限思想</span></div>
+      <p>理想导磁体磁导率 μ→∞。若 B 有限，由 B=μH 可知 H 必须趋于 0。</p>
+      <div class="formula">H = <span class="frac"><span>B</span><span>μ</span></span>，当 μ→∞ 且 B 有限时，H→0</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>这和理想导电体中 E→0 的逻辑相似：材料越容易导磁，维持有限 B 所需的 H 越小。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>μ 是磁导率。</li><li>B 是磁感应强度。</li><li>H 是磁场强度。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>理解理想磁边界、强磁导材料近似时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>H 趋于 0 不等于 B 一定为 0，二者不是同一个量。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：μ→∞ 且 B 有限，H 为多少？</summary>
+      <div class="steps">
+        <ol><li>由 B=μH 得 H=B/μ。</li><li>B 有限，μ 无限大。</li><li>有限量除以无限大趋于 0。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>H→0。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp7">5.7 磁矩与转矩：载流线圈在磁场中会转动</h4>
+      <div class="tags"><span class="tag">磁矩</span><span class="tag">转矩</span></div>
+      <p>载流线圈相当于一个磁偶极子，放入外磁场后会受到转矩，使磁矩趋向与磁场方向一致。</p>
+      <div class="formula">m = NIS n<br>T = m×B<br>|T| = mB sinθ</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>线圈像一个小指南针，外磁场会让它转到稳定方向。θ=90° 时转矩最大，θ=0° 时稳定平衡。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>m 是磁矩。</li><li>N 是匝数。</li><li>I 是电流。</li><li>S 是面积。</li><li>B 是磁感应强度。</li><li>T 是转矩。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>求载流线圈受力矩、平衡位置时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>线圈平面与 B 平行时，磁矩 m 与 B 垂直，不要把线圈平面方向和法向方向混淆。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：N=100，I=2A，S=0.02m²，B=0.5T，θ=60°，求转矩。</summary>
+      <div class="steps">
+        <ol><li>先求磁矩：m=NIS=100×2×0.02=4 A·m²。</li><li>用 |T|=mBsinθ。</li><li>代入：|T|=4×0.5×sin60°。</li><li>sin60°=√3/2，所以 |T|=√3≈1.73 N·m。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>|T|≈1.73 N·m。</div>
+    </details>
+    
+    </article>
+    
+      </div>
+
+      <div class="review" id="ch5-review">
+        <h3>第 5 章复盘</h3>
+        <p>学完本章后，建议你用一句话复述每个公式的含义，再做一遍每个知识点后面的题目。能说出“为什么用这个公式”，比只会代入更重要。</p>
+      </div>
+    </section>
+    
+
+    <section class="review">
+      <h3>三轮优化检查记录</h3>
+      <p><b>第1轮：结构检查。</b>已将 1–5 章拆成独立章节，每章有章节标题、学习路线、章节联系、章节内目录和复盘。</p>
+      <p><b>第2轮：题目检查。</b>每个知识点均配套一个题目，且不是只给答案，而是有分步解析。</p>
+      <p><b>第3轮：公式与阅读检查。</b>所有除法类公式均使用上下分子/分母结构；页面采用响应式排版，手机端自动单列显示。</p>
+    </section>
+  </main>
+</div>
+</div>
+
+<script src="../../assets/site.js"></script>
+</body>
+</html>

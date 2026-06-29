@@ -1,1 +1,197 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>第3章 静电场边值问题</title><link rel="stylesheet" href="../../assets/style.css"></head><body><main class="wrap"><nav class="nav"><a href="../../index.html">总入口</a><a href="../../mindmaps/ch3.html">本章思维导图</a><a href="../ch2/index.html">上一章</a><a href="../ch4/index.html">下一章</a></nav><section class="hero"><p class="eyebrow">第3章</p><h1>静电场边值问题</h1><p>本章从边界条件出发求电位 φ，再由 E=-∇φ 求电场。</p></section><section class="panel"><h2>本章学习路线</h2><ol class="route"><li>边值问题思想</li><li>泊松/拉普拉斯</li><li>三类边界条件</li><li>唯一性与镜像法</li></ol></section><article class="kp"><h2>3.1 泊松方程与拉普拉斯方程</h2><p>有电荷源用泊松方程，无电荷区域用拉普拉斯方程。无源不等于无电场。</p><div class="formula">∇²φ=-<span class="frac"><span>ρ</span><span>ε</span></span><br>ρ=0 时：∇²φ=0</div><div class="practice"><b>题目：</b>无电荷区域满足什么方程？<br><b>步骤：</b>ρ=0 代入泊松方程，得到 ∇²φ=0。</div></article><article class="kp"><h2>3.2 三类边界条件</h2><p>狄里赫利给电位，诺依曼给法向导数，混合给二者组合。</p><div class="formula">φ|<sub>S</sub>=f<br><span class="frac"><span>∂φ</span><span>∂n</span></span>|<sub>S</sub>=g<br>aφ+b<span class="frac"><span>∂φ</span><span>∂n</span></span>=h</div><div class="practice"><b>题目：</b>导体表面电位 V0 属于哪类？<br><b>步骤：</b>直接给 φ，所以是狄里赫利条件。</div></article><article class="kp"><h2>3.3 唯一性与镜像法</h2><p>只要区域方程和边界条件一致，解唯一。镜像法就是构造等效电荷让边界自动满足。</p><div class="practice"><b>题目：</b>接地无限导体平面旁点电荷 q 的镜像是什么？<br><b>步骤：</b>在平面对称位置放 -q，使平面电位为 0。</div></article></main></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="电磁场与电磁波 1-5章完整分章学习网站，包含章节正文、公式、步骤题、思维导图和检索。"/>
+<title>第3章 静电场边值问题｜完整章节页</title>
+<link rel="stylesheet" href="../../assets/style.css"/>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+
+<div class="site-shell chapter-page">
+
+<div class="topbar">
+  <div class="breadcrumb"><a href="../../index.html">总入口</a> / 第3章 静电场边值问题</div>
+  <nav class="navlinks" aria-label="主导航">
+    <a href="../../index.html">总入口</a>
+    <a href="../../search.html">全站检索</a>
+    <a href="../../formula-index.html">公式索引</a>
+    <a href="../../practice-index.html">题目索引</a>
+    <a href="../../study-roadmap.html">复习路线</a>
+    <a href="../../audit.html">审查报告</a>
+    <a href="../../mindmaps/index.html">总导图</a>
+    <button class="tool-btn" type="button" onclick="toggleTheme()">深色模式</button>
+  </nav>
+</div>
+<div class="chapter-layout">
+  <aside class="local-sidebar">
+    <h2>第3章目录</h2>
+    <a class="strong" href="../../mindmaps/ch3.html">本章独立思维导图</a>
+    <a class="strong" href="../../search.html">全站检索</a>
+    <a class="strong" href="../../formula-index.html">公式索引</a>
+    <a class="strong" href="../../practice-index.html">题目索引</a>
+    <a class="strong" href="#top">本章开头</a>
+    <a class="strong" href="#ch3-s1">知识点区</a>
+    <a href="#kp1">1. 3.1 静电场边值问题：已知边界，求空间电位</a><a href="#kp2">2. 3.2 泊松方程与拉普拉斯方程</a><a href="#kp3">3. 3.3 三类边界条件：狄里赫利、诺依曼、混合</a><a href="#kp4">4. 3.4 唯一性定理：解只要满足方程和边界，就不会错</a><a href="#kp5">5. 3.5 镜像法：用等效电荷代替导体边界影响</a>
+    <a class="strong" href="#ch3-review">本章复盘</a>
+    <a class="strong" href="../../index.html">返回总入口</a>
+  </aside>
+  <main id="main">
+    <div class="full-preserve"><b>完整性校验：</b>本章从原网页完整拆出。文本指纹：<code>6c30e1e69e8d</code>。共 5 个知识点、5 个公式块、5 道步骤题。</div>
+    <section class="progress-box" data-progress-scope>
+      <h3>本章学习进度</h3>
+      <div class="progress-bar"><span data-progress-bar></span></div>
+      <p data-progress-text>0/5 已完成（0%）</p>
+      <div class="progress-row"><label><input type="checkbox" data-progress-key="ch3-kp1"> 1. 3.1 静电场边值问题：已知边界，求空间电位</label><a class="pill-link" href="#kp1">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch3-kp2"> 2. 3.2 泊松方程与拉普拉斯方程</label><a class="pill-link" href="#kp2">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch3-kp3"> 3. 3.3 三类边界条件：狄里赫利、诺依曼、混合</label><a class="pill-link" href="#kp3">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch3-kp4"> 4. 3.4 唯一性定理：解只要满足方程和边界，就不会错</label><a class="pill-link" href="#kp4">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch3-kp5"> 5. 3.5 镜像法：用等效电荷代替导体边界影响</label><a class="pill-link" href="#kp5">跳转</a></div>
+    </section>
+    <span id="top"></span><section class="chapter" id="ch3">
+      <div class="chapter-head">
+        <div class="chapter-num">第 3 章</div>
+        <h2>静电场边值问题</h2>
+        <p>本章把第二章的电位 φ 作为主角，学习如何通过边界条件求空间电位。</p>
+      </div>
+
+      <div class="route-card">
+        <h3>本章独立学习路线</h3>
+        <ol class="route"><li><b>从 E 转向 φ</b><span>用电位简化静电场求解。</span></li><li><b>判断方程</b><span>有源用泊松，无源用拉普拉斯。</span></li><li><b>识别边界条件</b><span>分清电位、法向导数和混合条件。</span></li><li><b>使用镜像法</b><span>用等效电荷处理特殊边界。</span></li></ol>
+      </div>
+
+      <div class="relation-card">
+        <h3>本章与前后章节的联系</h3>
+        <p>第三章承接第二章的电位与边界条件。第四章会进入恒定电流场，它和静电场有很强的数学相似性，可以进行静电比拟。</p>
+      </div>
+
+      <nav class="chapter-toc">
+        <a href="#ch3-s1">本章知识点</a>
+        <a href="#ch3-review">本章复盘</a>
+        <a href="#top">返回总目录</a>
+      </nav>
+
+      <div id="ch3-s1">
+        
+    <article class="kp">
+      <h4 id="kp1">3.1 静电场边值问题：已知边界，求空间电位</h4>
+      <div class="tags"><span class="tag">边值问题</span><span class="tag">电位</span></div>
+      <p>边值问题就是：边界上的电位或电位导数已知，要求区域内部每一点的电位分布。</p>
+      <div class="formula">已知边界条件 → 求 φ(x,y,z) → 再由 E = −∇φ 求电场</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>它像知道房间墙壁温度，求房间内部温度分布；静电场中则是知道边界电位，求空间电位。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>φ 是待求电位。</li><li>边界条件是求解所需的约束。</li><li>E=−∇φ 用于由电位求电场。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>遇到导体边界、电位已知、空间区域待求时使用边值问题思想。</p></div>
+        <div class="box"><b>易错提醒</b><p>边值问题不是只求某一点，而是求整个区域的函数分布。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：已知导体球表面电位，求球外电位属于什么问题？</summary>
+      <div class="steps">
+        <ol><li>题目给了边界上的电位。</li><li>要求空间区域中的电位。</li><li>这符合边值问题定义。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>属于静电场边值问题，具体是第一类边界条件问题。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp2">3.2 泊松方程与拉普拉斯方程</h4>
+      <div class="tags"><span class="tag">微分方程</span><span class="tag">电位</span></div>
+      <p>电位 φ 满足的方程取决于区域内有没有电荷。有电荷源时是泊松方程；无电荷区域是拉普拉斯方程。</p>
+      <div class="formula">泊松方程：∇²φ = −<span class="frac"><span>ρ</span><span>ε</span></span><br>拉普拉斯方程：∇²φ = 0</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>ρ 是电荷源。如果区域里有电荷，电位会被源项驱动；如果没有电荷，电位只由边界决定。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>∇² 是拉普拉斯算子。</li><li>ρ 是体电荷密度。</li><li>ε 是介电常数。</li><li>φ 是电位。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>判断区域有源或无源时选择对应方程。</p></div>
+        <div class="box"><b>易错提醒</b><p>不要把“空间里有电场”和“区域内有电荷”混淆。无源区也可以有电场。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：无电荷区域中电位满足什么方程？</summary>
+      <div class="steps">
+        <ol><li>无电荷说明 ρ=0。</li><li>泊松方程 ∇²φ=−ρ/ε。</li><li>代入 ρ=0，得到 ∇²φ=0。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>满足拉普拉斯方程 ∇²φ=0。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp3">3.3 三类边界条件：狄里赫利、诺依曼、混合</h4>
+      <div class="tags"><span class="tag">边界条件</span><span class="tag">分类</span></div>
+      <p>边界条件告诉你边界上已知什么。已知电位是第一类；已知法向导数是第二类；已知二者组合是第三类。</p>
+      <div class="formula">第一类：φ|<sub>S</sub>=f₁(r)<br>第二类：<span class="frac"><span>∂φ</span><span>∂n</span></span>|<sub>S</sub>=f₂(r)<br>第三类：aφ + b<span class="frac"><span>∂φ</span><span>∂n</span></span> = f₃(r)</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>第一类像告诉你海拔高度；第二类像告诉你坡度；第三类是高度和坡度的组合约束。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>S 是边界。</li><li>∂φ/∂n 是沿法线方向的变化率。</li><li>f₁、f₂、f₃ 是边界上给定函数。</li><li>a、b 是系数。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>读题时先判断给的是电位、场的法向分量，还是二者组合。</p></div>
+        <div class="box"><b>易错提醒</b><p>法向导数和电场法向有关，因为 E_n=−∂φ/∂n。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：导体表面电位给定为 V₀，属于哪类边界条件？</summary>
+      <div class="steps">
+        <ol><li>题目直接给出边界电位。</li><li>第一类边界条件定义为 φ|S=f。</li><li>因此属于狄里赫利条件。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>属于第一类边界条件，也叫狄里赫利条件。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp4">3.4 唯一性定理：解只要满足方程和边界，就不会错</h4>
+      <div class="tags"><span class="tag">唯一性</span><span class="tag">理论基础</span></div>
+      <p>唯一性定理说明，在给定区域内，只要电位满足泊松/拉普拉斯方程，并满足边界条件，那么解就是唯一的。</p>
+      <div class="formula">方程 + 边界条件 → 唯一电位分布</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>这给镜像法等方法提供了底气：不管你怎么构造，只要边界和区域方程对，结果就是原问题的解。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>方程描述区域内部规律。</li><li>边界条件描述区域边缘约束。</li><li>唯一性说明不会存在两个不同正确解。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>证明镜像法、判断构造解是否正确时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>唯一性定理不一定告诉你怎么找解，但告诉你找到后为什么可信。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：为什么镜像法只需检查边界条件？</summary>
+      <div class="steps">
+        <ol><li>镜像法构造的新电荷只放在求解区域外。</li><li>求解区域内仍满足原来的方程。</li><li>如果边界条件也相同，根据唯一性定理，区域内解相同。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>因为唯一性定理保证满足同一方程和同一边界条件的解唯一。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp5">3.5 镜像法：用等效电荷代替导体边界影响</h4>
+      <div class="tags"><span class="tag">镜像法</span><span class="tag">技巧</span></div>
+      <p>镜像法把复杂导体边界的作用，用边界外的等效电荷代替，使原问题变成无界空间中的电荷叠加问题。</p>
+      <div class="formula">原电荷 + 镜像电荷 → 满足边界条件的等效问题</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>镜像电荷不是真实存在的，它只是数学替身。它的作用是让导体表面电位条件被自动满足。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>原电荷是真实电荷。</li><li>镜像电荷是构造的等效电荷。</li><li>边界条件是镜像法成功的关键。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>点电荷与无限大接地导体平面、导体球、导体圆柱等问题常用。</p></div>
+        <div class="box"><b>易错提醒</b><p>镜像电荷只能用于求解区域外或导体内部的数学构造，不能把它当真实电荷。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：点电荷 q 距接地无限导体平面 a，镜像电荷怎么放？</summary>
+      <div class="steps">
+        <ol><li>接地平面要求平面上电位为 0。</li><li>在平面对称位置放一个 −q。</li><li>原电荷和平面另一侧镜像电荷在平面上产生等大反号电位。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>在平面另一侧对称位置放镜像电荷 −q。</div>
+    </details>
+    
+    </article>
+    
+      </div>
+
+      <div class="review" id="ch3-review">
+        <h3>第 3 章复盘</h3>
+        <p>学完本章后，建议你用一句话复述每个公式的含义，再做一遍每个知识点后面的题目。能说出“为什么用这个公式”，比只会代入更重要。</p>
+      </div>
+    </section>
+  </main>
+</div>
+</div>
+
+<script src="../../assets/site.js"></script>
+</body>
+</html>

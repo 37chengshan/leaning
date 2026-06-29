@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="电磁场与电磁波 1-5章完整分章学习网站，包含章节正文、公式、步骤题、思维导图和检索。"/>
+<title>复习路线｜电磁场与电磁波</title>
+<link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+
+<div class="site-shell">
+
+<div class="topbar">
+  <div class="breadcrumb"><a href="index.html">总入口</a> / 复习路线</div>
+  <nav class="navlinks" aria-label="主导航">
+    <a href="index.html">总入口</a>
+    <a href="search.html">全站检索</a>
+    <a href="formula-index.html">公式索引</a>
+    <a href="practice-index.html">题目索引</a>
+    <a href="study-roadmap.html">复习路线</a>
+    <a href="audit.html">审查报告</a>
+    <a href="mindmaps/index.html">总导图</a>
+    <button class="tool-btn" type="button" onclick="toggleTheme()">深色模式</button>
+  </nav>
+</div>
+<main id="main">
+<section class="hero"><span class="eyebrow">复习路线</span><h1>1–5章学习路线总览</h1><p class="subtitle">建议先用总导图建立框架，再按章节路线学习，最后用公式索引和题目索引复盘。</p></section>
+<div class="index-grid">
+<section class="index-card">
+  <h2>第1章｜矢量分析基础</h2>
+  <p>本章是后面所有电场、磁场公式的数学语言。先理解场、矢量、∇、梯度、散度、旋度，后面才不会只是在背公式。</p>
+  <ol><li>场与矢量 知道物理量如何分布在空间里。</li><li>∇ 算子 理解空间变化如何被数学表达。</li><li>梯度/散度/旋度 分别理解变化最快、源汇、旋转。</li><li>积分定理 把局部性质和整体性质联系起来。</li></ol>
+  <div class="action-row"><a class="pill-link" href="chapters/ch1/index.html">学习正文</a><a class="pill-link" href="mindmaps/ch1.html">看导图</a></div>
+</section>
+<section class="index-card">
+  <h2>第2章｜静电场</h2>
+  <p>本章把第一章的数学工具用到电荷和电场中，核心是 E、φ、D、边界条件和静电能量。</p>
+  <ol><li>电场强度 先理解电场是单位正电荷受到的力。</li><li>电位 再用标量 φ 简化静电场计算。</li><li>介质与导体 理解材料对电场的影响。</li><li>边界与能量 掌握分界面和储能问题。</li></ol>
+  <div class="action-row"><a class="pill-link" href="chapters/ch2/index.html">学习正文</a><a class="pill-link" href="mindmaps/ch2.html">看导图</a></div>
+</section>
+<section class="index-card">
+  <h2>第3章｜静电场边值问题</h2>
+  <p>本章把第二章的电位 φ 作为主角，学习如何通过边界条件求空间电位。</p>
+  <ol><li>从 E 转向 φ 用电位简化静电场求解。</li><li>判断方程 有源用泊松，无源用拉普拉斯。</li><li>识别边界条件 分清电位、法向导数和混合条件。</li><li>使用镜像法 用等效电荷处理特殊边界。</li></ol>
+  <div class="action-row"><a class="pill-link" href="chapters/ch3/index.html">学习正文</a><a class="pill-link" href="mindmaps/ch3.html">看导图</a></div>
+</section>
+<section class="index-card">
+  <h2>第4章｜恒定电流场</h2>
+  <p>本章把电场放进导电介质里，研究稳态电流如何流动、如何满足连续性以及如何产生功率损耗。</p>
+  <ol><li>电流密度 J 理解电流不只是总量，还可以是空间分布。</li><li>连续性 掌握 ∇·J=0 的物理意义。</li><li>边界条件 学会跨介质处理 J 和 E。</li><li>静电比拟 把静电场方法迁移到电流场。</li></ol>
+  <div class="action-row"><a class="pill-link" href="chapters/ch4/index.html">学习正文</a><a class="pill-link" href="mindmaps/ch4.html">看导图</a></div>
+</section>
+<section class="index-card">
+  <h2>第5章｜恒定磁场</h2>
+  <p>本章研究恒定电流如何产生磁场，以及磁场在介质中如何表现、如何跨边界变化、如何对载流线圈产生转矩。</p>
+  <ol><li>从电流到磁场 理解恒定电流是磁场旋度的来源。</li><li>B 与 H 区分磁感应强度和磁场强度。</li><li>磁化 理解材料内部磁矩排列造成的宏观效应。</li><li>边界和转矩 掌握磁介质边界条件与线圈受力矩。</li></ol>
+  <div class="action-row"><a class="pill-link" href="chapters/ch5/index.html">学习正文</a><a class="pill-link" href="mindmaps/ch5.html">看导图</a></div>
+</section></div>
+<section class="warn-box"><b>推荐顺序：</b>第1章工具 → 第2章静电场 → 第3章边值求解 → 第4章恒定电流场 → 第5章恒定磁场。不要跳过第1章的散度、旋度、斯托克斯定理，否则后面公式会变成死记硬背。</section>
+</main>
+</div>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

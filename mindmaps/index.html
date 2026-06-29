@@ -1,1 +1,84 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>1-5章总思维导图</title><link rel="stylesheet" href="../assets/style.css"></head><body><main class="wrap"><nav class="nav"><a href="../index.html">总入口</a><a href="ch1.html">第1章导图</a><a href="ch2.html">第2章导图</a><a href="ch3.html">第3章导图</a><a href="ch4.html">第4章导图</a><a href="ch5.html">第5章导图</a></nav><section class="map"><div class="mm-root">1-5章总主线</div><div class="seq"><span>数学工具</span><span>→</span><span>静电场</span><span>→</span><span>边值问题</span><span>→</span><span>恒定电流场</span><span>→</span><span>恒定磁场</span></div><div class="branches"><div class="branch"><h3>第1章</h3><p>学习 ∇、梯度、散度、旋度，为电磁场公式提供语言。</p></div><div class="branch"><h3>第2章</h3><p>用 E、φ、D 描述静电场。</p></div><div class="branch"><h3>第3章</h3><p>用泊松/拉普拉斯方程和边界条件求 φ。</p></div><div class="branch"><h3>第4章</h3><p>用 J=σE 描述恒定电流场，并与静电场类比。</p></div><div class="branch"><h3>第5章</h3><p>电流产生磁场，进入 B、H、磁介质和磁边界。</p></div></div></section></main></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="电磁场与电磁波 1-5章完整分章学习网站，包含章节正文、公式、步骤题、思维导图和检索。"/>
+<title>1–5章总串联思维导图</title>
+<link rel="stylesheet" href="../assets/style.css"/>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+<div class="site-shell mindmap-page">
+<div class="topbar">
+  <div class="breadcrumb"><a href="../index.html">总入口</a> / 1–5章总串联思维导图</div>
+  <nav class="navlinks" aria-label="主导航">
+    <a href="../index.html">总入口</a>
+    <a href="../search.html">全站检索</a>
+    <a href="../formula-index.html">公式索引</a>
+    <a href="../practice-index.html">题目索引</a>
+    <a href="../study-roadmap.html">复习路线</a>
+    <a href="../audit.html">审查报告</a>
+    <a href="../mindmaps/index.html">总导图</a>
+    <button class="tool-btn" type="button" onclick="toggleTheme()">深色模式</button>
+  </nav>
+</div><main id="main"><section class="hero"><span class="eyebrow">总导图</span><h1>1–5章总串联思维导图</h1><p class="subtitle">把五章从数学工具到静电场、边值问题、电流场、磁场串成主线。</p></section><nav class="mini-index"><a href="ch1.html">第1章<br>矢量分析基础</a><a href="ch2.html">第2章<br>静电场</a><a href="ch3.html">第3章<br>静电场边值问题</a><a href="ch4.html">第4章<br>恒定电流场</a><a href="ch5.html">第5章<br>恒定磁场</a></nav><section class="mindmap-stage"><h3>Mermaid 总导图</h3><div class="mermaid-wrap"><pre class="mermaid">---
+config:
+  layout: tidy-tree
+---
+mindmap
+  root((电磁场与电磁波 1-5章总主线))
+    第1章 矢量分析基础
+      1.1 场：空间中每一点都有一个物理量
+      1.2 标量与矢量：只有大小，还是既有大小又有方向
+      1.3 点积与叉积：矢量相乘的两种方式
+      1.4 ∇ 算子：空间变化检测器
+      1.5 梯度与方向导数：标量场变化最快的方向
+      1.6 散度与通量：有没有源、有没有净流出
+      1.7 旋度与环量：有没有局部打转
+      1.8 散度定理与斯托克斯定理：局部和整体互相转换
+    第2章 静电场
+      2.1 电场强度 E：单位正电荷受到的力
+      2.2 电场线：用图像看方向和强弱
+      2.3 电位 φ 与电场 E：电场指向电位降低最快方向
+      2.4 真空中静电场方程：有源无旋
+      2.5 电介质中的 D：把自由电荷单独拿出来处理
+      2.6 导体静电平衡：内部 E=0，导体是等位体
+      2.7 静电场边界条件：切向看 E，法向看 D
+      2.8 静电场能量：电场本身储存能量
+    第3章 静电场边值问题
+      3.1 静电场边值问题：已知边界，求空间电位
+      3.2 泊松方程与拉普拉斯方程
+      3.3 三类边界条件：狄里赫利、诺依曼、混合
+      3.4 唯一性定理：解只要满足方程和边界，就不会错
+      3.5 镜像法：用等效电荷代替导体边界影响
+    第4章 恒定电流场
+      4.1 恒定电流场：电荷持续定向运动形成电流
+      4.2 恒定电流场方程：电流连续且无旋电场
+      4.3 电流连续性原理：电流线必须闭合
+      4.4 恒定电流场边界条件
+      4.5 导电介质功率损耗
+      4.6 静电比拟：恒定电场与静电场的相似性
+      4.7 理想导电体中不存在恒定电场
+    第5章 恒定磁场
+      5.1 真空中恒定磁场方程：有旋无散
+      5.2 介质中的恒定磁场方程：用 H 处理传导电流
+      5.3 磁介质本构关系：B、H、M 的联系
+      5.4 磁化电流：磁化也等效为电流
+      5.5 恒定磁场边界条件
+      5.6 理想导磁体：μ→∞ 时 H 趋于 0
+      5.7 磁矩与转矩：载流线圈在磁场中会转动
+    横向主线
+      数学工具线：∇ 梯度 散度 旋度
+      电位求解线：E=-∇φ 泊松 拉普拉斯 边界条件
+      通量守恒线：D 与自由电荷 J 与连续性 B 的无散
+      环量旋度线：斯托克斯 静电无旋 安培环路
+      静电比拟线：D=εE 与 J=σE</pre></div><div class="map-note"><b>总主线：</b>第1章 ∇工具 → 第2章 E/φ/D → 第3章 泊松/拉普拉斯/边界 → 第4章 J=σE → 第5章 H/B。</div><div class="fallback-map"><div class="mm-root">1–5章<br>总串联</div><div class="mm-seq"><span>第1章 工具</span><span>→</span><span>第2章 静电场</span><span>→</span><span>第3章 边值问题</span><span>→</span><span>第4章 电流场</span><span>→</span><span>第5章 磁场</span></div><div class="mm-branches"><section class="mm-branch"><h3>第1章｜矢量分析基础</h3><ul><li>1.1 场：空间中每一点都有一个物理量</li><li>1.2 标量与矢量：只有大小，还是既有大小又有方向</li><li>1.3 点积与叉积：矢量相乘的两种方式</li><li>1.4 ∇ 算子：空间变化检测器</li><li>1.5 梯度与方向导数：标量场变化最快的方向</li><li>1.6 散度与通量：有没有源、有没有净流出</li><li>1.7 旋度与环量：有没有局部打转</li><li>1.8 散度定理与斯托克斯定理：局部和整体互相转换</li></ul></section><section class="mm-branch"><h3>第2章｜静电场</h3><ul><li>2.1 电场强度 E：单位正电荷受到的力</li><li>2.2 电场线：用图像看方向和强弱</li><li>2.3 电位 φ 与电场 E：电场指向电位降低最快方向</li><li>2.4 真空中静电场方程：有源无旋</li><li>2.5 电介质中的 D：把自由电荷单独拿出来处理</li><li>2.6 导体静电平衡：内部 E=0，导体是等位体</li><li>2.7 静电场边界条件：切向看 E，法向看 D</li><li>2.8 静电场能量：电场本身储存能量</li></ul></section><section class="mm-branch"><h3>第3章｜静电场边值问题</h3><ul><li>3.1 静电场边值问题：已知边界，求空间电位</li><li>3.2 泊松方程与拉普拉斯方程</li><li>3.3 三类边界条件：狄里赫利、诺依曼、混合</li><li>3.4 唯一性定理：解只要满足方程和边界，就不会错</li><li>3.5 镜像法：用等效电荷代替导体边界影响</li></ul></section><section class="mm-branch"><h3>第4章｜恒定电流场</h3><ul><li>4.1 恒定电流场：电荷持续定向运动形成电流</li><li>4.2 恒定电流场方程：电流连续且无旋电场</li><li>4.3 电流连续性原理：电流线必须闭合</li><li>4.4 恒定电流场边界条件</li><li>4.5 导电介质功率损耗</li><li>4.6 静电比拟：恒定电场与静电场的相似性</li><li>4.7 理想导电体中不存在恒定电场</li></ul></section><section class="mm-branch"><h3>第5章｜恒定磁场</h3><ul><li>5.1 真空中恒定磁场方程：有旋无散</li><li>5.2 介质中的恒定磁场方程：用 H 处理传导电流</li><li>5.3 磁介质本构关系：B、H、M 的联系</li><li>5.4 磁化电流：磁化也等效为电流</li><li>5.5 恒定磁场边界条件</li><li>5.6 理想导磁体：μ→∞ 时 H 趋于 0</li><li>5.7 磁矩与转矩：载流线圈在磁场中会转动</li></ul></section><section class="mm-branch"><h3>横向联系</h3><ul><li>∇：统一描述空间变化。</li><li>散度：源、通量、自由电荷、电流连续。</li><li>旋度：环量、无旋电场、有旋磁场。</li><li>边界条件：切向与法向分量贯穿电场、电流场、磁场。</li><li>静电比拟：D=εE 与 J=σE 结构相同。</li></ul></section></div></div></section></main>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+mermaid.initialize({ startOnLoad: true, securityLevel: 'loose', theme: 'base', mindmap: { padding: 18 } });
+</script>
+</div>
+<script src="../assets/site.js"></script>
+</body>
+</html>

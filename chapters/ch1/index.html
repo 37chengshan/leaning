@@ -1,1 +1,263 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>第1章 矢量分析基础</title><link rel="stylesheet" href="../../assets/style.css"></head><body><main class="wrap"><nav class="nav"><a href="../../index.html">总入口</a><a href="../../mindmaps/ch1.html">本章思维导图</a><a href="../ch2/index.html">下一章</a></nav><section class="hero"><p class="eyebrow">第1章</p><h1>矢量分析基础</h1><p>本章是工具箱。后面电场、磁场里的 ∇·E、∇×E、E=-∇φ 都依赖这里。</p></section><section class="panel"><h2>本章学习路线</h2><ol class="route"><li>场与矢量</li><li>∇ 算子</li><li>梯度/散度/旋度</li><li>积分定理</li></ol></section><article class="kp"><h2>1.1 场</h2><p>场就是空间中每一点都有一个物理量。温度场每点一个数；电场每点一个箭头。</p><div class="formula">标量场：T=T(x,y,z,t)<br>矢量场：A=A(x,y,z,t)</div><div class="practice"><b>题目：</b>温度、电场、速度哪些是场？<br><b>步骤：</b>温度随位置变化是标量场；电场和速度每点都有方向，是矢量场。</div></article><article class="kp"><h2>1.2 梯度</h2><p>梯度表示标量场增加最快的方向。</p><div class="formula">∇φ=e<sub>x</sub><span class="frac"><span>∂φ</span><span>∂x</span></span>+e<sub>y</sub><span class="frac"><span>∂φ</span><span>∂y</span></span>+e<sub>z</sub><span class="frac"><span>∂φ</span><span>∂z</span></span></div><div class="practice"><b>题目：</b>φ=x²+y²，求(1,2)处梯度。<br><b>步骤：</b>∂φ/∂x=2x，∂φ/∂y=2y，代入得 2eₓ+4eᵧ。</div></article><article class="kp"><h2>1.3 散度、旋度、斯托克斯定理</h2><p>散度看源汇，旋度看局部打转。斯托克斯定理把边界环量和曲面内旋度联系起来。</p><div class="formula">∇·A=<span class="frac"><span>∂A<sub>x</sub></span><span>∂x</span></span>+<span class="frac"><span>∂A<sub>y</sub></span><span>∂y</span></span>+<span class="frac"><span>∂A<sub>z</sub></span><span>∂z</span></span><br>∮<sub>L</sub>A·dl=∬<sub>S</sub>(∇×A)·dS</div><div class="practice"><b>题目：</b>斯托克斯定理人话是什么？<br><b>步骤：</b>左边是沿边界走一圈的总绕行；右边是面内所有局部旋转加起来；二者相等。</div></article></main></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="电磁场与电磁波 1-5章完整分章学习网站，包含章节正文、公式、步骤题、思维导图和检索。"/>
+<title>第1章 矢量分析基础｜完整章节页</title>
+<link rel="stylesheet" href="../../assets/style.css"/>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+
+<div class="site-shell chapter-page">
+
+<div class="topbar">
+  <div class="breadcrumb"><a href="../../index.html">总入口</a> / 第1章 矢量分析基础</div>
+  <nav class="navlinks" aria-label="主导航">
+    <a href="../../index.html">总入口</a>
+    <a href="../../search.html">全站检索</a>
+    <a href="../../formula-index.html">公式索引</a>
+    <a href="../../practice-index.html">题目索引</a>
+    <a href="../../study-roadmap.html">复习路线</a>
+    <a href="../../audit.html">审查报告</a>
+    <a href="../../mindmaps/index.html">总导图</a>
+    <button class="tool-btn" type="button" onclick="toggleTheme()">深色模式</button>
+  </nav>
+</div>
+<div class="chapter-layout">
+  <aside class="local-sidebar">
+    <h2>第1章目录</h2>
+    <a class="strong" href="../../mindmaps/ch1.html">本章独立思维导图</a>
+    <a class="strong" href="../../search.html">全站检索</a>
+    <a class="strong" href="../../formula-index.html">公式索引</a>
+    <a class="strong" href="../../practice-index.html">题目索引</a>
+    <a class="strong" href="#top">本章开头</a>
+    <a class="strong" href="#ch1-s1">知识点区</a>
+    <a href="#kp1">1. 1.1 场：空间中每一点都有一个物理量</a><a href="#kp2">2. 1.2 标量与矢量：只有大小，还是既有大小又有方向</a><a href="#kp3">3. 1.3 点积与叉积：矢量相乘的两种方式</a><a href="#kp4">4. 1.4 ∇ 算子：空间变化检测器</a><a href="#kp5">5. 1.5 梯度与方向导数：标量场变化最快的方向</a><a href="#kp6">6. 1.6 散度与通量：有没有源、有没有净流出</a><a href="#kp7">7. 1.7 旋度与环量：有没有局部打转</a><a href="#kp8">8. 1.8 散度定理与斯托克斯定理：局部和整体互相转换</a>
+    <a class="strong" href="#ch1-review">本章复盘</a>
+    <a class="strong" href="../../index.html">返回总入口</a>
+  </aside>
+  <main id="main">
+    <div class="full-preserve"><b>完整性校验：</b>本章从原网页完整拆出。文本指纹：<code>169f26ce30b0</code>。共 8 个知识点、8 个公式块、8 道步骤题。</div>
+    <section class="progress-box" data-progress-scope>
+      <h3>本章学习进度</h3>
+      <div class="progress-bar"><span data-progress-bar></span></div>
+      <p data-progress-text>0/8 已完成（0%）</p>
+      <div class="progress-row"><label><input type="checkbox" data-progress-key="ch1-kp1"> 1. 1.1 场：空间中每一点都有一个物理量</label><a class="pill-link" href="#kp1">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch1-kp2"> 2. 1.2 标量与矢量：只有大小，还是既有大小又有方向</label><a class="pill-link" href="#kp2">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch1-kp3"> 3. 1.3 点积与叉积：矢量相乘的两种方式</label><a class="pill-link" href="#kp3">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch1-kp4"> 4. 1.4 ∇ 算子：空间变化检测器</label><a class="pill-link" href="#kp4">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch1-kp5"> 5. 1.5 梯度与方向导数：标量场变化最快的方向</label><a class="pill-link" href="#kp5">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch1-kp6"> 6. 1.6 散度与通量：有没有源、有没有净流出</label><a class="pill-link" href="#kp6">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch1-kp7"> 7. 1.7 旋度与环量：有没有局部打转</label><a class="pill-link" href="#kp7">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch1-kp8"> 8. 1.8 散度定理与斯托克斯定理：局部和整体互相转换</label><a class="pill-link" href="#kp8">跳转</a></div>
+    </section>
+    <span id="top"></span><section class="chapter" id="ch1">
+      <div class="chapter-head">
+        <div class="chapter-num">第 1 章</div>
+        <h2>矢量分析基础</h2>
+        <p>本章是后面所有电场、磁场公式的数学语言。先理解场、矢量、∇、梯度、散度、旋度，后面才不会只是在背公式。</p>
+      </div>
+
+      <div class="route-card">
+        <h3>本章独立学习路线</h3>
+        <ol class="route"><li><b>场与矢量</b><span>知道物理量如何分布在空间里。</span></li><li><b>∇ 算子</b><span>理解空间变化如何被数学表达。</span></li><li><b>梯度/散度/旋度</b><span>分别理解变化最快、源汇、旋转。</span></li><li><b>积分定理</b><span>把局部性质和整体性质联系起来。</span></li></ol>
+      </div>
+
+      <div class="relation-card">
+        <h3>本章与前后章节的联系</h3>
+        <p>第一章是工具箱；第二章开始把这些工具用到静电场中，例如 ∇·E 表示电荷产生电场，∇×E=0 表示静电场无旋。</p>
+      </div>
+
+      <nav class="chapter-toc">
+        <a href="#ch1-s1">本章知识点</a>
+        <a href="#ch1-review">本章复盘</a>
+        <a href="#top">返回总目录</a>
+      </nav>
+
+      <div id="ch1-s1">
+        
+    <article class="kp">
+      <h4 id="kp1">1.1 场：空间中每一点都有一个物理量</h4>
+      <div class="tags"><span class="tag">概念</span><span class="tag">入门</span></div>
+      <p>场不是一个单独的数，而是一整片空间里的分布规律。比如教室里每个位置都有温度，这就是温度场；空间中每一点都有电场强度，这就是电场。</p>
+      <div class="formula">标量场：T = T(x, y, z, t)<br>矢量场：A = A(x, y, z, t)</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>你可以把场想成一张“空间地图”：地图上每个位置都写着一个数，或者画着一个箭头。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>T 表示温度这类只有大小的量。</li><li>A 表示矢量场，既有大小又有方向。</li><li>x、y、z 表示空间位置。</li><li>t 表示时间。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>看到题目说“某区域内每一点都有某个物理量”时，就要想到场。</p></div>
+        <div class="box"><b>易错提醒</b><p>不要把场理解成某一个点的量。某一点的值只是场在该点的取值。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：判断温度、电场、速度哪个属于场？</summary>
+      <div class="steps">
+        <ol><li>温度如果随空间位置变化，可写成 T(x,y,z)，是标量场。</li><li>电场强度 E(x,y,z) 在每点有大小和方向，是矢量场。</li><li>流体速度 v(x,y,z) 在每点有速度大小和方向，也是矢量场。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>三者都可以构成场；温度是标量场，电场和速度是矢量场。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp2">1.2 标量与矢量：只有大小，还是既有大小又有方向</h4>
+      <div class="tags"><span class="tag">基础</span><span class="tag">坐标分量</span></div>
+      <p>标量只有大小，比如温度、电位；矢量既有大小又有方向，比如力、速度、电场强度、磁场强度。</p>
+      <div class="formula">A = A<sub>x</sub>e<sub>x</sub> + A<sub>y</sub>e<sub>y</sub> + A<sub>z</sub>e<sub>z</sub><br>|A| = √(A<sub>x</sub><sup>2</sup> + A<sub>y</sub><sup>2</sup> + A<sub>z</sub><sup>2</sup>)</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>一个空间箭头可以拆成三个方向上的分量。模长就是这个箭头的真实长度，本质上是三维勾股定理。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>A 是矢量。</li><li>Aₓ、Aᵧ、A_z 是三个坐标方向的分量。</li><li>eₓ、eᵧ、e_z 是三个单位矢量。</li><li>|A| 是矢量大小。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>给出矢量分量时，用这个式子表达矢量或求矢量大小。</p></div>
+        <div class="box"><b>易错提醒</b><p>不要把分量当成矢量本身。分量只是数，乘上单位矢量后才说明方向。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：A=3eₓ+4eᵧ，求 |A|。</summary>
+      <div class="steps">
+        <ol><li>识别分量：Aₓ=3，Aᵧ=4，A_z=0。</li><li>代入模长公式：|A|=√(3²+4²+0²)。</li><li>计算：√25=5。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>|A|=5。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp3">1.3 点积与叉积：矢量相乘的两种方式</h4>
+      <div class="tags"><span class="tag">运算</span><span class="tag">方向</span></div>
+      <p>点积衡量两个矢量同向程度，结果是标量；叉积衡量两个矢量构成的垂直效果，结果是矢量。</p>
+      <div class="formula">A·B = |A||B|cosθ = A<sub>x</sub>B<sub>x</sub> + A<sub>y</sub>B<sub>y</sub> + A<sub>z</sub>B<sub>z</sub><br>|A×B| = |A||B|sinθ</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>点积像把一个矢量投影到另一个方向上；叉积像用右手定则判断旋转轴方向。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>θ 是 A 和 B 的夹角。</li><li>cosθ 描述同向程度。</li><li>sinθ 描述垂直程度。</li><li>A×B 的方向由右手定则决定。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>算功、通量、环量常用点积；算力矩、旋度方向、磁场力常用叉积。</p></div>
+        <div class="box"><b>易错提醒</b><p>点积结果不是矢量；叉积顺序不能随便换，A×B = −B×A。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：A=2eₓ+eᵧ，B=eₓ+3eᵧ，求 A·B。</summary>
+      <div class="steps">
+        <ol><li>写出分量：Aₓ=2，Aᵧ=1；Bₓ=1，Bᵧ=3。</li><li>用点积分量公式：A·B=AₓBₓ+AᵧBᵧ。</li><li>代入：2×1+1×3=5。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>A·B=5。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp4">1.4 ∇ 算子：空间变化检测器</h4>
+      <div class="tags"><span class="tag">核心工具</span><span class="tag">偏导</span></div>
+      <p>∇ 不是普通数字，而是由三个方向偏导数组成的微分算子。它负责检查一个场沿 x、y、z 三个方向怎么变化。</p>
+      <div class="formula">∇ = e<sub>x</sub><span class="frac"><span>∂</span><span>∂x</span></span> + e<sub>y</sub><span class="frac"><span>∂</span><span>∂y</span></span> + e<sub>z</sub><span class="frac"><span>∂</span><span>∂z</span></span></div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>它像一个三方向扫描器：分别扫描 x、y、z 方向上的变化。后面接标量得到梯度，点乘矢量得到散度，叉乘矢量得到旋度。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>∂/∂x 表示只看 x 方向变化。</li><li>∂/∂y 表示只看 y 方向变化。</li><li>∂/∂z 表示只看 z 方向变化。</li><li>eₓ、eᵧ、e_z 标明方向。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>遇到梯度、散度、旋度时，都先想到 ∇。</p></div>
+        <div class="box"><b>易错提醒</b><p>∇ 本身不是结果，它必须作用到某个标量场或矢量场上才有意义。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：∇φ、∇·A、∇×A 分别叫什么？</summary>
+      <div class="steps">
+        <ol><li>∇ 作用于标量 φ，得到 ∇φ，叫梯度。</li><li>∇ 与矢量 A 做点积，得到 ∇·A，叫散度。</li><li>∇ 与矢量 A 做叉积，得到 ∇×A，叫旋度。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>∇φ 是梯度，∇·A 是散度，∇×A 是旋度。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp5">1.5 梯度与方向导数：标量场变化最快的方向</h4>
+      <div class="tags"><span class="tag">梯度</span><span class="tag">方向导数</span></div>
+      <p>梯度用于标量场，告诉你该标量在哪个方向增加最快，以及增加得有多快。方向导数则是问沿某个指定方向变化多快。</p>
+      <div class="formula">∇φ = e<sub>x</sub><span class="frac"><span>∂φ</span><span>∂x</span></span> + e<sub>y</sub><span class="frac"><span>∂φ</span><span>∂y</span></span> + e<sub>z</sub><span class="frac"><span>∂φ</span><span>∂z</span></span><br><span class="frac"><span>∂φ</span><span>∂l</span></span> = ∇φ · e<sub>l</sub></div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>梯度像山坡上最陡的上坡方向。方向导数像你不一定沿最陡方向走，而是沿题目指定方向走，看看高度变化多快。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>φ 是标量场。</li><li>∇φ 是梯度矢量。</li><li>e_l 是指定方向的单位矢量。</li><li>∂φ/∂l 是沿 l 方向变化率。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>求温度、电位、高度等标量场变化方向时用梯度；题目问“沿某方向变化率”时用方向导数。</p></div>
+        <div class="box"><b>易错提醒</b><p>方向向量必须先单位化，否则方向导数会被长度放大。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：φ=x²+y²，求点(1,2)处梯度。</summary>
+      <div class="steps">
+        <ol><li>求偏导：∂φ/∂x=2x，∂φ/∂y=2y。</li><li>代入点(1,2)：∂φ/∂x=2，∂φ/∂y=4。</li><li>写成矢量：∇φ=2eₓ+4eᵧ。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>∇φ|(1,2)=2eₓ+4eᵧ。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp6">1.6 散度与通量：有没有源、有没有净流出</h4>
+      <div class="tags"><span class="tag">散度</span><span class="tag">通量</span></div>
+      <p>散度是局部概念，判断某点附近是否像源一样向外发散；通量是整体概念，计算穿过一个面的总量。</p>
+      <div class="formula">∇·A = <span class="frac"><span>∂A<sub>x</sub></span><span>∂x</span></span> + <span class="frac"><span>∂A<sub>y</sub></span><span>∂y</span></span> + <span class="frac"><span>∂A<sub>z</sub></span><span>∂z</span></span><br>Φ = ∬<sub>S</sub> A·dS</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>散度像看一个点是不是喷泉或排水口。通量像看一张网有多少水流穿过去。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>A 是矢量场。</li><li>Aₓ、Aᵧ、A_z 是分量。</li><li>S 是曲面。</li><li>dS 是带方向的小面积。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>判断场是否有源时用散度；求穿过某个面或闭合面的总量时用通量。</p></div>
+        <div class="box"><b>易错提醒</b><p>通量为零不一定说明没有场，可能是进出抵消。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：A=xeₓ+yeᵧ+ze_z，求散度。</summary>
+      <div class="steps">
+        <ol><li>识别分量：Aₓ=x，Aᵧ=y，A_z=z。</li><li>逐项求偏导：∂Aₓ/∂x=1，∂Aᵧ/∂y=1，∂A_z/∂z=1。</li><li>相加：∇·A=3。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>散度为 3，表示该场处处有向外发散趋势。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp7">1.7 旋度与环量：有没有局部打转</h4>
+      <div class="tags"><span class="tag">旋度</span><span class="tag">环量</span></div>
+      <p>旋度判断矢量场局部有没有旋转趋势；环量计算沿闭合路径走一圈的总绕行效果。</p>
+      <div class="formula">∇×A = (<span class="frac"><span>∂A<sub>z</sub></span><span>∂y</span></span> − <span class="frac"><span>∂A<sub>y</sub></span><span>∂z</span></span>)e<sub>x</sub> + (<span class="frac"><span>∂A<sub>x</sub></span><span>∂z</span></span> − <span class="frac"><span>∂A<sub>z</sub></span><span>∂x</span></span>)e<sub>y</sub> + (<span class="frac"><span>∂A<sub>y</sub></span><span>∂x</span></span> − <span class="frac"><span>∂A<sub>x</sub></span><span>∂y</span></span>)e<sub>z</sub><br>Γ = ∮<sub>L</sub>A·dl</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>把小叶轮放进场里，如果叶轮会转，说明旋度不为零。环量则是沿一整条闭合曲线累加这个绕行效果。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>∇×A 是旋度，结果是矢量。</li><li>Γ 是环量。</li><li>L 是闭合曲线。</li><li>dl 是沿路径方向的小线段。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>判断场是否无旋、是否能写成某个势函数梯度时用旋度。</p></div>
+        <div class="box"><b>易错提醒</b><p>旋度公式正负号容易写反，建议按行列式顺序记。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：A=−yeₓ+xeᵧ，求旋度 z 分量。</summary>
+      <div class="steps">
+        <ol><li>识别 Aₓ=−y，Aᵧ=x。</li><li>z 分量公式：(∇×A)_z=∂Aᵧ/∂x−∂Aₓ/∂y。</li><li>计算：∂x/∂x=1，∂(−y)/∂y=−1。</li><li>相减：1−(−1)=2。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>(∇×A)_z=2，说明绕 z 轴有旋转趋势。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp8">1.8 散度定理与斯托克斯定理：局部和整体互相转换</h4>
+      <div class="tags"><span class="tag">积分定理</span><span class="tag">高斯定理</span></div>
+      <p>散度定理把体内散度与边界通量联系起来；斯托克斯定理把曲面上的旋度与边界环量联系起来。</p>
+      <div class="formula">∯<sub>S</sub>A·dS = ∭<sub>V</sub>(∇·A)dV<br>∮<sub>L</sub>A·dl = ∬<sub>S</sub>(∇×A)·dS</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>第一条说：内部所有源的总和等于边界总流出。第二条说：边界绕行效果等于内部所有局部旋转效果的总和。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>S 是闭合曲面。</li><li>V 是曲面包围的体积。</li><li>L 是曲面的边界曲线。</li><li>dV 是体积元。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>复杂面积分和体积分之间转换时使用；后面高斯定律、安培环路定理都会用到这些思想。</p></div>
+        <div class="box"><b>易错提醒</b><p>散度定理要求 S 是闭合曲面；斯托克斯定理的 L 是曲面 S 的边界。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：闭合面通量为正说明什么？</summary>
+      <div class="steps">
+        <ol><li>通量是穿过闭合面的净流出量。</li><li>通量为正，说明流出多于流入。</li><li>用散度定理看，内部散度积分为正，表示内部存在净源。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>闭合面内存在净源，整体向外流出。</div>
+    </details>
+    
+    </article>
+    
+      </div>
+
+      <div class="review" id="ch1-review">
+        <h3>第 1 章复盘</h3>
+        <p>学完本章后，建议你用一句话复述每个公式的含义，再做一遍每个知识点后面的题目。能说出“为什么用这个公式”，比只会代入更重要。</p>
+      </div>
+    </section>
+  </main>
+</div>
+</div>
+
+<script src="../../assets/site.js"></script>
+</body>
+</html>

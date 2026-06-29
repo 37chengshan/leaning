@@ -1,1 +1,263 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>第2章 静电场</title><link rel="stylesheet" href="../../assets/style.css"></head><body><main class="wrap"><nav class="nav"><a href="../../index.html">总入口</a><a href="../../mindmaps/ch2.html">本章思维导图</a><a href="../ch1/index.html">上一章</a><a href="../ch3/index.html">下一章</a></nav><section class="hero"><p class="eyebrow">第2章</p><h1>静电场</h1><p>本章研究电荷产生电场，以及电位 φ、电位移 D、导体、边界和能量。</p></section><section class="panel"><h2>本章学习路线</h2><ol class="route"><li>电场强度 E</li><li>电位 φ</li><li>电介质与 D</li><li>边界条件与能量</li></ol></section><article class="kp"><h2>2.1 电场强度</h2><p>E 表示单位正电荷受到的力，方向规定为正电荷受力方向。</p><div class="formula">E=<span class="frac"><span>F</span><span>q</span></span></div><div class="practice"><b>题目：</b>q=2μC，F=6mN，求E。<br><b>步骤：</b>统一单位后 E=6×10⁻³ / 2×10⁻⁶ = 3×10³ N/C。</div></article><article class="kp"><h2>2.2 电位</h2><p>电位是标量，电场方向是电位降低最快的方向。</p><div class="formula">E=-∇φ</div><div class="practice"><b>题目：</b>φ=3x，求E。<br><b>步骤：</b>∇φ=3eₓ，所以 E=-3eₓ。</div></article><article class="kp"><h2>2.3 电位移矢量 D</h2><p>D 是为了在介质中更方便地处理自由电荷。E 决定受力，D 更适合配合自由电荷写高斯定律。</p><div class="formula">D=εE=ε<sub>r</sub>ε₀E<br>∇·D=ρ<sub>f</sub></div><div class="practice"><b>题目：</b>D=4ε₀E，求 εr。<br><b>步骤：</b>和 D=εrε₀E 比较，εr=4。</div></article><article class="kp"><h2>2.4 边界条件</h2><p>静电场边界要分切向和法向：切向看 E，法向看 D。</p><div class="formula">E<sub>1t</sub>=E<sub>2t</sub><br>D<sub>2n</sub>-D<sub>1n</sub>=ρ<sub>s</sub></div><div class="practice"><b>题目：</b>无自由面电荷时 D 法向怎么变？<br><b>步骤：</b>ρs=0，所以 D2n-D1n=0，即 D1n=D2n。</div></article></main></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="电磁场与电磁波 1-5章完整分章学习网站，包含章节正文、公式、步骤题、思维导图和检索。"/>
+<title>第2章 静电场｜完整章节页</title>
+<link rel="stylesheet" href="../../assets/style.css"/>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+
+<div class="site-shell chapter-page">
+
+<div class="topbar">
+  <div class="breadcrumb"><a href="../../index.html">总入口</a> / 第2章 静电场</div>
+  <nav class="navlinks" aria-label="主导航">
+    <a href="../../index.html">总入口</a>
+    <a href="../../search.html">全站检索</a>
+    <a href="../../formula-index.html">公式索引</a>
+    <a href="../../practice-index.html">题目索引</a>
+    <a href="../../study-roadmap.html">复习路线</a>
+    <a href="../../audit.html">审查报告</a>
+    <a href="../../mindmaps/index.html">总导图</a>
+    <button class="tool-btn" type="button" onclick="toggleTheme()">深色模式</button>
+  </nav>
+</div>
+<div class="chapter-layout">
+  <aside class="local-sidebar">
+    <h2>第2章目录</h2>
+    <a class="strong" href="../../mindmaps/ch2.html">本章独立思维导图</a>
+    <a class="strong" href="../../search.html">全站检索</a>
+    <a class="strong" href="../../formula-index.html">公式索引</a>
+    <a class="strong" href="../../practice-index.html">题目索引</a>
+    <a class="strong" href="#top">本章开头</a>
+    <a class="strong" href="#ch2-s1">知识点区</a>
+    <a href="#kp1">1. 2.1 电场强度 E：单位正电荷受到的力</a><a href="#kp2">2. 2.2 电场线：用图像看方向和强弱</a><a href="#kp3">3. 2.3 电位 φ 与电场 E：电场指向电位降低最快方向</a><a href="#kp4">4. 2.4 真空中静电场方程：有源无旋</a><a href="#kp5">5. 2.5 电介质中的 D：把自由电荷单独拿出来处理</a><a href="#kp6">6. 2.6 导体静电平衡：内部 E=0，导体是等位体</a><a href="#kp7">7. 2.7 静电场边界条件：切向看 E，法向看 D</a><a href="#kp8">8. 2.8 静电场能量：电场本身储存能量</a>
+    <a class="strong" href="#ch2-review">本章复盘</a>
+    <a class="strong" href="../../index.html">返回总入口</a>
+  </aside>
+  <main id="main">
+    <div class="full-preserve"><b>完整性校验：</b>本章从原网页完整拆出。文本指纹：<code>25e27ea13637</code>。共 8 个知识点、8 个公式块、8 道步骤题。</div>
+    <section class="progress-box" data-progress-scope>
+      <h3>本章学习进度</h3>
+      <div class="progress-bar"><span data-progress-bar></span></div>
+      <p data-progress-text>0/8 已完成（0%）</p>
+      <div class="progress-row"><label><input type="checkbox" data-progress-key="ch2-kp1"> 1. 2.1 电场强度 E：单位正电荷受到的力</label><a class="pill-link" href="#kp1">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch2-kp2"> 2. 2.2 电场线：用图像看方向和强弱</label><a class="pill-link" href="#kp2">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch2-kp3"> 3. 2.3 电位 φ 与电场 E：电场指向电位降低最快方向</label><a class="pill-link" href="#kp3">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch2-kp4"> 4. 2.4 真空中静电场方程：有源无旋</label><a class="pill-link" href="#kp4">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch2-kp5"> 5. 2.5 电介质中的 D：把自由电荷单独拿出来处理</label><a class="pill-link" href="#kp5">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch2-kp6"> 6. 2.6 导体静电平衡：内部 E=0，导体是等位体</label><a class="pill-link" href="#kp6">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch2-kp7"> 7. 2.7 静电场边界条件：切向看 E，法向看 D</label><a class="pill-link" href="#kp7">跳转</a></div><div class="progress-row"><label><input type="checkbox" data-progress-key="ch2-kp8"> 8. 2.8 静电场能量：电场本身储存能量</label><a class="pill-link" href="#kp8">跳转</a></div>
+    </section>
+    <span id="top"></span><section class="chapter" id="ch2">
+      <div class="chapter-head">
+        <div class="chapter-num">第 2 章</div>
+        <h2>静电场</h2>
+        <p>本章把第一章的数学工具用到电荷和电场中，核心是 E、φ、D、边界条件和静电能量。</p>
+      </div>
+
+      <div class="route-card">
+        <h3>本章独立学习路线</h3>
+        <ol class="route"><li><b>电场强度</b><span>先理解电场是单位正电荷受到的力。</span></li><li><b>电位</b><span>再用标量 φ 简化静电场计算。</span></li><li><b>介质与导体</b><span>理解材料对电场的影响。</span></li><li><b>边界与能量</b><span>掌握分界面和储能问题。</span></li></ol>
+      </div>
+
+      <div class="relation-card">
+        <h3>本章与前后章节的联系</h3>
+        <p>第二章直接使用第一章的散度、旋度和梯度。第三章会进一步把电位 φ 用于边值问题，例如泊松方程、拉普拉斯方程和镜像法。</p>
+      </div>
+
+      <nav class="chapter-toc">
+        <a href="#ch2-s1">本章知识点</a>
+        <a href="#ch2-review">本章复盘</a>
+        <a href="#top">返回总目录</a>
+      </nav>
+
+      <div id="ch2-s1">
+        
+    <article class="kp">
+      <h4 id="kp1">2.1 电场强度 E：单位正电荷受到的力</h4>
+      <div class="tags"><span class="tag">静电场</span><span class="tag">定义</span></div>
+      <p>电场强度描述某点电场有多强、方向朝哪里。它的方向规定为正电荷在该点受到的力的方向。</p>
+      <div class="formula">E = <span class="frac"><span>F</span><span>q</span></span></div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>把一个很小的正试探电荷放到某点，看它受到多少力。每 1 C 电荷受到的力，就是该点电场强度。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>E 是电场强度，单位 N/C 或 V/m。</li><li>F 是电场力。</li><li>q 是试探电荷量。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>题目给电场力和试探电荷时，用定义式。</p></div>
+        <div class="box"><b>易错提醒</b><p>如果试探电荷是负电荷，受力方向和电场方向相反。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：q=2 μC，受力 6 mN，求 E。</summary>
+      <div class="steps">
+        <ol><li>统一单位：q=2×10⁻⁶ C，F=6×10⁻³ N。</li><li>代入 E=F/q。</li><li>E=(6×10⁻³)/(2×10⁻⁶)=3×10³ N/C。</li><li>若 q 为正，E 方向与 F 相同。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>E=3×10³ N/C，方向与正电荷受力方向一致。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp2">2.2 电场线：用图像看方向和强弱</h4>
+      <div class="tags"><span class="tag">电场线</span><span class="tag">直观理解</span></div>
+      <p>电场线是人为画出的辅助线。切线方向表示电场方向，疏密表示电场强弱。</p>
+      <div class="formula"><span class="frac"><span>dx</span><span>E<sub>x</sub></span></span> = <span class="frac"><span>dy</span><span>E<sub>y</sub></span></span> = <span class="frac"><span>dz</span><span>E<sub>z</sub></span></span></div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>这表示电场线在任一点的前进方向，都和该点电场矢量方向一致。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>dx、dy、dz 是电场线小位移分量。</li><li>Eₓ、Eᵧ、E_z 是电场分量。</li><li>比例相等说明线的切向与 E 平行。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>判断电场线方向、画电场分布示意图时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>电场线不是实际存在的绳子，它只是辅助表示。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：电场线越密代表什么？</summary>
+      <div class="steps">
+        <ol><li>电场线疏密用来表示电场强弱。</li><li>越密说明单位面积穿过的电场线越多。</li><li>因此该区域电场强度较大。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>电场线越密，电场越强。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp3">2.3 电位 φ 与电场 E：电场指向电位降低最快方向</h4>
+      <div class="tags"><span class="tag">电位</span><span class="tag">负梯度</span></div>
+      <p>静电场中可以用标量电位 φ 描述电场。电场强度等于电位梯度的负值。</p>
+      <div class="formula">E = −∇φ<br>φ<sub>A</sub> − φ<sub>B</sub> = ∫<sub>A</sub><sup>B</sup>E·dl</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>电位像高度，正电荷会沿电位降低方向运动，所以电场方向是电位下降最快方向。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>φ 是电位，单位 V。</li><li>∇φ 指向电位增加最快方向。</li><li>负号说明 E 指向电位降低方向。</li><li>E·dl 表示沿路径方向的电场贡献。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>已知电位求电场时，用 E=−∇φ；求两点电位差时用线积分。</p></div>
+        <div class="box"><b>易错提醒</b><p>最常见错误是漏掉负号。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：φ=3x，求 E。</summary>
+      <div class="steps">
+        <ol><li>求梯度：∇φ=3eₓ。</li><li>用 E=−∇φ。</li><li>得到 E=−3eₓ。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>E=−3eₓ V/m。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp4">2.4 真空中静电场方程：有源无旋</h4>
+      <div class="tags"><span class="tag">高斯定律</span><span class="tag">无旋</span></div>
+      <p>静电场有两个基本性质：电荷是电场的源，所以散度与电荷密度有关；静电场无旋，所以可以引入电位。</p>
+      <div class="formula">∇·E = <span class="frac"><span>ρ</span><span>ε₀</span></span><br>∇×E = 0<br>∯<sub>S</sub>E·dS = <span class="frac"><span>Q</span><span>ε₀</span></span><br>∮<sub>L</sub>E·dl = 0</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>∇·E 表示电场线发散程度；∇×E=0 表示静电场没有旋涡，沿闭合路径一圈做功为零。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>ρ 是体电荷密度。</li><li>ε₀ 是真空介电常数。</li><li>Q 是闭合面内总电荷。</li><li>S 是闭合曲面，L 是闭合路径。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>高斯定律适合对称电荷分布求 E；无旋性质用于引入电位。</p></div>
+        <div class="box"><b>易错提醒</b><p>高斯定律总成立，但不一定总方便求解。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：某处 ρ>0，∇·E 是正还是负？</summary>
+      <div class="steps">
+        <ol><li>根据 ∇·E=ρ/ε₀。</li><li>ε₀ 为正。</li><li>ρ>0，所以 ∇·E>0。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>∇·E 为正，说明该处电场线向外发散。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp5">2.5 电介质中的 D：把自由电荷单独拿出来处理</h4>
+      <div class="tags"><span class="tag">电介质</span><span class="tag">电位移</span></div>
+      <p>介质会被电场极化。引入 D 的目的，是在介质中更方便地处理自由电荷。</p>
+      <div class="formula">D = εE = ε<sub>r</sub>ε₀E<br>∇·D = ρ<sub>f</sub><br>∯<sub>S</sub>D·dS = Q<sub>f</sub></div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>E 描述电场强度；D 是为了处理介质中自由电荷而引入的辅助矢量。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>D 是电位移矢量，单位 C/m²。</li><li>ε 是介电常数。</li><li>εᵣ 是相对介电常数。</li><li>ρ_f 是自由电荷密度。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>介质中的高斯定律通常先求 D，再用 D=εE 求 E。</p></div>
+        <div class="box"><b>易错提醒</b><p>不要把自由电荷和束缚电荷混为一谈。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：线性介质中 D=4ε₀E，求 εᵣ。</summary>
+      <div class="steps">
+        <ol><li>线性介质关系：D=εᵣε₀E。</li><li>与题中 D=4ε₀E 比较。</li><li>得到 εᵣ=4。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>εᵣ=4。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp6">2.6 导体静电平衡：内部 E=0，导体是等位体</h4>
+      <div class="tags"><span class="tag">导体</span><span class="tag">等位体</span></div>
+      <p>导体中自由电荷能移动。静电平衡时如果内部仍有电场，电荷会继续移动，所以平衡条件是导体内部电场为零。</p>
+      <div class="formula">E<sub>inside</sub> = 0<br>φ = constant</div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>E=−∇φ。若 E=0，则 ∇φ=0，说明导体内部电位不随位置变化，所以导体是等位体。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>E_inside 是导体内部电场。</li><li>φ=constant 表示电位处处相同。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>判断导体静电平衡、导体表面电荷分布时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>导体内部 E=0 不代表导体表面没有电荷，多余电荷通常在表面。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：静电平衡导体内部两点电位差是多少？</summary>
+      <div class="steps">
+        <ol><li>导体内部 E=0。</li><li>电位差与电场线积分有关。</li><li>E=0，所以积分为 0。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>导体内部任意两点电位差为 0。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp7">2.7 静电场边界条件：切向看 E，法向看 D</h4>
+      <div class="tags"><span class="tag">边界条件</span><span class="tag">介质界面</span></div>
+      <p>场穿过不同介质分界面时，要分解成切向和法向。静电场中切向 E 连续，法向 D 的跳变由自由面电荷决定。</p>
+      <div class="formula">E<sub>1t</sub> = E<sub>2t</sub><br>D<sub>2n</sub> − D<sub>1n</sub> = ρ<sub>s</sub><br>导体表面：E<sub>t</sub>=0，D<sub>n</sub>=ρ<sub>s</sub></div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>切向方向沿界面，法向方向垂直界面。边界条件就是告诉你场跨过界面时哪些分量不能乱跳。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>t 表示切向。</li><li>n 表示法向。</li><li>ρ_s 是自由面电荷密度。</li><li>D=εE 可把 D 条件转成 E 条件。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>介质分层、电场折射、导体表面电场题都要用。</p></div>
+        <div class="box"><b>易错提醒</b><p>不要把 E_t 连续误写成 D_t 连续；也不要把 D_n 条件直接当 E_n 连续。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：无自由面电荷时，D₁n 与 D₂n 关系？</summary>
+      <div class="steps">
+        <ol><li>边界条件：D₂n−D₁n=ρ_s。</li><li>无自由面电荷：ρ_s=0。</li><li>所以 D₂n−D₁n=0。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>D₁n = D₂n。</div>
+    </details>
+    
+    </article>
+    
+    <article class="kp">
+      <h4 id="kp8">2.8 静电场能量：电场本身储存能量</h4>
+      <div class="tags"><span class="tag">能量</span><span class="tag">电容</span></div>
+      <p>电场可以对电荷做功，所以电场本身具有能量。能量密度描述单位体积储存多少能量。</p>
+      <div class="formula">w<sub>e</sub> = <span class="frac"><span>1</span><span>2</span></span>E·D<br>W<sub>e</sub> = <span class="frac"><span>1</span><span>2</span></span>∭<sub>V</sub>E·D dV<br>W = <span class="frac"><span>1</span><span>2</span></span>CU<sup>2</sup> = <span class="frac"><span>1</span><span>2</span></span>QU = <span class="frac"><span>Q<sup>2</sup></span><span>2C</span></span></div>
+      <div class="explain-grid">
+        <div class="box"><b>通俗解释</b><p>能量密度是局部量，总能量是把所有小体积里的能量加起来。电容器公式是常用特例。</p></div>
+        <div class="box"><b>符号拆解</b><ul><li>w_e 是能量密度。</li><li>W_e 是总能量。</li><li>C 是电容。</li><li>U 是电压，Q 是电荷量。</li></ul></div>
+        <div class="box"><b>什么时候用</b><p>计算电场储能、电容器能量时使用。</p></div>
+        <div class="box"><b>易错提醒</b><p>公式选择看题目给什么量：给 C/U 用 1/2CU²，给 Q/C 用 Q²/2C。</p></div>
+      </div>
+      
+    <details class="practice">
+      <summary>小题：C=2 μF，U=10 V，求电容器能量。</summary>
+      <div class="steps">
+        <ol><li>统一单位：C=2×10⁻⁶ F。</li><li>选公式 W=1/2CU²。</li><li>代入：W=1/2×2×10⁻⁶×10²。</li><li>计算：W=1×10⁻⁴ J。</li></ol>
+      </div>
+      <div class="answer"><b>答案整理：</b>W=1.0×10⁻⁴ J。</div>
+    </details>
+    
+    </article>
+    
+      </div>
+
+      <div class="review" id="ch2-review">
+        <h3>第 2 章复盘</h3>
+        <p>学完本章后，建议你用一句话复述每个公式的含义，再做一遍每个知识点后面的题目。能说出“为什么用这个公式”，比只会代入更重要。</p>
+      </div>
+    </section>
+  </main>
+</div>
+</div>
+
+<script src="../../assets/site.js"></script>
+</body>
+</html>
