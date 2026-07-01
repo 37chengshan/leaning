@@ -1,0 +1,225 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>运算放大器：虚短虚断 + KCL</title><link rel="stylesheet" href="../../assets/style.css"/><script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]},svg:{fontCache:'global'}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head><body><div class="site-shell">
+<div class="topbar"><div class="brand">电路零基础详讲 v2</div><nav class="nav"><a href="../../index.html">总入口</a><a href="../../mind-guide.html">思维导读</a><a href="../../search.html">检索</a><a href="../../formula-index.html">公式索引</a><a href="../../type-map.html">题型地图</a><a href="../../audit.html">审查</a><button class="btn" type="button" onclick="toggleTheme()">深色</button></nav></div>
+<main id="top" class="chapter-layout">
+<aside class="sidebar">
+<a class="strong" href="../../index.html">返回总入口</a>
+<a class="strong" href="../../mindmaps/ch3.html">本章导图</a>
+<a class="strong" href="../../mind-guide.html">总思维导读</a>
+<a class="strong" href="#guide">本章导读</a>
+<a href="#t1">1. 运放符号：+ 端、- 端、输出端</a><a href="#t2">2. 理想运放模型</a><a href="#t3">3. 虚断：输入端电流为零</a><a href="#t4">4. 虚短：负反馈下两输入端电压相等</a><a href="#t5">5. 支路电流：节点电压差除以电阻</a><a href="#t6">6. 节点法分析运放：最稳套路</a><a href="#t7">7. 反相放大器</a><a href="#t8">8. 同相放大器</a><a href="#t9">9. 差分放大器：输出与两个输入之差有关</a>
+</aside>
+<section>
+<section class="hero"><span class="eyebrow">第3章 · 零基础详讲</span><h1>运算放大器：虚短虚断 + KCL</h1><p class="subtitle">运放题对新手最友好，因为它套路非常固定：先写虚断，再写虚短，最后在输入相关节点列 KCL。</p><p class="math-note">资料依据：S3 运算放大器。S3 资料强调理想运放两输入端电压相等、输入电流为零，以及用结点法/KCL 分析含理想运放的电路。</p></section>
+<div class="diagram"><svg width="880" height="260" viewBox="0 0 880 260" xmlns="http://www.w3.org/2000/svg"><rect width="878" height="258" x="1" y="1" rx="20" fill="#f8fafc" stroke="#cbd5e1"/><polygon points="360,70 360,190 560,130" fill="#eff6ff" stroke="#2563eb" stroke-width="4"/><line x1="180" y1="100" x2="360" y2="100" stroke="#0f172a" stroke-width="4"/><line x1="180" y1="160" x2="360" y2="160" stroke="#0f172a" stroke-width="4"/><line x1="560" y1="130" x2="710" y2="130" stroke="#0f172a" stroke-width="4"/><text x="332" y="108" font-size="28" fill="#0f172a">−</text><text x="332" y="170" font-size="28" fill="#0f172a">+</text><text x="128" y="105" font-size="18" fill="#334155">u−</text><text x="128" y="166" font-size="18" fill="#334155">u+</text><text x="730" y="136" font-size="18" fill="#334155">uo</text><text x="105" y="225" font-size="19" fill="#0f766e">理想负反馈两规则：虚断 i+=i-=0；虚短 u+=u−</text></svg></div>
+<section class="panel" id="guide"><h2>本章学习顺序</h2><ol><li>符号</li><li>节点电压</li><li>理想模型</li><li>虚断</li><li>虚短</li><li>支路电流</li><li>KCL</li><li>反相放大</li><li>同相/差分</li></ol><div class="example"><b>学完要达到：</b>能说出每个公式的字母含义，知道题目第一步做什么，而不是只背答案。</div></section>
+
+<article class="topic" id="t1">
+  <div class="topic-head"><span class="badge">知识点 1</span><h3>运放符号：+ 端、- 端、输出端</h3></div>
+  <p><b>新手先听这句：</b>+ 端是同相输入端，- 端是反相输入端，右边通常是输出端。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>先认清三个端。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>输出由两个输入端电压差放大得到。</p>
+    <div class="formula">\[u_o=A(u_+-u_-)\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>uo</code></td><td>输出电压。</td></tr><tr><td><code>A</code></td><td>开环增益。</td></tr><tr><td><code>u+</code></td><td>同相端电压。</td></tr><tr><td><code>u-</code></td><td>反相端电压。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>找 + 端。</li><li>找 - 端。</li><li>找输出端。</li><li>判断是否有反馈。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>识别端口</li><li>判断同相/反相</li><li>反馈方向</li></ul></section>
+      <section class="deep-section"><h4>一步例题：输入接 - 端常形成反相放大。</h4><ol><li>因为输出相位与输入相反。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>+ 端不是正电源，- 端不是负电源。</div>
+  </div>
+</article>
+
+<article class="topic" id="t2">
+  <div class="topic-head"><span class="badge">知识点 2</span><h3>理想运放模型</h3></div>
+  <p><b>新手先听这句：</b>理想运放是假设模型，让计算变简单。输入电阻无穷大、输出电阻为 0、电压增益无穷大。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>理想运放 = 计算简化。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>理想条件让输入端不吸电流，输出端像理想电压源。</p>
+    <div class="formula">\[R_{\text{in}}\to\infty,\quad R_{\text{out}}=0,\quad A\to\infty\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>Rin</code></td><td>输入电阻。</td></tr><tr><td><code>Rout</code></td><td>输出电阻。</td></tr><tr><td><code>A</code></td><td>开环增益。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>题目说理想运放，直接使用虚短虚断。</li><li>若没有负反馈，只能使用输入电流为 0，不能乱用虚短。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>理想条件判断</li><li>虚短虚断适用性</li><li>运放模型</li></ul></section>
+      <section class="deep-section"><h4>一步例题：理想输入电阻无穷大，所以输入端电流为 0。</h4><ol><li>由 Rin→∞ 得 i≈0。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>虚短要有负反馈，虚断来自输入电阻大。</div>
+  </div>
+</article>
+
+<article class="topic" id="t3">
+  <div class="topic-head"><span class="badge">知识点 3</span><h3>虚断：输入端电流为零</h3></div>
+  <p><b>新手先听这句：</b>虚断意思是输入端看起来像断路，没有电流流入运放输入端。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>虚断：电流进不去。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>理想运放两个输入端电流为零。</p>
+    <div class="formula">\[i_+=i_-=0\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>i+</code></td><td>同相端输入电流。</td></tr><tr><td><code>i-</code></td><td>反相端输入电流。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>列 KCL 时不把电流列进运放输入端。</li><li>外部电阻中的电流要从其他支路走。</li><li>用这个条件简化节点方程。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>运放 KCL</li><li>支路电流关系</li><li>输入电阻题</li></ul></section>
+      <section class="deep-section"><h4>一步例题：反相端连接输入电阻和反馈电阻时，两支路电流相等。</h4><ol><li>因为没有电流流入运放。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>虚断不是导线断开，只是输入电流为 0。</div>
+  </div>
+</article>
+
+<article class="topic" id="t4">
+  <div class="topic-head"><span class="badge">知识点 4</span><h3>虚短：负反馈下两输入端电压相等</h3></div>
+  <p><b>新手先听这句：</b>虚短意思是两个输入端电压相等，但不是导线真的短接。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>虚短：电压相等。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>负反馈下，理想运放通过调节输出让输入差趋近于 0。</p>
+    <div class="formula">\[u_+=u_-\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>u+</code></td><td>同相端电压。</td></tr><tr><td><code>u-</code></td><td>反相端电压。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>先确认有负反馈。</li><li>写 u+=u-。</li><li>若 + 端接地，则 - 端为虚地。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>虚地</li><li>反相放大</li><li>同相放大</li><li>差分放大</li></ul></section>
+      <section class="deep-section"><h4>一步例题：+ 端接地且有负反馈，则 u-=0。</h4><ol><li>u+=0，虚短得 u-=0。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>正反馈不能直接用虚短。</div>
+  </div>
+</article>
+
+<article class="topic" id="t5">
+  <div class="topic-head"><span class="badge">知识点 5</span><h3>支路电流：节点电压差除以电阻</h3></div>
+  <p><b>新手先听这句：</b>运放题的电流不是靠猜，而是用电阻两端节点电压差除以电阻。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>支路电流 = 电压差 / 电阻。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>假设电流从 a 流向 b，则电流等于 a 点电压减 b 点电压再除以电阻。</p>
+    <div class="formula">\[i=\frac{u_a-u_b}{R}\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>u_a,u_b</code></td><td>支路两端节点电压。</td></tr><tr><td><code>R</code></td><td>支路电阻。</td></tr><tr><td><code>i</code></td><td>支路电流。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>假设电流方向。</li><li>写起点电压减终点电压。</li><li>除以电阻。</li><li>代入 KCL。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>支路电流计算</li><li>KCL 方程</li><li>差分运放</li></ul></section>
+      <section class="deep-section"><h4>一步例题：a=5V,b=2V,R=1kΩ，则 i=3mA。</h4><ol><li>i=(5-2)/1000=0.003A。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>电流方向假设不同，分子顺序也不同。</div>
+  </div>
+</article>
+
+<article class="topic" id="t6">
+  <div class="topic-head"><span class="badge">知识点 6</span><h3>节点法分析运放：最稳套路</h3></div>
+  <p><b>新手先听这句：</b>复杂运放题不要硬看输出，先找适合列 KCL 的节点。S3 资料也提示通常在与输入端相连接的节点列方程。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>运放题 = 虚短虚断 + KCL。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>运放节点法就是 KCL 加虚短虚断。</p>
+    <div class="formula">\[\sum i_{\text{in}}=\sum i_{\text{out}},\quad i_+=i_-=0,\quad u_+=u_-\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>KCL</code></td><td>节点电流守恒。</td></tr><tr><td><code>u+=u-</code></td><td>虚短。</td></tr><tr><td><code>i+=i-=0</code></td><td>虚断。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>找输入端相关节点。</li><li>写虚断。</li><li>写虚短。</li><li>列 KCL。</li><li>代入电阻电流表达式。</li><li>解输出 uo。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>单运放节点法</li><li>多运放节点法</li><li>差分电路</li><li>求 uo/us</li></ul></section>
+      <section class="deep-section"><h4>一步例题：反相节点 KCL：输入电流=反馈电流。</h4><ol><li>(ui-0)/R1=(0-uo)/Rf。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>不要在输出端直接相连的节点乱列方程。</div>
+  </div>
+</article>
+
+<article class="topic" id="t7">
+  <div class="topic-head"><span class="badge">知识点 7</span><h3>反相放大器</h3></div>
+  <p><b>新手先听这句：</b>输入进 - 端，+ 端接地，输出通过反馈电阻回到 - 端。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>反相放大：负号 + 电阻比。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>输出与输入反相，倍数由电阻比决定。</p>
+    <div class="formula">\[u_o=-\frac{R_f}{R_1}u_i\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>uo</code></td><td>输出。</td></tr><tr><td><code>ui</code></td><td>输入。</td></tr><tr><td><code>Rf</code></td><td>反馈电阻。</td></tr><tr><td><code>R1</code></td><td>输入电阻。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>+ 端接地，u+=0。</li><li>虚短得 u-=0。</li><li>输入电流 ui/R1。</li><li>反馈电流 (0-uo)/Rf。</li><li>虚断使两电流相等，解 uo。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>求放大倍数</li><li>设计电阻比</li><li>反相信号</li><li>加法器基础</li></ul></section>
+      <section class="deep-section"><h4>一步例题：Rf=20kΩ,R1=10kΩ，则 uo=-2ui。</h4><ol><li>-Rf/R1=-2。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>负号表示反相，不能丢。</div>
+  </div>
+</article>
+
+<article class="topic" id="t8">
+  <div class="topic-head"><span class="badge">知识点 8</span><h3>同相放大器</h3></div>
+  <p><b>新手先听这句：</b>输入接 + 端，输出通过分压反馈到 - 端。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>同相放大：1+电阻比。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>输出与输入同相，增益大于等于 1。</p>
+    <div class="formula">\[u_o=\left(1+\frac{R_f}{R_1}\right)u_i\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>Rf</code></td><td>反馈电阻。</td></tr><tr><td><code>R1</code></td><td>接地电阻。</td></tr><tr><td><code>ui</code></td><td>输入。</td></tr><tr><td><code>uo</code></td><td>输出。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>虚短得 u-=u+=ui。</li><li>- 端电压是输出分压。</li><li>写 ui=uo·R1/(R1+Rf)。</li><li>解出 uo。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>同相放大器</li><li>电压跟随器</li><li>增益设计</li></ul></section>
+      <section class="deep-section"><h4>一步例题：Rf=9kΩ,R1=1kΩ，则增益 10。</h4><ol><li>1+9/1=10。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>同相放大器没有负号。</div>
+  </div>
+</article>
+
+<article class="topic" id="t9">
+  <div class="topic-head"><span class="badge">知识点 9</span><h3>差分放大器：输出与两个输入之差有关</h3></div>
+  <p><b>新手先听这句：</b>差分放大器常用来放大两个输入信号的差值，而抑制共同部分。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>差分放大看 u2-u1。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>在匹配电阻条件下，输出正比于两个输入电压之差。</p>
+    <div class="formula">\[u_o=\frac{R_2}{R_1}(u_2-u_1)\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>u1,u2</code></td><td>两个输入。</td></tr><tr><td><code>R1,R2</code></td><td>电阻。</td></tr><tr><td><code>uo</code></td><td>输出。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>对 - 端节点列 KCL。</li><li>对 + 端分压求 u+。</li><li>用虚短 u-=u+。</li><li>联立得到 uo。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>差分放大</li><li>减法器</li><li>共模抑制基础</li></ul></section>
+      <section class="deep-section"><h4>一步例题：R2/R1=3，u2-u1=1V，则 uo=3V。</h4><ol><li>uo=3×1=3V。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>输入顺序决定正负号。</div>
+  </div>
+</article>
+
+</section>
+</main>
+</div><div class="reader-tools"><a href="#top">顶部</a><button type="button" onclick="toggleTheme()">深色</button></div><script src="../../assets/site.js"></script></body></html>

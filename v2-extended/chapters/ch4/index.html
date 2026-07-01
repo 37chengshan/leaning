@@ -1,0 +1,225 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>频率响应：从阻抗到波特图</title><link rel="stylesheet" href="../../assets/style.css"/><script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]},svg:{fontCache:'global'}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head><body><div class="site-shell">
+<div class="topbar"><div class="brand">电路零基础详讲 v2</div><nav class="nav"><a href="../../index.html">总入口</a><a href="../../mind-guide.html">思维导读</a><a href="../../search.html">检索</a><a href="../../formula-index.html">公式索引</a><a href="../../type-map.html">题型地图</a><a href="../../audit.html">审查</a><button class="btn" type="button" onclick="toggleTheme()">深色</button></nav></div>
+<main id="top" class="chapter-layout">
+<aside class="sidebar">
+<a class="strong" href="../../index.html">返回总入口</a>
+<a class="strong" href="../../mindmaps/ch4.html">本章导图</a>
+<a class="strong" href="../../mind-guide.html">总思维导读</a>
+<a class="strong" href="#guide">本章导读</a>
+<a href="#t1">1. 频率响应：为什么频率会影响电路</a><a href="#t2">2. 网络函数 H(jω)</a><a href="#t3">3. 电容阻抗和电感阻抗</a><a href="#t4">4. RC 低通滤波器</a><a href="#t5">5. RC 高通滤波器</a><a href="#t6">6. RCL 串联谐振频率</a><a href="#t7">7. 品质因数 Q 和带宽 BW</a><a href="#t8">8. 分贝 dB</a><a href="#t9">9. 波特图：频响的草图语言</a>
+</aside>
+<section>
+<section class="hero"><span class="eyebrow">第4章 · 零基础详讲</span><h1>频率响应：从阻抗到波特图</h1><p class="subtitle">频率响应回答：同一个电路遇到不同频率信号时，输出会放大、衰减还是移相。</p><p class="math-note">资料依据：S4 电路的频率响应。S4 资料包含频率响应、网络函数、电容电感阻抗、RCL 谐振、分贝和波特图。</p></section>
+<div class="diagram"><svg width="880" height="270" viewBox="0 0 880 270" xmlns="http://www.w3.org/2000/svg"><rect width="878" height="268" x="1" y="1" rx="20" fill="#f8fafc" stroke="#cbd5e1"/><line x1="100" y1="220" x2="780" y2="220" stroke="#0f172a" stroke-width="3"/><line x1="100" y1="40" x2="100" y2="220" stroke="#0f172a" stroke-width="3"/><polyline points="130,85 330,85 480,145 680,205" fill="none" stroke="#2563eb" stroke-width="5"/><line x1="330" y1="85" x2="330" y2="220" stroke="#f59e0b" stroke-width="3" stroke-dasharray="8 6"/><text x="302" y="245" font-size="16" fill="#f59e0b">截止频率</text><text x="690" y="245" font-size="16" fill="#334155">频率 ω</text><text x="28" y="54" font-size="16" fill="#334155">增益 dB</text><text x="450" y="165" font-size="18" fill="#1e40af">低通示意：高频衰减</text></svg></div>
+<section class="panel" id="guide"><h2>本章学习顺序</h2><ol><li>频率与角频率</li><li>网络函数</li><li>相量阻抗</li><li>RC/RL 滤波</li><li>RCL 谐振</li><li>Q 和带宽</li><li>dB</li><li>波特图</li></ol><div class="example"><b>学完要达到：</b>能说出每个公式的字母含义，知道题目第一步做什么，而不是只背答案。</div></section>
+
+<article class="topic" id="t1">
+  <div class="topic-head"><span class="badge">知识点 1</span><h3>频率响应：为什么频率会影响电路</h3></div>
+  <p><b>新手先听这句：</b>电阻对频率不敏感，但电容和电感对频率非常敏感，所以电路会对不同频率表现不同。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>频率响应从 ω=2πf 开始。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>频率 f 和角频率 ω 的换算关系。</p>
+    <div class="formula">\[\omega=2\pi f\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>f</code></td><td>频率，Hz。</td></tr><tr><td><code>ω</code></td><td>角频率，rad/s。</td></tr><tr><td><code>2π</code></td><td>一圈对应 2π 弧度。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>看到 Hz 先转 rad/s。</li><li>把电容电感换成阻抗。</li><li>再求输出/输入比。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>频率换算</li><li>频率响应概念</li><li>滤波器判断</li></ul></section>
+      <section class="deep-section"><h4>一步例题：f=100Hz，则 ω=200π rad/s。</h4><ol><li>ω=2πf=200π。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>jω 里用的是 ω，不是 f。</div>
+  </div>
+</article>
+
+<article class="topic" id="t2">
+  <div class="topic-head"><span class="badge">知识点 2</span><h3>网络函数 H(jω)</h3></div>
+  <p><b>新手先听这句：</b>网络函数就是输出除以输入。它告诉你这个频率下信号被放大多少、相位变多少。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>网络函数 = 输出 / 输入。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>输出相量与输入相量的比值。</p>
+    <div class="formula">\[H(j\omega)=\frac{\dot{Y}(j\omega)}{\dot{X}(j\omega)}\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>H(jω)</code></td><td>网络函数。</td></tr><tr><td><code>X</code></td><td>输入相量。</td></tr><tr><td><code>Y</code></td><td>输出相量。</td></tr><tr><td><code>|H|</code></td><td>幅值增益。</td></tr><tr><td><code>argH</code></td><td>相位。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>确定输入是什么。</li><li>确定输出是什么。</li><li>用电路方法求输出与输入关系。</li><li>输出除以输入。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>电压传递函数</li><li>电流传递函数</li><li>幅频特性</li><li>相频特性</li></ul></section>
+      <section class="deep-section"><h4>一步例题：若 Uo=0.5Ui，则 H=0.5。</h4><ol><li>H=Uo/Ui=0.5。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>不要把输入/输出反写。</div>
+  </div>
+</article>
+
+<article class="topic" id="t3">
+  <div class="topic-head"><span class="badge">知识点 3</span><h3>电容阻抗和电感阻抗</h3></div>
+  <p><b>新手先听这句：</b>频率越高，电容越像短路；频率越高，电感越像开路。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>C 低频阻，高频通；L 低频通，高频阻。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>电容阻抗与频率成反比，电感阻抗与频率成正比。</p>
+    <div class="formula">\[Z_C=\frac{1}{j\omega C},\quad Z_L=j\omega L\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>ZC</code></td><td>电容阻抗。</td></tr><tr><td><code>ZL</code></td><td>电感阻抗。</td></tr><tr><td><code>j</code></td><td>虚数单位。</td></tr><tr><td><code>C,L</code></td><td>电容、电感。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>电容换成 1/(jωC)。</li><li>电感换成 jωL。</li><li>把电路当成复阻抗电路。</li><li>用分压/KCL/KVL 求 H。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>RC 频响</li><li>RL 频响</li><li>阻抗计算</li><li>相量法</li></ul></section>
+      <section class="deep-section"><h4>一步例题：频率很高时 ZC 很小，电容容易通过高频。</h4><ol><li>ZC=1/(jωC)，ω 越大，大小越小。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>jωC 是导纳，不是电容阻抗。</div>
+  </div>
+</article>
+
+<article class="topic" id="t4">
+  <div class="topic-head"><span class="badge">知识点 4</span><h3>RC 低通滤波器</h3></div>
+  <p><b>新手先听这句：</b>低通滤波器让低频通过，让高频被衰减。最典型的是电阻串联、电容对地，输出取电容两端。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>RC 电容输出常是低通。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>频率越高，分母越大，输出越小。</p>
+    <div class="formula">\[H(j\omega)=\frac{1}{1+j\omega RC}\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>R</code></td><td>电阻。</td></tr><tr><td><code>C</code></td><td>电容。</td></tr><tr><td><code>ω</code></td><td>角频率。</td></tr><tr><td><code>H</code></td><td>传递函数。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>把电容写成 1/(jωC)。</li><li>用分压公式 Uc/Us。</li><li>化简成标准形式。</li><li>判断低频和高频极限。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>低通判断</li><li>截止频率</li><li>传递函数</li><li>波特图</li></ul></section>
+      <section class="deep-section"><h4>一步例题：ω=0 时 H=1，低频通过。</h4><ol><li>代入 ω=0，H=1/(1+0)=1。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>输出取电容两端是低通；取电阻两端可能是高通。</div>
+  </div>
+</article>
+
+<article class="topic" id="t5">
+  <div class="topic-head"><span class="badge">知识点 5</span><h3>RC 高通滤波器</h3></div>
+  <p><b>新手先听这句：</b>高通滤波器让高频通过，让低频被衰减。典型电路是电容串联、电阻对地，输出取电阻两端。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>RC 电阻输出常是高通。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>ω 很小时输出接近 0，ω 很大时输出接近 1。</p>
+    <div class="formula">\[H(j\omega)=\frac{j\omega RC}{1+j\omega RC}\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>jωRC</code></td><td>频率相关项。</td></tr><tr><td><code>H</code></td><td>输出/输入。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>电容换成阻抗。</li><li>输出取电阻两端。</li><li>用分压求 H。</li><li>看 ω→0 和 ω→∞。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>高通判断</li><li>截止频率</li><li>分压法</li><li>波特图</li></ul></section>
+      <section class="deep-section"><h4>一步例题：ω→0 时 H→0，低频被挡住。</h4><ol><li>分子 jωRC→0。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>不要只看有电容就说高通，关键看输出取哪。</div>
+  </div>
+</article>
+
+<article class="topic" id="t6">
+  <div class="topic-head"><span class="badge">知识点 6</span><h3>RCL 串联谐振频率</h3></div>
+  <p><b>新手先听这句：</b>RCL 串联电路在某个频率下，电感和电容的反应抵消，总阻抗最小，电流最大。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>谐振频率只由 L、C 决定。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>ω0 是谐振角频率，f0 是普通频率。</p>
+    <div class="formula">\[\omega_0=\frac{1}{\sqrt{LC}},\quad f_0=\frac{1}{2\pi\sqrt{LC}}\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>ω0</code></td><td>谐振角频率。</td></tr><tr><td><code>f0</code></td><td>谐振频率，Hz。</td></tr><tr><td><code>L</code></td><td>电感。</td></tr><tr><td><code>C</code></td><td>电容。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>读出 L 和 C。</li><li>代入 ω0=1/√(LC)。</li><li>若要 Hz，再除以 2π。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>求谐振频率</li><li>判断谐振</li><li>RCL 参数计算</li></ul></section>
+      <section class="deep-section"><h4>一步例题：L=1H,C=1F，则 ω0=1rad/s。</h4><ol><li>ω0=1/√1=1。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>ω0 和 f0 单位不同。</div>
+  </div>
+</article>
+
+<article class="topic" id="t7">
+  <div class="topic-head"><span class="badge">知识点 7</span><h3>品质因数 Q 和带宽 BW</h3></div>
+  <p><b>新手先听这句：</b>Q 值越大，谐振越尖锐，通频带越窄，选择频率的能力越强。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>Q 越大，越挑频率。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>Q 描述选频能力，BW 描述通频带宽度。</p>
+    <div class="formula">\[Q=\frac{\omega_0L}{R}=\frac{1}{\omega_0CR},\quad BW=\frac{\omega_0}{Q}\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>Q</code></td><td>品质因数，无单位。</td></tr><tr><td><code>BW</code></td><td>带宽。</td></tr><tr><td><code>R,L,C</code></td><td>RCL 参数。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>先求 ω0。</li><li>代入 Q 公式。</li><li>用 BW=ω0/Q 求带宽。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>求 Q</li><li>求带宽</li><li>选频能力判断</li><li>RCL 谐振</li></ul></section>
+      <section class="deep-section"><h4>一步例题：ω0=1000rad/s，Q=10，则 BW=100rad/s。</h4><ol><li>BW=1000/10。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>Q 大不是带宽大，而是带宽小。</div>
+  </div>
+</article>
+
+<article class="topic" id="t8">
+  <div class="topic-head"><span class="badge">知识点 8</span><h3>分贝 dB</h3></div>
+  <p><b>新手先听这句：</b>分贝把倍率变成对数，方便画图。电压/电流增益用 20log。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>电压增益 dB = 20log。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>把幅值增益 |H| 转成分贝。</p>
+    <div class="formula">\[G_{\text{dB}}=20\log_{10}|H|\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>GdB</code></td><td>分贝增益。</td></tr><tr><td><code>|H|</code></td><td>幅值增益。</td></tr><tr><td><code>log10</code></td><td>以 10 为底的对数。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>先求 |H|。</li><li>代入 20log10。</li><li>判断正负。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>倍数转 dB</li><li>dB 转倍数</li><li>波特图纵轴</li><li>截止点计算</li></ul></section>
+      <section class="deep-section"><h4>一步例题：|H|=10，则 G=20dB。</h4><ol><li>20log10(10)=20。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>功率增益常用 10log；电压/电流增益常用 20log。</div>
+  </div>
+</article>
+
+<article class="topic" id="t9">
+  <div class="topic-head"><span class="badge">知识点 9</span><h3>波特图：频响的草图语言</h3></div>
+  <p><b>新手先听这句：</b>波特图用对数横轴表示频率，用 dB 纵轴表示增益。它能快速看出电路是低通、高通还是带通。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>波特图是频率响应的地图。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>频率按倍数展开，增益按 dB 表示。</p>
+    <div class="formula">\[\text{横轴：}\log\omega,\quad \text{纵轴：}20\log_{10}|H(j\omega)|\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>ω</code></td><td>角频率。</td></tr><tr><td><code>|H|</code></td><td>幅值。</td></tr><tr><td><code>dB</code></td><td>分贝。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>求 H(jω)。</li><li>求模 |H|。</li><li>转 dB。</li><li>找转折频率。</li><li>按斜率画近似直线。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>画幅频波特图</li><li>判断斜率</li><li>截止频率</li><li>滤波器识别</li></ul></section>
+      <section class="deep-section"><h4>一步例题：一阶低通在截止后约 -20dB/dec。</h4><ol><li>dec 表示频率增加 10 倍。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>横轴是对数坐标，不是普通线性坐标。</div>
+  </div>
+</article>
+
+</section>
+</main>
+</div><div class="reader-tools"><a href="#top">顶部</a><button type="button" onclick="toggleTheme()">深色</button></div><script src="../../assets/site.js"></script></body></html>

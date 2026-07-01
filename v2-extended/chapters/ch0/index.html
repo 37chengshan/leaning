@@ -1,0 +1,202 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>零基础预备：把电路语言补起来</title><link rel="stylesheet" href="../../assets/style.css"/><script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]},svg:{fontCache:'global'}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head><body><div class="site-shell">
+<div class="topbar"><div class="brand">电路零基础详讲 v2</div><nav class="nav"><a href="../../index.html">总入口</a><a href="../../mind-guide.html">思维导读</a><a href="../../search.html">检索</a><a href="../../formula-index.html">公式索引</a><a href="../../type-map.html">题型地图</a><a href="../../audit.html">审查</a><button class="btn" type="button" onclick="toggleTheme()">深色</button></nav></div>
+<main id="top" class="chapter-layout">
+<aside class="sidebar">
+<a class="strong" href="../../index.html">返回总入口</a>
+<a class="strong" href="../../mindmaps/ch0.html">本章导图</a>
+<a class="strong" href="../../mind-guide.html">总思维导读</a>
+<a class="strong" href="#guide">本章导读</a>
+<a href="#t1">1. 电流：电荷在导线里流动</a><a href="#t2">2. 电压：两个点之间的电势差</a><a href="#t3">3. 欧姆定律：电阻上的电压和电流关系</a><a href="#t4">4. 串联和并联：怎么把电阻化简</a><a href="#t5">5. KCL：节点电流守恒</a><a href="#t6">6. KVL：回路电压守恒</a><a href="#t7">7. 电容：电压不能突变</a><a href="#t8">8. 电感：电流不能突变</a>
+</aside>
+<section>
+<section class="hero"><span class="eyebrow">第0章 · 零基础详讲</span><h1>零基础预备：把电路语言补起来</h1><p class="subtitle">如果你连电压、电流、节点、KCL、KVL 都不熟，后面的拉普拉斯、二端口、运放和频率响应都会变成机械背公式。所以先把电路语言补上。</p><p class="math-note">资料依据：新增预备章。这一章是为了照顾完全新学生，原 PDF 默认你已经学过基础电路。</p></section>
+<div class="diagram"><svg width="880" height="230" viewBox="0 0 880 230" xmlns="http://www.w3.org/2000/svg"><rect width="878" height="228" x="1" y="1" rx="20" fill="#f8fafc" stroke="#cbd5e1"/><text x="32" y="38" font-size="22" font-weight="700" fill="#0f172a">新手电路主线：电压推动电流，元件决定关系，KCL/KVL列方程</text><circle cx="95" cy="120" r="28" fill="none" stroke="#0f172a" stroke-width="4"/><text x="86" y="116" font-size="20" fill="#dc2626">+</text><text x="87" y="140" font-size="20" fill="#2563eb">-</text><line x1="123" y1="120" x2="245" y2="120" stroke="#0f172a" stroke-width="4"/><polyline points="245,120 260,95 285,145 310,95 335,145 360,95 375,120" fill="none" stroke="#0f172a" stroke-width="4"/><line x1="375" y1="120" x2="520" y2="120" stroke="#0f172a" stroke-width="4"/><line x1="520" y1="120" x2="520" y2="180" stroke="#0f172a" stroke-width="4"/><line x1="520" y1="180" x2="95" y2="180" stroke="#0f172a" stroke-width="4"/><line x1="95" y1="180" x2="95" y2="148" stroke="#0f172a" stroke-width="4"/><text x="285" y="85" font-size="20" fill="#0f766e">R</text><path d="M150 95 C220 55, 360 55, 455 95" stroke="#2563eb" stroke-width="4" fill="none" marker-end="url(#a)"/><text x="255" y="58" font-size="18" fill="#2563eb">电流 i</text><text x="575" y="110" font-size="18" fill="#334155">欧姆定律：u = Ri</text><text x="575" y="140" font-size="18" fill="#334155">KCL：节点电流守恒</text><text x="575" y="170" font-size="18" fill="#334155">KVL：回路电压守恒</text><defs><marker id="a" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2563eb"/></marker></defs></svg></div>
+<section class="panel" id="guide"><h2>本章学习顺序</h2><ol><li>电荷与电流</li><li>电压与接地</li><li>欧姆定律</li><li>串并联</li><li>KCL</li><li>KVL</li><li>电容电感</li><li>功率能量</li></ol><div class="example"><b>学完要达到：</b>能说出每个公式的字母含义，知道题目第一步做什么，而不是只背答案。</div></section>
+
+<article class="topic" id="t1">
+  <div class="topic-head"><span class="badge">知识点 1</span><h3>电流：电荷在导线里流动</h3></div>
+  <p><b>新手先听这句：</b>把电流想成“电荷流量”。一秒钟通过某个截面的电荷越多，电流越大。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>电流 = 电荷流动速度。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>电流 i 是电荷量 q 对时间 t 的变化率。</p>
+    <div class="formula">\[i=\frac{dq}{dt}\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>i</code></td><td>电流，单位 A。</td></tr><tr><td><code>q</code></td><td>电荷量，单位 C。</td></tr><tr><td><code>t</code></td><td>时间，单位 s。</td></tr><tr><td><code>dq/dt</code></td><td>单位时间内通过的电荷量。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>如果题目给总电荷量和时间，用 i=q/t。</li><li>如果 q 随 t 变化，用导数 dq/dt。</li><li>看方向：正电荷运动方向定义为电流方向。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>电流定义题</li><li>单位换算题</li><li>电流方向判断题</li></ul></section>
+      <section class="deep-section"><h4>一步例题：2 秒通过 6 C 电荷，电流是多少？</h4><ol><li>i=q/t=6/2=3A。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>mA 要换成 A：1mA=0.001A。；电子实际运动方向和传统电流方向相反。</div>
+  </div>
+</article>
+
+<article class="topic" id="t2">
+  <div class="topic-head"><span class="badge">知识点 2</span><h3>电压：两个点之间的电势差</h3></div>
+  <p><b>新手先听这句：</b>电压不是某个元件“自己有”的东西，而是两个点之间的差。没有参考点，就没有明确电压。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>电压 = 两点电势差。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>A 点相对 B 点的电压等于 A 点电势减 B 点电势。</p>
+    <div class="formula">\[u_{AB}=V_A-V_B\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>u_AB</code></td><td>A 到 B 的电压。</td></tr><tr><td><code>V_A</code></td><td>A 点电势。</td></tr><tr><td><code>V_B</code></td><td>B 点电势。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>先确定电压方向 A→B。</li><li>用起点电势减终点电势。</li><li>若结果为负，说明实际极性与假设相反。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>节点电压题</li><li>电压方向题</li><li>支路电压计算</li></ul></section>
+      <section class="deep-section"><h4>一步例题：A 点 8V，B 点 3V，求 u_AB。</h4><ol><li>u_AB=8-3=5V。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>电压一定是两个点之间的量。；接地只是人为规定 0V，不是电流一定流向地。</div>
+  </div>
+</article>
+
+<article class="topic" id="t3">
+  <div class="topic-head"><span class="badge">知识点 3</span><h3>欧姆定律：电阻上的电压和电流关系</h3></div>
+  <p><b>新手先听这句：</b>电阻越大，同样电压下电流越小；电压越大，同样电阻下电流越大。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>电阻题第一反应：u=Ri。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>电阻元件上，电压、电流、电阻成线性关系。</p>
+    <div class="formula">\[u=Ri,\quad i=\frac{u}{R},\quad R=\frac{u}{i}\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>u</code></td><td>电阻两端电压，V。</td></tr><tr><td><code>i</code></td><td>通过电阻的电流，A。</td></tr><tr><td><code>R</code></td><td>电阻，Ω。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>统一单位：kΩ→Ω，mA→A。</li><li>看已知两个量。</li><li>选公式变形。</li><li>结果带单位。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>已知 u,R 求 i</li><li>已知 i,R 求 u</li><li>已知 u,i 求 R</li><li>电阻功率题</li></ul></section>
+      <section class="deep-section"><h4>一步例题：R=2kΩ，u=10V，求 i。</h4><ol><li>2kΩ=2000Ω。</li><li>i=10/2000=0.005A=5mA。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>最容易错在单位。；方向和极性不一致时，计算符号会变。</div>
+  </div>
+</article>
+
+<article class="topic" id="t4">
+  <div class="topic-head"><span class="badge">知识点 4</span><h3>串联和并联：怎么把电阻化简</h3></div>
+  <p><b>新手先听这句：</b>串联像一条路连续经过几个阻碍；并联像有多条路可以走。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>串联加，平行倒数加。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>串联电阻直接相加；并联电阻的倒数相加。</p>
+    <div class="formula">\[R_{\text{串}}=R_1+R_2+\cdots,\quad \frac{1}{R_{\text{并}}}=\frac{1}{R_1}+\frac{1}{R_2}+\cdots\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>R_串</code></td><td>串联等效电阻。</td></tr><tr><td><code>R_并</code></td><td>并联等效电阻。</td></tr><tr><td><code>R1,R2</code></td><td>各个电阻。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>先判断电阻连接关系。</li><li>串联：电流相同，电阻相加。</li><li>并联：电压相同，倒数相加。</li><li>复杂电路先局部化简。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>串联等效</li><li>并联等效</li><li>混联化简</li><li>分压分流</li></ul></section>
+      <section class="deep-section"><h4>一步例题：2kΩ 与 3kΩ 串联，等效多少？</h4><ol><li>R=2kΩ+3kΩ=5kΩ。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>并联电阻一定小于最小的那个电阻。；看到两个电阻接在同一对节点上才是并联。</div>
+  </div>
+</article>
+
+<article class="topic" id="t5">
+  <div class="topic-head"><span class="badge">知识点 5</span><h3>KCL：节点电流守恒</h3></div>
+  <p><b>新手先听这句：</b>一个节点不能凭空储存电荷，所以流入多少，流出多少。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>KCL 是节点法的灵魂。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>节点处电流代数和为 0。</p>
+    <div class="formula">\[\sum i_{\text{in}}=\sum i_{\text{out}}\quad \text{或}\quad \sum i=0\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>Σ</code></td><td>求和。</td></tr><tr><td><code>i_in</code></td><td>流入节点的电流。</td></tr><tr><td><code>i_out</code></td><td>流出节点的电流。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>选节点。</li><li>给每条支路电流规定方向。</li><li>把每条电流写成电压差/电阻。</li><li>列流入=流出。</li><li>解方程。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>节点电压法</li><li>运放 KCL</li><li>二端口电流方程</li><li>支路电流计算</li></ul></section>
+      <section class="deep-section"><h4>一步例题：流入节点 2mA 和 3mA，流出 i，求 i。</h4><ol><li>由 KCL：i=2+3=5mA。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>电流方向可以假设，算出负数表示方向相反。；不要漏掉某一条支路。</div>
+  </div>
+</article>
+
+<article class="topic" id="t6">
+  <div class="topic-head"><span class="badge">知识点 6</span><h3>KVL：回路电压守恒</h3></div>
+  <p><b>新手先听这句：</b>沿闭合回路绕一圈，电压升高和降低必须抵消。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>KVL 是回路法的核心。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>闭合回路中所有电压升降的代数和为 0。</p>
+    <div class="formula">\[\sum u=0\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>u</code></td><td>每段电压升降。</td></tr><tr><td><code>Σu</code></td><td>沿回路所有电压相加。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>选闭合回路。</li><li>规定绕行方向。</li><li>遇到电源从 - 到 + 记升压。</li><li>顺电流过电阻记压降。</li><li>列和为 0。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>网孔电流法</li><li>串联回路</li><li>RLC 方程</li><li>拉普拉斯域 KVL</li></ul></section>
+      <section class="deep-section"><h4>一步例题：10V 电源串联两个压降 4V、6V，验证 KVL。</h4><ol><li>10-4-6=0，满足 KVL。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>符号最容易错。建议每次都画极性。</div>
+  </div>
+</article>
+
+<article class="topic" id="t7">
+  <div class="topic-head"><span class="badge">知识点 7</span><h3>电容：电压不能突变</h3></div>
+  <p><b>新手先听这句：</b>电容像一个能储存电荷的水桶，电压变化需要时间，所以电容电压不能突然跳变。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>记住：电容保电压。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>电容电流取决于电压变化速度；换路瞬间电容电压连续。</p>
+    <div class="formula">\[i_C=C\frac{du_C}{dt},\quad u_C(0^-)=u_C(0^+)\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>i_C</code></td><td>电容电流。</td></tr><tr><td><code>C</code></td><td>电容值，F。</td></tr><tr><td><code>u_C</code></td><td>电容电压。</td></tr><tr><td><code>0-,0+</code></td><td>换路前/后瞬间。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>找换路前电容电压。</li><li>用 uC(0-)=uC(0+)。</li><li>时域题用微分关系。</li><li>拉普拉斯题用 s 域模型。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>换路初值</li><li>RC 暂态</li><li>拉普拉斯电容模型</li><li>频率响应电容阻抗</li></ul></section>
+      <section class="deep-section"><h4>一步例题：换路前电容电压 5V，换路后瞬间是多少？</h4><ol><li>uC(0+)=uC(0-)=5V。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>电容电流可以突变，但电容电压不能突变。</div>
+  </div>
+</article>
+
+<article class="topic" id="t8">
+  <div class="topic-head"><span class="badge">知识点 8</span><h3>电感：电流不能突变</h3></div>
+  <p><b>新手先听这句：</b>电感像有惯性的电流，电流变化不能突然完成。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>记住：电感保电流。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>电感电压取决于电流变化速度；换路瞬间电感电流连续。</p>
+    <div class="formula">\[u_L=L\frac{di_L}{dt},\quad i_L(0^-)=i_L(0^+)\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>u_L</code></td><td>电感电压。</td></tr><tr><td><code>L</code></td><td>电感值，H。</td></tr><tr><td><code>i_L</code></td><td>电感电流。</td></tr><tr><td><code>0-,0+</code></td><td>换路前/后瞬间。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>找换路前电感电流。</li><li>用 iL(0-)=iL(0+)。</li><li>时域题用微分关系。</li><li>拉普拉斯题用 s 域模型。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>换路初值</li><li>RL 暂态</li><li>拉普拉斯电感模型</li><li>频率响应电感阻抗</li></ul></section>
+      <section class="deep-section"><h4>一步例题：换路前电感电流 2A，换路后瞬间是多少？</h4><ol><li>iL(0+)=iL(0-)=2A。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>电感电压可以突变，但电感电流不能突变。</div>
+  </div>
+</article>
+
+</section>
+</main>
+</div><div class="reader-tools"><a href="#top">顶部</a><button type="button" onclick="toggleTheme()">深色</button></div><script src="../../assets/site.js"></script></body></html>

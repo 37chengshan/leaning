@@ -1,0 +1,225 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>拉普拉斯变换：新手从时域到 s 域</title><link rel="stylesheet" href="../../assets/style.css"/><script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]},svg:{fontCache:'global'}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head><body><div class="site-shell">
+<div class="topbar"><div class="brand">电路零基础详讲 v2</div><nav class="nav"><a href="../../index.html">总入口</a><a href="../../mind-guide.html">思维导读</a><a href="../../search.html">检索</a><a href="../../formula-index.html">公式索引</a><a href="../../type-map.html">题型地图</a><a href="../../audit.html">审查</a><button class="btn" type="button" onclick="toggleTheme()">深色</button></nav></div>
+<main id="top" class="chapter-layout">
+<aside class="sidebar">
+<a class="strong" href="../../index.html">返回总入口</a>
+<a class="strong" href="../../mindmaps/ch1.html">本章导图</a>
+<a class="strong" href="../../mind-guide.html">总思维导读</a>
+<a class="strong" href="#guide">本章导读</a>
+<a href="#t1">1. 时域与 s 域：把函数翻译成另一种语言</a><a href="#t2">2. 单位阶跃 ε(t)：开关动作的数学表示</a><a href="#t3">3. 单位冲激 δ(t)：瞬间作用</a><a href="#t4">4. 常用变换对：从查表开始</a><a href="#t5">5. 线性性质：复杂函数拆开算</a><a href="#t6">6. 微分性质：电容电感为什么能进 s 域</a><a href="#t7">7. 积分性质：累积量怎么变换</a><a href="#t8">8. 部分分式展开：反变换前必须拆开</a><a href="#t9">9. 复频域下的电路分析总流程</a>
+</aside>
+<section>
+<section class="hero"><span class="eyebrow">第1章 · 零基础详讲</span><h1>拉普拉斯变换：新手从时域到 s 域</h1><p class="subtitle">拉普拉斯变换的价值是把电容、电感造成的微分方程变成代数方程。S1 里也把复频域下电路分析概括成：先按换路定则求初值，再列 KCL/KVL，再拉普拉斯变换求解，最后反变换。</p><p class="math-note">资料依据：S1 拉普拉斯变换。S1 资料列出拉普拉斯概念、性质、常用变换对、部分分式展开和复频域电路分析流程。</p></section>
+<div class="diagram"><svg width="880" height="230" viewBox="0 0 880 230" xmlns="http://www.w3.org/2000/svg"><rect width="878" height="228" x="1" y="1" rx="20" fill="#f8fafc" stroke="#cbd5e1"/><rect x="70" y="75" width="220" height="80" rx="16" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/><rect x="590" y="75" width="220" height="80" rx="16" fill="#ecfdf5" stroke="#0f766e" stroke-width="3"/><text x="130" y="123" font-size="26" font-weight="700" fill="#1e40af">时域 f(t)</text><text x="650" y="123" font-size="26" font-weight="700" fill="#0f766e">s域 F(s)</text><path d="M310 105 C410 55, 490 55, 570 105" fill="none" stroke="#f59e0b" stroke-width="5" marker-end="url(#b)"/><path d="M570 130 C480 175, 405 175, 310 130" fill="none" stroke="#64748b" stroke-width="4" marker-end="url(#c)"/><text x="390" y="62" font-size="19" fill="#f59e0b">拉普拉斯变换</text><text x="408" y="186" font-size="19" fill="#64748b">反变换</text><defs><marker id="b" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#f59e0b"/></marker><marker id="c" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#64748b"/></marker></defs></svg></div>
+<section class="panel" id="guide"><h2>本章学习顺序</h2><ol><li>时域与 s 域</li><li>单位阶跃/冲激</li><li>常用变换对</li><li>三大性质</li><li>部分分式</li><li>单根/重根/复根</li><li>电容电感 s 域</li><li>复频域电路流程</li></ol><div class="example"><b>学完要达到：</b>能说出每个公式的字母含义，知道题目第一步做什么，而不是只背答案。</div></section>
+
+<article class="topic" id="t1">
+  <div class="topic-head"><span class="badge">知识点 1</span><h3>时域与 s 域：把函数翻译成另一种语言</h3></div>
+  <p><b>新手先听这句：</b>时域 f(t) 是你熟悉的随时间变化的波形；s 域 F(s) 是它的拉普拉斯表达。它们描述的是同一个东西，只是语言不同。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>拉普拉斯就是时域和 s 域之间翻译。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>左边是时间函数，右边是复频域函数。</p>
+    <div class="formula">\[f(t)\;\Longleftrightarrow\;F(s)\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>f(t)</code></td><td>时域函数。</td></tr><tr><td><code>F(s)</code></td><td>s 域函数。</td></tr><tr><td><code>s</code></td><td>复频率变量。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>判断题目给的是 f(t) 还是 F(s)。</li><li>f(t)→F(s) 是正变换。</li><li>F(s)→f(t) 是反变换。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>判断域</li><li>正变换</li><li>反变换</li><li>暂态电路建模</li></ul></section>
+      <section class="deep-section"><h4>一步例题：u(t) ↔ 1/s。</h4><ol><li>阶跃函数查表得到 1/s。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>s 不是秒，是复频率变量。</div>
+  </div>
+</article>
+
+<article class="topic" id="t2">
+  <div class="topic-head"><span class="badge">知识点 2</span><h3>单位阶跃 ε(t)：开关动作的数学表示</h3></div>
+  <p><b>新手先听这句：</b>电路换路题里，开关闭合可以理解为某个激励突然开始，这常用单位阶跃表示。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>阶跃表示“从某一刻开始”。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>单位阶跃在 t&lt;0 时为 0，t&gt;0 时为 1。</p>
+    <div class="formula">\[\varepsilon(t)\Longleftrightarrow \frac{1}{s}\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>ε(t)</code></td><td>单位阶跃函数。</td></tr><tr><td><code>1/s</code></td><td>阶跃在 s 域的形式。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>看到从 t=0 开始作用的常值信号，写成 Aε(t)。</li><li>查表得到 A/s。</li><li>和其他项按线性性质相加。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>开关输入</li><li>阶跃响应</li><li>常值电源接入</li><li>零状态响应</li></ul></section>
+      <section class="deep-section"><h4>一步例题：2ε(t) 的变换是多少？</h4><ol><li>ε(t)↔1/s，所以 2ε(t)↔2/s。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>ε(t) 和冲激 δ(t) 不一样。</div>
+  </div>
+</article>
+
+<article class="topic" id="t3">
+  <div class="topic-head"><span class="badge">知识点 3</span><h3>单位冲激 δ(t)：瞬间作用</h3></div>
+  <p><b>新手先听这句：</b>冲激是非常短、非常强的一下。它在电路中常用于理想化瞬间输入。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>冲激变换最简单：Aδ(t)→A。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>冲激函数的拉普拉斯变换就是它的强度 A。</p>
+    <div class="formula">\[A\delta(t)\Longleftrightarrow A\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>δ(t)</code></td><td>单位冲激。</td></tr><tr><td><code>A</code></td><td>冲激强度。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>识别 δ(t)。</li><li>如果前面有系数 A，变换就是 A。</li><li>和其他项线性叠加。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>冲激响应</li><li>组合信号变换</li><li>系统响应基础</li></ul></section>
+      <section class="deep-section"><h4>一步例题：3δ(t) ↔ 3。</h4><ol><li>A=3，直接得到 3。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>δ(t) 不是普通函数，不能把它当成某个很大的数。</div>
+  </div>
+</article>
+
+<article class="topic" id="t4">
+  <div class="topic-head"><span class="badge">知识点 4</span><h3>常用变换对：从查表开始</h3></div>
+  <p><b>新手先听这句：</b>新手不要一开始就从积分定义硬算，先学会查表和识别形式。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>查表是拉普拉斯入门的第一技能。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>常见时域函数都有固定的 s 域形式。</p>
+    <div class="formula">\[e^{-\alpha t}\Longleftrightarrow\frac{1}{s+\alpha},\quad \sin\omega t\Longleftrightarrow\frac{\omega}{s^2+\omega^2},\quad \cos\omega t\Longleftrightarrow\frac{s}{s^2+\omega^2}\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>α</code></td><td>指数衰减系数。</td></tr><tr><td><code>ω</code></td><td>角频率。</td></tr><tr><td><code>s</code></td><td>复频率变量。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>拆成基本函数。</li><li>逐项查表。</li><li>系数保留。</li><li>最后相加。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>指数函数变换</li><li>正弦余弦变换</li><li>组合函数变换</li><li>反变换查表</li></ul></section>
+      <section class="deep-section"><h4>一步例题：5e^{-3t} ↔ 5/(s+3)。</h4><ol><li>e^{-αt}↔1/(s+α)，α=3，再乘 5。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>sin 分子是 ω，cos 分子是 s。</div>
+  </div>
+</article>
+
+<article class="topic" id="t5">
+  <div class="topic-head"><span class="badge">知识点 5</span><h3>线性性质：复杂函数拆开算</h3></div>
+  <p><b>新手先听这句：</b>如果一个函数由几项相加组成，就可以每一项单独变换。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>复杂 = 简单项相加。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>拉普拉斯变换对加法和常数倍保持线性。</p>
+    <div class="formula">\[A_1f_1(t)+A_2f_2(t)\Longleftrightarrow A_1F_1(s)+A_2F_2(s)\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>A1,A2</code></td><td>常数系数。</td></tr><tr><td><code>f1,f2</code></td><td>时域函数。</td></tr><tr><td><code>F1,F2</code></td><td>对应 s 域函数。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>把函数拆项。</li><li>每项查表。</li><li>乘上原系数。</li><li>相加。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>组合函数变换</li><li>反变换拆项</li><li>电路输入分解</li></ul></section>
+      <section class="deep-section"><h4>一步例题：δ(t)+2ε(t)-3e^{-2t} ↔ 1+2/s-3/(s+2)。</h4><ol><li>δ→1；2ε→2/s；-3e^{-2t}→-3/(s+2)。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>别把不同项乱合并，先拆再算更稳。</div>
+  </div>
+</article>
+
+<article class="topic" id="t6">
+  <div class="topic-head"><span class="badge">知识点 6</span><h3>微分性质：电容电感为什么能进 s 域</h3></div>
+  <p><b>新手先听这句：</b>电容电感公式里有导数。微分性质把导数变成 s 乘法，并带上初值。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>导数 → sF(s)-初值。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>求导在 s 域中主要变成乘 s，但必须扣掉换路前初值。</p>
+    <div class="formula">\[\frac{df(t)}{dt}\Longleftrightarrow sF(s)-f(0^-)\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>df/dt</code></td><td>时域导数。</td></tr><tr><td><code>F(s)</code></td><td>f(t) 的变换。</td></tr><tr><td><code>f(0-)</code></td><td>换路前一瞬间的值。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>找 F(s)。</li><li>乘 s。</li><li>减初值 f(0-)。</li><li>用于电容电感时不要漏初始条件。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>导数变换</li><li>换路初值</li><li>电容电感 s 域模型</li></ul></section>
+      <section class="deep-section"><h4>一步例题：若 f(0-)=2，则 df/dt ↔ sF(s)-2。</h4><ol><li>按微分性质直接代入。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>是 0-，不是 0+。</div>
+  </div>
+</article>
+
+<article class="topic" id="t7">
+  <div class="topic-head"><span class="badge">知识点 7</span><h3>积分性质：累积量怎么变换</h3></div>
+  <p><b>新手先听这句：</b>积分表示从 0 到 t 的累积。拉普拉斯中积分相当于除以 s。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>积分 → 除以 s。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>时域积分在 s 域中变成除以 s。</p>
+    <div class="formula">\[\int_0^t f(\xi)d\xi\Longleftrightarrow\frac{F(s)}{s}\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>ξ</code></td><td>积分变量，只是临时变量。</td></tr><tr><td><code>F(s)</code></td><td>f(t) 的变换。</td></tr><tr><td><code>s</code></td><td>复频率变量。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>先求 f(t) 的 F(s)。</li><li>再除以 s。</li><li>需要反变换时再查表或部分分式。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>积分函数变换</li><li>系统累积响应</li><li>电路状态变量</li></ul></section>
+      <section class="deep-section"><h4>一步例题：∫0^t 1 dξ = t，而 1↔1/s，积分对应 1/s²。</h4><ol><li>F(s)=1/s，再除以 s 得 1/s²。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>积分上限是 t，不是固定常数。</div>
+  </div>
+</article>
+
+<article class="topic" id="t8">
+  <div class="topic-head"><span class="badge">知识点 8</span><h3>部分分式展开：反变换前必须拆开</h3></div>
+  <p><b>新手先听这句：</b>复杂分式通常不能直接反查表，要拆成几个简单分式。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>反变换前先拆分。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>把复杂 F(s) 拆成表里能认出来的简单项。</p>
+    <div class="formula">\[F(s)=\frac{N(s)}{D(s)}=\frac{R_1}{s-p_1}+\frac{R_2}{s-p_2}+\cdots\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>N(s)</code></td><td>分子。</td></tr><tr><td><code>D(s)</code></td><td>分母。</td></tr><tr><td><code>p_i</code></td><td>分母根/极点。</td></tr><tr><td><code>R_i</code></td><td>对应系数/留数。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>分母因式分解。</li><li>写出拆分形式。</li><li>代入根求系数。</li><li>逐项反变换。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>单实根</li><li>重根</li><li>共轭复根</li><li>暂态响应</li></ul></section>
+      <section class="deep-section"><h4>一步例题：1/[s(s+2)] = A/s + B/(s+2)。</h4><ol><li>两边通分，代入 s=0 求 A，代入 s=-2 求 B。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>真分式才能直接部分分式；假分式先多项式除法。</div>
+  </div>
+</article>
+
+<article class="topic" id="t9">
+  <div class="topic-head"><span class="badge">知识点 9</span><h3>复频域下的电路分析总流程</h3></div>
+  <p><b>新手先听这句：</b>S1 的核心不是只算变换，而是用 s 域分析电路。流程固定，按步骤走就不乱。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>s 域电路分析就是流程题。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>先找初值，再列电路方程，再变换求解，最后反变换。</p>
+    <div class="formula">\[\text{初值}\rightarrow \text{KCL/KVL}\rightarrow \mathcal{L}\{\cdot\}\rightarrow F(s)\rightarrow f(t)\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>u_C(0-)</code></td><td>电容换路前电压。</td></tr><tr><td><code>i_L(0-)</code></td><td>电感换路前电流。</td></tr><tr><td><code>KCL/KVL</code></td><td>电路方程。</td></tr><tr><td><code>F(s)</code></td><td>s 域解。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>按换路定则求 uC(0-) 和 iL(0-)。</li><li>列 KCL/KVL。</li><li>对方程做拉普拉斯变换。</li><li>解出目标 F(s)。</li><li>部分分式展开并反变换。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>RC/RL/RLC 暂态</li><li>含初值电路</li><li>开关闭合后响应</li></ul></section>
+      <section class="deep-section"><h4>一步例题：若 uC(0-)=1V，iL(0-)=0A，就先把这两个初值写进 s 域模型。</h4><ol><li>列初值；列方程；变换；解；反变换。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>不要跳过初值。初值错，后面全错。</div>
+  </div>
+</article>
+
+</section>
+</main>
+</div><div class="reader-tools"><a href="#top">顶部</a><button type="button" onclick="toggleTheme()">深色</button></div><script src="../../assets/site.js"></script></body></html>

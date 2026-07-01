@@ -1,0 +1,202 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>二端口网络：输入输出黑箱和矩阵参数</title><link rel="stylesheet" href="../../assets/style.css"/><script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]},svg:{fontCache:'global'}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head><body><div class="site-shell">
+<div class="topbar"><div class="brand">电路零基础详讲 v2</div><nav class="nav"><a href="../../index.html">总入口</a><a href="../../mind-guide.html">思维导读</a><a href="../../search.html">检索</a><a href="../../formula-index.html">公式索引</a><a href="../../type-map.html">题型地图</a><a href="../../audit.html">审查</a><button class="btn" type="button" onclick="toggleTheme()">深色</button></nav></div>
+<main id="top" class="chapter-layout">
+<aside class="sidebar">
+<a class="strong" href="../../index.html">返回总入口</a>
+<a class="strong" href="../../mindmaps/ch2.html">本章导图</a>
+<a class="strong" href="../../mind-guide.html">总思维导读</a>
+<a class="strong" href="#guide">本章导读</a>
+<a href="#t1">1. 端口条件：什么时候算二端口</a><a href="#t2">2. 端口变量 U1、U2、I1、I2</a><a href="#t3">3. 线性和互易：参数矩阵的性质</a><a href="#t4">4. Y 参数：电压控制电流</a><a href="#t5">5. Z 参数：电流控制电压</a><a href="#t6">6. Y 和 Z 的转换：矩阵求逆</a><a href="#t7">7. T 参数：级联网络最方便</a><a href="#t8">8. 含电容电感的二端口：s 与 jω 的连接</a>
+</aside>
+<section>
+<section class="hero"><span class="eyebrow">第2章 · 零基础详讲</span><h1>二端口网络：输入输出黑箱和矩阵参数</h1><p class="subtitle">二端口网络用矩阵描述输入端和输出端之间的关系。它让你不用关心内部每根线，只看端口变量。</p><p class="math-note">资料依据：S2 二端口网络。S2 资料强调端口条件、U1/U2/I1/I2、Y/Z/T 参数，及短路法、开路法、矩阵转换。</p></section>
+<div class="diagram"><svg width="880" height="260" viewBox="0 0 880 260" xmlns="http://www.w3.org/2000/svg"><rect width="878" height="258" x="1" y="1" rx="20" fill="#f8fafc" stroke="#cbd5e1"/><rect x="330" y="70" width="240" height="130" rx="18" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/><text x="382" y="140" font-size="26" font-weight="700" fill="#1e40af">二端口网络</text><line x1="100" y1="95" x2="330" y2="95" stroke="#0f172a" stroke-width="4"/><line x1="100" y1="175" x2="330" y2="175" stroke="#0f172a" stroke-width="4"/><line x1="570" y1="95" x2="800" y2="95" stroke="#0f172a" stroke-width="4"/><line x1="570" y1="175" x2="800" y2="175" stroke="#0f172a" stroke-width="4"/><text x="128" y="70" font-size="18" fill="#dc2626">U1, I1</text><text x="675" y="70" font-size="18" fill="#dc2626">U2, I2</text><text x="300" y="230" font-size="18" fill="#334155">Y: I=YU　Z: U=ZI　T: 适合级联</text></svg></div>
+<section class="panel" id="guide"><h2>本章学习顺序</h2><ol><li>端口条件</li><li>端口变量</li><li>线性互易</li><li>Y 参数</li><li>短路法</li><li>Z 参数</li><li>开路法</li><li>矩阵求逆</li><li>T 参数与级联</li></ol><div class="example"><b>学完要达到：</b>能说出每个公式的字母含义，知道题目第一步做什么，而不是只背答案。</div></section>
+
+<article class="topic" id="t1">
+  <div class="topic-head"><span class="badge">知识点 1</span><h3>端口条件：什么时候算二端口</h3></div>
+  <p><b>新手先听这句：</b>二端口不是简单地有四个接线柱，而是每一对端子必须满足端口电流条件。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>二端口首先看端口条件。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>端口像一个电流通道，进去的电流必须从另一端出来。</p>
+    <div class="formula">\[i_{\text{流入一端}}=i_{\text{流出另一端}}\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>i</code></td><td>端口电流。</td></tr><tr><td><code>端口1/端口2</code></td><td>输入端/输出端。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>找两对端子。</li><li>检查每对端子的电流是否一进一出。</li><li>标 U1、I1、U2、I2。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>判断二端口</li><li>画端口变量</li><li>端口条件判断</li></ul></section>
+      <section class="deep-section"><h4>一步例题：滤波器有输入一对端子、输出一对端子，通常可视为二端口。</h4><ol><li>检查输入端口电流一进一出，输出端也满足。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>四端网络不一定是二端口。</div>
+  </div>
+</article>
+
+<article class="topic" id="t2">
+  <div class="topic-head"><span class="badge">知识点 2</span><h3>端口变量 U1、U2、I1、I2</h3></div>
+  <p><b>新手先听这句：</b>二端口题最先要标变量。变量方向不清，矩阵参数必错。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>二端口先标方向。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>二端口只关心两个端口的电压电流。</p>
+    <div class="formula">\[\{U_1,I_1,U_2,I_2\}\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>U1</code></td><td>端口1电压。</td></tr><tr><td><code>I1</code></td><td>端口1电流。</td></tr><tr><td><code>U2</code></td><td>端口2电压。</td></tr><tr><td><code>I2</code></td><td>端口2电流。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>按教材参考方向标端口电压。</li><li>端口电流通常取流入网络为正。</li><li>后面所有方程都按这个方向写。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>端口变量标注</li><li>参数方程识别</li><li>符号方向判断</li></ul></section>
+      <section class="deep-section"><h4>一步例题：若 I2 算出负值，说明实际电流方向与参考方向相反。</h4><ol><li>保留负号，不要强行改方向。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>不同教材可能对 T 参数使用 -I2，先看定义。</div>
+  </div>
+</article>
+
+<article class="topic" id="t3">
+  <div class="topic-head"><span class="badge">知识点 3</span><h3>线性和互易：参数矩阵的性质</h3></div>
+  <p><b>新手先听这句：</b>如果网络只由线性元件构成，就可以用矩阵线性描述；互易网络通常有 Y12=Y21 或 Z12=Z21。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>互易常看交叉项是否相等。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>互易性表示输入输出某些传递关系对称。</p>
+    <div class="formula">\[Y_{12}=Y_{21},\quad Z_{12}=Z_{21}\quad(\text{互易时})\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>Y12,Y21</code></td><td>Y 矩阵的互传参数。</td></tr><tr><td><code>Z12,Z21</code></td><td>Z 矩阵的互传参数。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>判断网络是否线性。</li><li>判断是否含受控源等可能破坏互易的元件。</li><li>检查矩阵交叉项是否相等。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>互易性判断</li><li>线性二端口</li><li>参数矩阵性质</li></ul></section>
+      <section class="deep-section"><h4>一步例题：只含 R、L、C 的无源线性网络通常满足互易。</h4><ol><li>检查没有独立的非互易元件。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>线性不一定互易，互易也要看网络结构。</div>
+  </div>
+</article>
+
+<article class="topic" id="t4">
+  <div class="topic-head"><span class="badge">知识点 4</span><h3>Y 参数：电压控制电流</h3></div>
+  <p><b>新手先听这句：</b>Y 参数适合用短路法求，因为令某端口电压为 0 很自然就是短路。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>Y：I=YU，短路法。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>端口电流由端口电压线性决定。</p>
+    <div class="formula">\[\begin{bmatrix}I_1\\I_2\end{bmatrix}=\begin{bmatrix}Y_{11}&Y_{12}\\Y_{21}&Y_{22}\end{bmatrix}\begin{bmatrix}U_1\\U_2\end{bmatrix}\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>Y11</code></td><td>U2=0 时 I1/U1。</td></tr><tr><td><code>Y21</code></td><td>U2=0 时 I2/U1。</td></tr><tr><td><code>Y12</code></td><td>U1=0 时 I1/U2。</td></tr><tr><td><code>Y22</code></td><td>U1=0 时 I2/U2。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>短路端口2，令 U2=0。</li><li>求 I1、I2 关于 U1 的式子。</li><li>读出 Y11、Y21。</li><li>短路端口1，令 U1=0。</li><li>求 I1、I2 关于 U2 的式子，读出 Y12、Y22。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>短路法求 Y</li><li>由 Y 求电流</li><li>Y 参数矩阵</li><li>互易判断</li></ul></section>
+      <section class="deep-section"><h4>一步例题：I1=2U1+3U2，I2=4U1+5U2，则 Y=[[2,3],[4,5]]。</h4><ol><li>对应比较系数即可。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>短路某端口是令该端口电压为 0。</div>
+  </div>
+</article>
+
+<article class="topic" id="t5">
+  <div class="topic-head"><span class="badge">知识点 5</span><h3>Z 参数：电流控制电压</h3></div>
+  <p><b>新手先听这句：</b>Z 参数适合用开路法求，因为令某端口电流为 0 就是开路。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>Z：U=ZI，开路法。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>端口电压由端口电流线性决定。</p>
+    <div class="formula">\[\begin{bmatrix}U_1\\U_2\end{bmatrix}=\begin{bmatrix}Z_{11}&Z_{12}\\Z_{21}&Z_{22}\end{bmatrix}\begin{bmatrix}I_1\\I_2\end{bmatrix}\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>Z11</code></td><td>I2=0 时 U1/I1。</td></tr><tr><td><code>Z21</code></td><td>I2=0 时 U2/I1。</td></tr><tr><td><code>Z12</code></td><td>I1=0 时 U1/I2。</td></tr><tr><td><code>Z22</code></td><td>I1=0 时 U2/I2。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>开路端口2，令 I2=0。</li><li>求 U1、U2 关于 I1 的式子。</li><li>读出 Z11、Z21。</li><li>开路端口1，令 I1=0。</li><li>求 U1、U2 关于 I2 的式子，读出 Z12、Z22。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>开路法求 Z</li><li>由 Z 求电压</li><li>Z 参数矩阵</li><li>Z 与 Y 转换</li></ul></section>
+      <section class="deep-section"><h4>一步例题：U1=6I1+2I2，U2=2I1+4I2，则 Z=[[6,2],[2,4]]。</h4><ol><li>比较 I1、I2 的系数。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>开路是电流为 0，不是电压为 0。</div>
+  </div>
+</article>
+
+<article class="topic" id="t6">
+  <div class="topic-head"><span class="badge">知识点 6</span><h3>Y 和 Z 的转换：矩阵求逆</h3></div>
+  <p><b>新手先听这句：</b>Y 和 Z 是同一个网络的两种表达，因此它们互为逆矩阵。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>Y 和 Z 互逆。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>已知 Y 可求 Z，已知 Z 可求 Y。</p>
+    <div class="formula">\[Z=Y^{-1},\quad Y=Z^{-1}\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>Y^{-1}</code></td><td>Y 的逆矩阵。</td></tr><tr><td><code>Z^{-1}</code></td><td>Z 的逆矩阵。</td></tr><tr><td><code>det</code></td><td>行列式。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>写出 2×2 矩阵。</li><li>求行列式 ad-bc。</li><li>主对角线互换，副对角线变号。</li><li>除以行列式。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>Y转Z</li><li>Z转Y</li><li>矩阵求逆</li><li>参数校验</li></ul></section>
+      <section class="deep-section"><h4>一步例题：矩阵 [[a,b],[c,d]] 的逆为 1/(ad-bc)[[d,-b],[-c,a]]。</h4><ol><li>套二阶矩阵求逆公式。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>行列式为 0 不能求逆。</div>
+  </div>
+</article>
+
+<article class="topic" id="t7">
+  <div class="topic-head"><span class="badge">知识点 7</span><h3>T 参数：级联网络最方便</h3></div>
+  <p><b>新手先听这句：</b>多个二端口接起来时，用 T 参数最方便，因为总矩阵就是一个个矩阵相乘。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>级联优先 T。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>T 参数把输出端变量传到输入端变量。</p>
+    <div class="formula">\[\begin{bmatrix}U_1\\I_1\end{bmatrix}=\begin{bmatrix}A&B\\C&D\end{bmatrix}\begin{bmatrix}U_2\\-I_2\end{bmatrix}\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>A,B,C,D</code></td><td>传输参数。</td></tr><tr><td><code>U1,I1</code></td><td>输入端变量。</td></tr><tr><td><code>U2,-I2</code></td><td>输出端变量，注意符号约定。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>把方程整理成 T 参数定义形式。</li><li>读出 A、B、C、D。</li><li>级联时按连接顺序矩阵相乘。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>求 T 矩阵</li><li>级联二端口</li><li>由 Y/Z 转 T</li><li>传输网络</li></ul></section>
+      <section class="deep-section"><h4>一步例题：两个二端口级联：T_total=T1T2。</h4><ol><li>按信号通过顺序相乘。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>T 参数的 I2 常带负号，别漏。</div>
+  </div>
+</article>
+
+<article class="topic" id="t8">
+  <div class="topic-head"><span class="badge">知识点 8</span><h3>含电容电感的二端口：s 与 jω 的连接</h3></div>
+  <p><b>新手先听这句：</b>二端口如果含 C、L，既可以在 s 域看，也可以在正弦稳态下令 s=jω。</p>
+  <div class="lesson-map">
+    <div class="lesson-step"><b>① 是什么</b><span>拉氏变换和相量法常通过 s↔jω 联系。</span></div>
+    <div class="lesson-step"><b>② 看公式</b><span>先认字母再代数</span></div>
+    <div class="lesson-step"><b>③ 怎么算</b><span>按步骤列式</span></div>
+    <div class="lesson-step"><b>④ 怎么考</b><span>看题型列表</span></div>
+  </div>
+  <div class="deep">
+    <h4>这个公式/概念到底在说什么</h4>
+    <p>电容电感在代数域中变成阻抗。</p>
+    <div class="formula">\[Z_C=\frac{1}{sC}\;\text{或}\;\frac{1}{j\omega C},\quad Z_L=sL\;\text{或}\;j\omega L\]</div>
+    <div class="deep-grid">
+      <section class="deep-section"><h4>每个字母/符号代表什么</h4><table class='symbol-table'><tbody><tr><td><code>s</code></td><td>拉普拉斯复频率。</td></tr><tr><td><code>jω</code></td><td>正弦稳态频率变量。</td></tr><tr><td><code>C,L</code></td><td>电容、电感。</td></tr></tbody></table></section>
+      <section class="deep-section"><h4>遇到题目怎么算</h4><ol><li>暂态问题用 s。</li><li>正弦稳态频响用 jω。</li><li>把 C、L 替换成阻抗。</li><li>再按二端口参数方法求解。</li></ol></section>
+      <section class="deep-section"><h4>常见题型</h4><ul><li>含 C/L 的 Y/Z 参数</li><li>s 域二端口</li><li>频域二端口</li></ul></section>
+      <section class="deep-section"><h4>一步例题：电感阻抗在 s 域为 sL，在相量法下为 jωL。</h4><ol><li>把 s 替换成 jω 即可得到正弦稳态形式。</li></ol></section>
+    </div>
+    <div class="warn"><b>新手易错：</b>不要把暂态 s 域和稳态 jω 域混用。</div>
+  </div>
+</article>
+
+</section>
+</main>
+</div><div class="reader-tools"><a href="#top">顶部</a><button type="button" onclick="toggleTheme()">深色</button></div><script src="../../assets/site.js"></script></body></html>
